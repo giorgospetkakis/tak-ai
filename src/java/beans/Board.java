@@ -67,8 +67,7 @@ public class Board {
    * @param source The cell the piece is currently in
    * @param destination The destination cell
    */
-  @SuppressWarnings(value = {"unused"})
-  private void moveTopPiece(String source, String destination) {
+  public void moveTopPiece(String source, String destination) {
     cells.get(destination).push(cells.get(source).pop());
   }
 
@@ -89,7 +88,7 @@ public class Board {
    * @param player the player in question
    * @return true if owned by the specified Player
    */
-  public boolean isOwnedByPlayer(String cell, Player player) {
+  public boolean isControlledByPlayer(String cell, Player player) {
     return cells.get(cell).peek().getOwner().compareTo(player) == 1;
   }
 

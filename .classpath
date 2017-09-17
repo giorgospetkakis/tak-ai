@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/test"/>
+	<classpathentry kind="src" path="src/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="test-lib/asm-2.2.1.jar"/>
+	<classpathentry kind="lib" path="test-lib/asm-tree-2.2.1.jar"/>
+	<classpathentry kind="lib" path="test-lib/cobertura.jar"/>
+	<classpathentry kind="lib" path="test-lib/jakarta-oro-2.0.8.jar"/>
+	<classpathentry kind="lib" path="test-lib/junit-4.5.jar"/>
+	<classpathentry kind="lib" path="lib/commons-cli-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="lib/commons-csv-1.3.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.5.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang3-3.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="lib/jcl-over-slf4j-1.7.21.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-api-1.7.21.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.7.21.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

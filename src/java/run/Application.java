@@ -28,15 +28,20 @@ public class Application {
    */
   public static void main(String[] args) {
     l.info("Application Started");
-    Board b5 = new Board(5);
+    Board b5 = new Board(8);
     Player w = new Player();
     Player b = new Player();
 
 
     b5.addPiece(new Stone(w), "A1");
+    l.info(b5.toString());
     b5.addPiece(new Capstone(b), "C4");
+    l.info(b5.toString());
     // true as a second argument adds a standing stone
     b5.addPiece(new Stone(w, true), "D2");
+    l.info(b5.toString());
+    
+    b5.moveTopPiece("A1", "A3");
     l.info(b5.toString());
   }
 }

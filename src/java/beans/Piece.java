@@ -3,7 +3,10 @@ package beans;
 public abstract class Piece {
 
   protected Player owner;
-  protected boolean isStandingStone;
+  
+  public Piece(Player owner) {
+    setOwner(owner);
+  }
 
   /**
    * Returns the piece owner.
@@ -18,12 +21,5 @@ public abstract class Piece {
    */
   public void setOwner(Player owner) {
     this.owner = owner;
-  }
-
-  /**
-   * @return true is piece is a Standing Stone.
-   */
-  public boolean isStandingStone() {
-    return isStandingStone;
   }
 }

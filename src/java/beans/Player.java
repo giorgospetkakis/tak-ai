@@ -6,7 +6,7 @@ package beans;
  * @author giorgospetkakis
  *
  */
-public abstract class Player implements Comparable<Player> {
+public class Player implements Comparable<Player> {
 
   /**
    * The current number of initialized players.
@@ -38,9 +38,9 @@ public abstract class Player implements Comparable<Player> {
    * Default player constructor. Creates a dummy player.
    */
   public Player() {
-    this.id = ++playerCount;
-    this.setName("Dummy_" + id);
+    this.setName(playerCount == 0 ? "White" : "Black");
     this.setPlayerType(0);
+    this.id = ++playerCount;
   }
 
   /**
@@ -49,8 +49,8 @@ public abstract class Player implements Comparable<Player> {
    * @param playerType The type of player being initialized
    */
   public Player(int playerType) {
-    this.setPlayerType(playerType);
     this.setName(playerCount == 0 ? "White" : "Black");
+    this.setPlayerType(playerType);
     this.id = ++playerCount;
   }
   

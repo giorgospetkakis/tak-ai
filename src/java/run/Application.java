@@ -1,7 +1,10 @@
 package run;
 
-//import beans.Board;
 import org.apache.log4j.Logger;
+import beans.Board;
+import beans.Capstone;
+import beans.Player;
+import beans.Stone;
 
 /**
  * TAK AI An AI player for the game Tak.
@@ -11,15 +14,29 @@ import org.apache.log4j.Logger;
  * Artificial Intelligence at Skidmore College.
  * </p>
  * 
- * @author giorgospetkakis
+ * @author giorgospetkakis, keltfire88
  *
  */
 public class Application {
 
   private static final Logger l = Logger.getLogger(Application.class);
 
+  /**
+   * Application main method.
+   * 
+   * @param args Console arguments
+   */
   public static void main(String[] args) {
     l.info("Application Started");
-    //Board b = new Board(6);
+    Board b5 = new Board(5);
+    Player w = new Player();
+    Player b = new Player();
+
+
+    b5.addPiece(new Stone(w), "A1");
+    b5.addPiece(new Capstone(b), "C4");
+    // true as a second argument adds a standing stone
+    b5.addPiece(new Stone(w, true), "D2");
+    l.info(b5.toString());
   }
 }

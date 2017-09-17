@@ -11,7 +11,7 @@ import org.apache.log4j.Logger;
  *
  */
 public class Board {
-  
+
   /**
    * Class Logger.
    */
@@ -107,6 +107,51 @@ public class Board {
   }
 
   /**
+   * Text method of displaying the current board.
+   * @return returns the current board state
+   */
+  public String toString() {
+    StringBuilder overview = new StringBuilder();
+    StringBuilder stacks = new StringBuilder();
+    
+    overview.append("\n");
+    for (int i = 0; i < size; i++) {
+      // Append horizontal cell lines
+      for (int k = 0; k < size; k++) {
+        overview.append("---");
+      }
+      // Append cell values
+      overview.append("-\n|");
+      for (int j = 0; j < size; j++) {
+        String cellIdx = getCellIndex(j, i);
+        String rep = " ";
+        if (!isEmptyCell(cellIdx)) {
+          Piece cellContents = cells.get(cellIdx).peek();
+          rep = cellContents.getOwner().getName().substring(0, 1);
+          if (cellContents instanceof Capstone) {
+            rep = " " + rep.toUpperCase();
+          } else if (cellContents instanceof Stone) {
+            rep = rep.toLowerCase();
+            if (((Stone) cellContents).isStandingStone()) {
+              rep = "/" + rep;
+            } else {
+              rep = " " + rep;
+            }
+          }
+        }
+        overview.append(rep + " |");
+      }
+      overview.append("\n");
+    }
+    // Append horizontal cell lines
+    for (int k = 0; k < size; k++) {
+      overview.append("---");
+    }
+    overview.append('-');
+    return overview.toString();
+  }
+
+  /**
    * Returns the size of the board.
    * 
    * @return the size
@@ -123,7 +168,7 @@ public class Board {
   private void setSize(int size) {
     this.size = Math.min(Math.max(size, MIN_SIZE), MAX_SIZE);
   }
-  
+
   /**
    * Initializes the board HashMap and keys.
    */

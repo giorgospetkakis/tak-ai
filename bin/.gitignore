@@ -1,6 +1,7 @@
+/beans/
 /game/
-/run/
+/io/
 /players/
-/basic/
-/java/
-/test/
+/run/
+/log4j.properties
+/resources/

@@ -67,6 +67,7 @@ public class Board {
    * @param source The cell the piece is currently in
    * @param destination The destination cell
    */
+  @SuppressWarnings(value = {"unused"})
   private void moveTopPiece(String source, String destination) {
     cells.get(destination).push(cells.get(source).pop());
   }

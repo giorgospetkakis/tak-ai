@@ -1,6 +1,12 @@
 package beans;
 
-public class Player implements Comparable<Player> {
+/**
+ * An abstract representation of a Tak Player.
+ * 
+ * @author giorgospetkakis
+ *
+ */
+public abstract class Player implements Comparable<Player> {
 
   /**
    * The current number of initialized players.
@@ -33,8 +39,8 @@ public class Player implements Comparable<Player> {
    */
   public Player() {
     this.id = ++playerCount;
-    this.name = "Dummy_" + id;
-    this.playerType = 0;
+    this.setName("Dummy_" + id);
+    this.setPlayerType(0);
   }
 
   /**
@@ -43,8 +49,8 @@ public class Player implements Comparable<Player> {
    * @param playerType The type of player being initialized
    */
   public Player(int playerType) {
-    this.playerType = playerType;
-    this.name = playerCount == 0 ? "White" : "Black";
+    this.setPlayerType(playerType);
+    this.setName(playerCount == 0 ? "White" : "Black");
     this.id = ++playerCount;
   }
   
@@ -54,8 +60,8 @@ public class Player implements Comparable<Player> {
    * @param playerType The type of player being initialized
    */
   public Player(String name, int playerType) {
-    this.playerType = playerType;
-    this.name = name != null && !name.isEmpty() ? name : playerCount == 0 ? "White" : "Black";
+    this.setPlayerType(playerType);
+    this.setName(name != null && !name.isEmpty() ? name : playerCount == 0 ? "White" : "Black");
     this.id = ++playerCount;
   }
 
@@ -73,5 +79,37 @@ public class Player implements Comparable<Player> {
       return 1;
     }
     return 0;
+  }
+
+  /**
+   * Returns the Player's current name.
+   * @return the name
+   */
+  public String getName() {
+    return name;
+  }
+
+  /**
+   * Sets the Player's name to a new value.
+   * @param name the name to set
+   */
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  /**
+   * Returns the numeric value of the Player.
+   * @return the playerType
+   */
+  public int getPlayerType() {
+    return playerType;
+  }
+
+  /**
+   * Sets the type of player.
+   * @param playerType the playerType to set
+   */
+  private void setPlayerType(int playerType) {
+    this.playerType = playerType;
   }
 }

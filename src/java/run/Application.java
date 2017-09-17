@@ -1,7 +1,7 @@
 package run;
 
+//import beans.Board;
 import org.apache.log4j.Logger;
-import beans.Board;
 
 /**
  * TAK AI An AI player for the game Tak.
@@ -20,6 +20,6 @@ public class Application {
 
   public static void main(String[] args) {
     l.info("Application Started");
-    Board b = new Board(6);
+    //Board b = new Board(6);
   }
 }

@@ -7,6 +7,8 @@ public abstract class Piece {
   public Piece(Player owner) {
     setOwner(owner);
   }
+  
+  public abstract boolean isStandingStone();
 
   /**
    * Returns the piece owner.

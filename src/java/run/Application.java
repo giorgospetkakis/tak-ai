@@ -1,10 +1,8 @@
 package run;
 
 import org.apache.log4j.Logger;
-import beans.Board;
-import beans.Capstone;
-import beans.Player;
-import beans.Stone;
+import beans.Game;
+import game.GameManager;
 
 /**
  * TAK AI An AI player for the game Tak.
@@ -27,21 +25,8 @@ public class Application {
    * @param args Console arguments
    */
   public static void main(String[] args) {
-    l.info("Application Started");
-    Board b5 = new Board(8);
-    Player w = new Player();
-    Player b = new Player();
+    Game g = new Game(3);
 
-
-    b5.addPiece(new Stone(w), "A1");
-    l.info(b5.toString());
-    b5.addPiece(new Capstone(b), "C4");
-    l.info(b5.toString());
-    // true as a second argument adds a standing stone
-    b5.addPiece(new Stone(w, true), "D2");
-    l.info(b5.toString());
-    
-    b5.moveTopPiece("A1", "A3");
-    l.info(b5.toString());
+    GameManager.start(g);
   }
 }

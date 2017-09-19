@@ -34,6 +34,7 @@ public class Stone extends Piece {
   /**
    * @return true is piece is a Standing Stone.
    */
+  @Override
   public boolean isStandingStone() {
     return isStandingStone;
   }

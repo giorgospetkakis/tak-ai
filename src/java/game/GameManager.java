@@ -22,8 +22,11 @@ public abstract class GameManager {
     while (game.getGameState() == Game.IN_PROGRESS) {
       
       // TODO: Add turn logic
+      
+      BoardManager.toString(game.getBoard());
+      
+      
       Player winner = detectWinner(game);
-
       // End-game sequence
       if (winner != null) {
         game.setWinner(winner);

@@ -38,8 +38,7 @@ public abstract class GameManager {
   }
 
   /**
-   * Dijkstra-based algorithm that find the winning player. TODO: This works but may be a bit long
-   * and wordy
+   * Breadth-First-Search algorithm that finds the winning player.
    * 
    * @param game The game to be examined
    * @return The winning player. Null if there is no winner.

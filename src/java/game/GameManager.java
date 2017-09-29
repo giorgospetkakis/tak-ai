@@ -14,19 +14,19 @@ public abstract class GameManager {
 
   public static final Logger logger = Logger.getLogger(GameManager.class);
 
+  //TODO: Change this back to private!
   /**
    * The main game loop for the game. Controls when game ends.
    * 
    * @param game The game of the loop
    */
-  private static void gameLoop(Game game) {
+  public static void gameLoop(Game game) {
 
     while (game.getGameState() == Game.IN_PROGRESS) {
       
       // TODO: Add turn logic
       
       BoardManager.toString(game.getBoard());
-      
       
       Player winner = detectWinner(game);
       // End-game sequence

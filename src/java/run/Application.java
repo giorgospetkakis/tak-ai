@@ -2,6 +2,7 @@ package run;
 
 import org.apache.log4j.Logger;
 import beans.Game;
+import game.BoardManager;
 import game.GameManager;
 
 /**
@@ -28,5 +29,11 @@ public class Application {
     Game g = new Game(3);
 
     GameManager.start(g);
+    
+    BoardManager.addPiece(g.getBoard(), g.getPlayers().get(0).getStone(false), g.getBoard().getCells().get(BoardManager.getByteCode(0, 0)));
+    BoardManager.addPiece(g.getBoard(), g.getPlayers().get(0).getStone(false), g.getBoard().getCells().get(BoardManager.getByteCode(0, 1)));
+    BoardManager.addPiece(g.getBoard(), g.getPlayers().get(0).getStone(false), g.getBoard().getCells().get(BoardManager.getByteCode(0, 2)));
+    
+    GameManager.gameLoop(g);
   }
 }

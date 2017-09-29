@@ -26948,3 +26948,320 @@ E X=1 Y=1 to the queue
 2017-09-29 03:12:35,207 [main] (GameManager.java:135) INFO  game.GameManager  - Game -889565351 has started.
 2017-09-29 03:12:36,341 [main] (GameManager.java:135) INFO  game.GameManager  - Game -889564373 has started.
 2017-09-29 03:12:37,651 [main] (GameManager.java:135) INFO  game.GameManager  - Game -889563444 has started.
+2017-09-29 04:08:19,314 [main] (GameManager.java:135) INFO  game.GameManager  - Game -886221396 has started.
+2017-09-29 04:08:47,179 [main] (GameManager.java:135) INFO  game.GameManager  - Game -886194027 has started.
+2017-09-29 04:09:08,727 [main] (GameManager.java:135) INFO  game.GameManager  - Game -886172503 has started.
+2017-09-29 04:09:43,079 [main] (GameManager.java:135) INFO  game.GameManager  - Game -886137479 has started.
+2017-09-29 04:10:26,666 [main] (GameManager.java:135) INFO  game.GameManager  - Game -886094028 has started.
+2017-09-29 04:11:13,217 [main] (GameManager.java:135) INFO  game.GameManager  - Game -886047457 has started.
+2017-09-29 04:11:41,628 [main] (GameManager.java:135) INFO  game.GameManager  - Game -886019486 has started.
+2017-09-29 04:12:40,078 [main] (GameManager.java:135) INFO  game.GameManager  - Game -885961008 has started.
+2017-09-29 04:12:40,080 [main] (BoardManager.java:178) DEBUG game.BoardManager  - in cell
+X=0
+Y=0
+Size1
+Visited false
+N null
+S X=0 Y=1
+W null
+E X=1 Y=0
+2017-09-29 04:13:02,935 [main] (GameManager.java:135) INFO  game.GameManager  - Game -885937784 has started.
+2017-09-29 04:13:02,938 [main] (BoardManager.java:178) DEBUG game.BoardManager  - in cellX=0 Y=0
+2017-09-29 04:13:20,816 [main] (GameManager.java:135) INFO  game.GameManager  - Game -885919759 has started.
+2017-09-29 04:13:20,818 [main] (BoardManager.java:178) DEBUG game.BoardManager  - in cellX=0 Y=0
+2017-09-29 04:14:02,883 [main] (GameManager.java:135) INFO  game.GameManager  - Game -885878179 has started.
+2017-09-29 04:14:20,519 [main] (GameManager.java:135) INFO  game.GameManager  - Game -885860680 has started.
+2017-09-29 04:18:25,270 [main] (GameManager.java:135) INFO  game.GameManager  - Game -885615960 has started.
+2017-09-29 04:18:50,565 [main] (GameManager.java:135) INFO  game.GameManager  - Game -885590117 has started.
+2017-09-29 04:20:24,646 [main] (GameManager.java:135) INFO  game.GameManager  - Game -885496037 has started.
+2017-09-29 04:24:57,931 [main] (GameManager.java:135) INFO  game.GameManager  - Game -885223276 has started.
+2017-09-29 04:34:13,616 [main] (GameManager.java:135) INFO  game.GameManager  - Game -884667090 has started.
+2017-09-29 04:36:11,992 [main] (GameManager.java:135) INFO  game.GameManager  - Game -884548730 has started.
+2017-09-29 04:37:11,581 [main] (GameManager.java:135) INFO  game.GameManager  - Game -884489533 has started.
+2017-09-29 04:37:27,240 [main] (GameManager.java:135) INFO  game.GameManager  - Game -884473450 has started.
+2017-09-29 04:39:04,911 [main] (GameManager.java:135) INFO  game.GameManager  - Game -884375792 has started.
+2017-09-29 04:40:00,916 [main] (GameManager.java:135) INFO  game.GameManager  - Game -884320179 has started.
+2017-09-29 04:48:34,594 [main] (GameManager.java:135) INFO  game.GameManager  - Game -883806465 has started.
+2017-09-29 04:50:08,686 [main] (GameManager.java:135) INFO  game.GameManager  - Game -883712397 has started.
+2017-09-29 04:50:47,753 [main] (GameManager.java:135) INFO  game.GameManager  - Game -883673449 has started.
+2017-09-29 04:51:17,873 [main] (GameManager.java:135) INFO  game.GameManager  - Game -883643345 has started.
+2017-09-29 04:51:52,657 [main] (GameManager.java:135) INFO  game.GameManager  - Game -883608561 has started.
+2017-09-29 04:51:52,659 [main] (GameManager.java:145) INFO  game.GameManager  - Game -883608561 has ended.
+2017-09-29 04:53:37,083 [main] (GameManager.java:136) INFO  game.GameManager  - Game -883504027 has started.
+2017-09-29 04:54:57,062 [main] (GameManager.java:136) INFO  game.GameManager  - Game -883424008 has started.
+2017-09-29 04:58:22,738 [main] (GameManager.java:136) INFO  game.GameManager  - Game -883218356 has started.
+2017-09-29 05:01:50,474 [main] (GameManager.java:136) INFO  game.GameManager  - Game -883010089 has started.
+2017-09-29 05:07:12,883 [main] (GameManager.java:135) INFO  game.GameManager  - Game -882688339 has started.
+2017-09-29 05:07:12,886 [main] (GameManager.java:145) INFO  game.GameManager  - Game -882688339 has ended.
+2017-09-29 05:07:12,888 [main] (RecordsManager.java:48) INFO  io.RecordsManager  - Attempting to record game: -882688339 to file 
+2017-09-29 05:07:12,889 [main] (RecordsManager.java:51) ERROR io.RecordsManager  - Could not find file 
+2017-09-29 05:07:12,889 [main] (RecordsManager.java:104) INFO  io.RecordsManager  - Created new records file: rec/TakAIRecord-0.csv
+2017-09-29 05:07:12,891 [main] (RecordsManager.java:48) INFO  io.RecordsManager  - Attempting to record game: -882688339 to file rec/TakAIRecord-0.csv
+2017-09-29 05:07:12,893 [main] (RecordsManager.java:55) ERROR io.RecordsManager  - Could not open file rec/TakAIRecord-0.csv
+2017-09-29 05:07:12,893 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Successfully recorded game: -882688339 to file rec/TakAIRecord-0.csv
+2017-09-29 05:07:12,894 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Successfully recorded game: -882688339 to file rec/TakAIRecord-0.csv
+2017-09-29 05:12:36,191 [main] (GameManager.java:135) INFO  game.GameManager  - Game -882364543 has started.
+2017-09-29 05:12:36,194 [main] (GameManager.java:145) INFO  game.GameManager  - Game -882364543 has ended.
+2017-09-29 05:12:36,196 [main] (RecordsManager.java:50) INFO  io.RecordsManager  - Attempting to record game: -882364543 to file 
+2017-09-29 05:12:36,196 [main] (RecordsManager.java:53) ERROR io.RecordsManager  - Could not find file 
+2017-09-29 05:12:36,197 [main] (RecordsManager.java:100) INFO  io.RecordsManager  - Created new records file: rec/TakAIRecord-1.csv
+2017-09-29 05:12:36,200 [main] (RecordsManager.java:105) ERROR io.RecordsManager  - Could not create file rec/TakAIRecord-1.csv
+2017-09-29 05:12:36,201 [main] (RecordsManager.java:50) INFO  io.RecordsManager  - Attempting to record game: -882364543 to file rec/TakAIRecord-1.csv
+2017-09-29 05:12:36,201 [main] (RecordsManager.java:57) ERROR io.RecordsManager  - Could not open file rec/TakAIRecord-1.csv
+2017-09-29 05:12:36,201 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -882364543 to file rec/TakAIRecord-1.csv
+2017-09-29 05:12:36,201 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -882364543 to file rec/TakAIRecord-1.csv
+2017-09-29 05:18:21,369 [main] (GameManager.java:135) INFO  game.GameManager  - Game -882019737 has started.
+2017-09-29 05:18:21,373 [main] (GameManager.java:145) INFO  game.GameManager  - Game -882019737 has ended.
+2017-09-29 05:18:21,375 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Attempting to record game: -882019737 to file null
+2017-09-29 05:22:09,438 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881791165 has started.
+2017-09-29 05:22:09,441 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881791165 has ended.
+2017-09-29 05:22:09,443 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881791165 to file 
+2017-09-29 05:22:09,444 [main] (RecordsManager.java:61) ERROR io.RecordsManager  - Could not find file 
+2017-09-29 05:22:09,444 [main] (RecordsManager.java:107) INFO  io.RecordsManager  - Created new records file: rec/TakAIRecords-0.csv
+2017-09-29 05:22:09,448 [main] (RecordsManager.java:112) ERROR io.RecordsManager  - Could not create file rec/TakAIRecords-0.csv
+2017-09-29 05:22:09,448 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881791165 to file rec/TakAIRecords-0.csv
+2017-09-29 05:22:09,448 [main] (RecordsManager.java:65) ERROR io.RecordsManager  - Could not open file rec/TakAIRecords-0.csv
+2017-09-29 05:24:54,261 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881626965 has started.
+2017-09-29 05:24:54,264 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881626965 has ended.
+2017-09-29 05:24:54,267 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881626965 to file 
+2017-09-29 05:24:54,268 [main] (RecordsManager.java:61) ERROR io.RecordsManager  - Could not find file 
+2017-09-29 05:24:54,268 [main] (RecordsManager.java:107) INFO  io.RecordsManager  - Created new records file: rec/TakAIRecords-1.csv
+2017-09-29 05:24:54,273 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881626965 to file rec/TakAIRecords-1.csv
+2017-09-29 05:24:54,273 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881626965 to file rec/TakAIRecords-1.csv
+2017-09-29 05:26:35,788 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881524779 has started.
+2017-09-29 05:26:35,790 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881524779 has ended.
+2017-09-29 05:26:35,793 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881524779 to file 
+2017-09-29 05:26:35,794 [main] (RecordsManager.java:61) ERROR io.RecordsManager  - Could not find file 
+2017-09-29 05:26:35,794 [main] (RecordsManager.java:107) INFO  io.RecordsManager  - Created new records file: rec/TakAIRecords-2.csv
+2017-09-29 05:26:35,798 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881524779 to file rec/TakAIRecords-2.csv
+2017-09-29 05:26:35,798 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881524779 to file rec/TakAIRecords-2.csv
+2017-09-29 05:27:21,194 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881480012 has started.
+2017-09-29 05:27:21,197 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881480012 has ended.
+2017-09-29 05:27:21,199 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881480012 to file rec/TakAIRecords-2.csv
+2017-09-29 05:27:21,202 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881480012 to file rec/TakAIRecords-2.csv
+2017-09-29 05:27:35,847 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881465223 has started.
+2017-09-29 05:27:35,849 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881465223 has ended.
+2017-09-29 05:27:35,851 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881465223 to file rec/TakAIRecords-2.csv
+2017-09-29 05:27:35,853 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881465223 to file rec/TakAIRecords-2.csv
+2017-09-29 05:27:37,033 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881464169 has started.
+2017-09-29 05:27:37,036 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881464169 has ended.
+2017-09-29 05:27:37,038 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881464169 to file rec/TakAIRecords-2.csv
+2017-09-29 05:27:37,041 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881464169 to file rec/TakAIRecords-2.csv
+2017-09-29 05:27:37,914 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881463196 has started.
+2017-09-29 05:27:37,917 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881463196 has ended.
+2017-09-29 05:27:37,919 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881463196 to file rec/TakAIRecords-2.csv
+2017-09-29 05:27:37,922 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881463196 to file rec/TakAIRecords-2.csv
+2017-09-29 05:27:38,683 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881461915 has started.
+2017-09-29 05:27:38,686 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881461915 has ended.
+2017-09-29 05:27:38,688 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881461915 to file rec/TakAIRecords-2.csv
+2017-09-29 05:27:38,691 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881461915 to file rec/TakAIRecords-2.csv
+2017-09-29 05:27:39,539 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881461555 has started.
+2017-09-29 05:27:39,542 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881461555 has ended.
+2017-09-29 05:27:39,544 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881461555 to file rec/TakAIRecords-2.csv
+2017-09-29 05:27:39,547 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881461555 to file rec/TakAIRecords-2.csv
+2017-09-29 05:30:53,396 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881267315 has started.
+2017-09-29 05:30:53,398 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881267315 has ended.
+2017-09-29 05:30:53,400 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881267315 to file rec/TakAIRecords-2.csv
+2017-09-29 05:30:53,403 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881267315 to file rec/TakAIRecords-2.csv
+2017-09-29 05:31:05,462 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881255765 has started.
+2017-09-29 05:31:05,464 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881255765 has ended.
+2017-09-29 05:31:05,466 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881255765 to file 
+2017-09-29 05:31:05,466 [main] (RecordsManager.java:61) ERROR io.RecordsManager  - Could not find file 
+2017-09-29 05:31:05,467 [main] (RecordsManager.java:108) INFO  io.RecordsManager  - Created new records file: rec/TakAIRecords-0.csv
+2017-09-29 05:31:05,470 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881255765 to file rec/TakAIRecords-0.csv
+2017-09-29 05:31:05,470 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881255765 to file rec/TakAIRecords-0.csv
+2017-09-29 05:31:39,537 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881221553 has started.
+2017-09-29 05:31:39,540 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881221553 has ended.
+2017-09-29 05:31:39,542 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881221553 to file 
+2017-09-29 05:31:39,542 [main] (RecordsManager.java:61) ERROR io.RecordsManager  - Could not find file 
+2017-09-29 05:31:39,542 [main] (RecordsManager.java:108) INFO  io.RecordsManager  - Created new records file: rec/TakAIRecords-1.csv
+2017-09-29 05:31:39,546 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881221553 to file rec/TakAIRecords-1.csv
+2017-09-29 05:31:39,546 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881221553 to file rec/TakAIRecords-1.csv
+2017-09-29 05:31:51,887 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881209328 has started.
+2017-09-29 05:31:51,889 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881209328 has ended.
+2017-09-29 05:31:51,891 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881209328 to file rec/TakAIRecords-1.csv
+2017-09-29 05:31:51,893 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881209328 to file rec/TakAIRecords-1.csv
+2017-09-29 05:32:09,101 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881191469 has started.
+2017-09-29 05:32:09,104 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881191469 has ended.
+2017-09-29 05:32:09,106 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881191469 to file rec/TakAIRecords-2.csv
+2017-09-29 05:32:09,108 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881191469 to file rec/TakAIRecords-2.csv
+2017-09-29 05:32:28,028 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881172699 has started.
+2017-09-29 05:32:28,031 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881172699 has ended.
+2017-09-29 05:32:28,033 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881172699 to file 
+2017-09-29 05:32:28,034 [main] (RecordsManager.java:61) ERROR io.RecordsManager  - Could not find file 
+2017-09-29 05:32:28,034 [main] (RecordsManager.java:108) INFO  io.RecordsManager  - Created new records file: rec/TakAIRecords-0.csv
+2017-09-29 05:32:28,038 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881172699 to file rec/TakAIRecords-0.csv
+2017-09-29 05:32:28,038 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881172699 to file rec/TakAIRecords-0.csv
+2017-09-29 05:32:30,085 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881170470 has started.
+2017-09-29 05:32:30,087 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881170470 has ended.
+2017-09-29 05:32:30,090 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881170470 to file rec/TakAIRecords-1.csv
+2017-09-29 05:32:30,092 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881170470 to file rec/TakAIRecords-1.csv
+2017-09-29 05:32:31,460 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881169734 has started.
+2017-09-29 05:32:31,463 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881169734 has ended.
+2017-09-29 05:32:31,465 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881169734 to file rec/TakAIRecords-2.csv
+2017-09-29 05:32:31,468 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881169734 to file rec/TakAIRecords-2.csv
+2017-09-29 05:32:32,213 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881168501 has started.
+2017-09-29 05:32:32,216 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881168501 has ended.
+2017-09-29 05:32:32,218 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881168501 to file rec/TakAIRecords-3.csv
+2017-09-29 05:32:32,220 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881168501 to file rec/TakAIRecords-3.csv
+2017-09-29 05:32:33,045 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881167542 has started.
+2017-09-29 05:32:33,047 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881167542 has ended.
+2017-09-29 05:32:33,049 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881167542 to file rec/TakAIRecords-4.csv
+2017-09-29 05:32:33,052 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881167542 to file rec/TakAIRecords-4.csv
+2017-09-29 05:32:33,826 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881167236 has started.
+2017-09-29 05:32:33,829 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881167236 has ended.
+2017-09-29 05:32:33,831 [main] (RecordsManager.java:57) INFO  io.RecordsManager  - Attempting to record game: -881167236 to file rec/TakAIRecords-5.csv
+2017-09-29 05:32:33,834 [main] (RecordsManager.java:59) INFO  io.RecordsManager  - Successfully recorded game: -881167236 to file rec/TakAIRecords-5.csv
+2017-09-29 05:33:22,452 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881118643 has started.
+2017-09-29 05:33:22,455 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881118643 has ended.
+2017-09-29 05:33:22,457 [main] (RecordsManager.java:58) INFO  io.RecordsManager  - Attempting to record game: -881118643 to file 
+2017-09-29 05:33:22,457 [main] (RecordsManager.java:62) ERROR io.RecordsManager  - Could not find file 
+2017-09-29 05:33:22,457 [main] (RecordsManager.java:109) INFO  io.RecordsManager  - Created new records file: rec/TakAIRecords-0.csv
+2017-09-29 05:33:22,461 [main] (RecordsManager.java:58) INFO  io.RecordsManager  - Attempting to record game: -881118643 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:22,461 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Successfully recorded game: -881118643 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:24,279 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881116311 has started.
+2017-09-29 05:33:24,282 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881116311 has ended.
+2017-09-29 05:33:24,284 [main] (RecordsManager.java:58) INFO  io.RecordsManager  - Attempting to record game: -881116311 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:24,286 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Successfully recorded game: -881116311 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:25,270 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881115320 has started.
+2017-09-29 05:33:25,273 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881115320 has ended.
+2017-09-29 05:33:25,274 [main] (RecordsManager.java:58) INFO  io.RecordsManager  - Attempting to record game: -881115320 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:25,277 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Successfully recorded game: -881115320 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:26,019 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881115043 has started.
+2017-09-29 05:33:26,022 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881115043 has ended.
+2017-09-29 05:33:26,024 [main] (RecordsManager.java:58) INFO  io.RecordsManager  - Attempting to record game: -881115043 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:26,026 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Successfully recorded game: -881115043 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:26,677 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881114421 has started.
+2017-09-29 05:33:26,680 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881114421 has ended.
+2017-09-29 05:33:26,682 [main] (RecordsManager.java:58) INFO  io.RecordsManager  - Attempting to record game: -881114421 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:26,685 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Successfully recorded game: -881114421 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:27,741 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881113374 has started.
+2017-09-29 05:33:27,744 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881113374 has ended.
+2017-09-29 05:33:27,746 [main] (RecordsManager.java:58) INFO  io.RecordsManager  - Attempting to record game: -881113374 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:27,749 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Successfully recorded game: -881113374 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:28,808 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881112394 has started.
+2017-09-29 05:33:28,811 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881112394 has ended.
+2017-09-29 05:33:28,813 [main] (RecordsManager.java:58) INFO  io.RecordsManager  - Attempting to record game: -881112394 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:28,815 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Successfully recorded game: -881112394 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:29,937 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881110770 has started.
+2017-09-29 05:33:29,939 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881110770 has ended.
+2017-09-29 05:33:29,942 [main] (RecordsManager.java:58) INFO  io.RecordsManager  - Attempting to record game: -881110770 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:29,944 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Successfully recorded game: -881110770 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:34,604 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881105963 has started.
+2017-09-29 05:33:34,607 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881105963 has ended.
+2017-09-29 05:33:34,609 [main] (RecordsManager.java:58) INFO  io.RecordsManager  - Attempting to record game: -881105963 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:34,612 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Successfully recorded game: -881105963 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:35,402 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881105676 has started.
+2017-09-29 05:33:35,405 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881105676 has ended.
+2017-09-29 05:33:35,407 [main] (RecordsManager.java:58) INFO  io.RecordsManager  - Attempting to record game: -881105676 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:35,410 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Successfully recorded game: -881105676 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:37,766 [main] (GameManager.java:135) INFO  game.GameManager  - Game -881102920 has started.
+2017-09-29 05:33:37,769 [main] (GameManager.java:145) INFO  game.GameManager  - Game -881102920 has ended.
+2017-09-29 05:33:37,771 [main] (RecordsManager.java:58) INFO  io.RecordsManager  - Attempting to record game: -881102920 to file rec/TakAIRecords-0.csv
+2017-09-29 05:33:37,774 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Successfully recorded game: -881102920 to file rec/TakAIRecords-0.csv
+2017-09-29 05:36:19,260 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880941851 has started.
+2017-09-29 05:36:19,263 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880941851 has ended.
+2017-09-29 05:36:19,263 [main] (RecordsManager.java:52) ERROR io.RecordsManager  - rec/ did not exist. Created new directory rec/
+2017-09-29 05:36:19,265 [main] (RecordsManager.java:58) INFO  io.RecordsManager  - Attempting to record game: -880941851 to file 
+2017-09-29 05:36:19,265 [main] (RecordsManager.java:62) ERROR io.RecordsManager  - Could not find file 
+2017-09-29 05:36:19,267 [main] (RecordsManager.java:109) INFO  io.RecordsManager  - Created new records file: rec/TakAIRecords-0.csv
+2017-09-29 05:36:19,269 [main] (RecordsManager.java:58) INFO  io.RecordsManager  - Attempting to record game: -880941851 to file rec/TakAIRecords-0.csv
+2017-09-29 05:36:19,269 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Successfully recorded game: -880941851 to file rec/TakAIRecords-0.csv
+2017-09-29 05:37:01,841 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880898737 has started.
+2017-09-29 05:37:01,844 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880898737 has ended.
+2017-09-29 05:37:01,846 [main] (RecordsManager.java:58) INFO  io.RecordsManager  - Attempting to record game: -880898737 to file rec/TakAIRecords-0.csv
+2017-09-29 05:37:01,848 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Successfully recorded game: -880898737 to file rec/TakAIRecords-0.csv
+2017-09-29 05:38:37,869 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880803213 has started.
+2017-09-29 05:38:37,872 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880803213 has ended.
+2017-09-29 05:38:37,874 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Attempting to record game: -880803213 to file rec/TakAIRecords-0.csv
+2017-09-29 05:38:37,877 [main] (RecordsManager.java:62) INFO  io.RecordsManager  - Successfully recorded game: -880803213 to file rec/TakAIRecords-0.csv
+2017-09-29 05:38:45,165 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880795918 has started.
+2017-09-29 05:38:45,168 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880795918 has ended.
+2017-09-29 05:38:45,170 [main] (RecordsManager.java:60) INFO  io.RecordsManager  - Attempting to record game: -880795918 to file rec/TakAIRecords-0.csv
+2017-09-29 05:38:45,172 [main] (RecordsManager.java:62) INFO  io.RecordsManager  - Successfully recorded game: -880795918 to file rec/TakAIRecords-0.csv
+2017-09-29 05:42:32,641 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880568033 has started.
+2017-09-29 05:42:32,643 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880568033 has ended.
+2017-09-29 05:42:32,645 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880568033 to file rec/TakAIRecords-0.csv
+2017-09-29 05:42:32,647 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880568033 to file rec/TakAIRecords-0.csv
+2017-09-29 05:42:44,781 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880556301 has started.
+2017-09-29 05:42:44,784 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880556301 has ended.
+2017-09-29 05:42:44,785 [main] (RecordsManager.java:114) INFO  io.RecordsManager  - Created new records file: rec/TakAIRecords-1.csv
+2017-09-29 05:42:44,789 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880556301 to file rec/TakAIRecords-1.csv
+2017-09-29 05:42:44,790 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880556301 to file rec/TakAIRecords-1.csv
+2017-09-29 05:45:20,733 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880399997 has started.
+2017-09-29 05:45:20,736 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880399997 has ended.
+2017-09-29 05:45:20,738 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880399997 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:20,741 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880399997 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:22,655 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880398079 has started.
+2017-09-29 05:45:22,658 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880398079 has ended.
+2017-09-29 05:45:22,660 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880398079 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:22,663 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880398079 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:23,560 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880397639 has started.
+2017-09-29 05:45:23,562 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880397639 has ended.
+2017-09-29 05:45:23,565 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880397639 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:23,567 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880397639 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:24,325 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880396358 has started.
+2017-09-29 05:45:24,328 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880396358 has ended.
+2017-09-29 05:45:24,330 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880396358 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:24,333 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880396358 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:34,637 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880386445 has started.
+2017-09-29 05:45:34,640 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880386445 has ended.
+2017-09-29 05:45:34,642 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880386445 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:34,645 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880386445 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:36,451 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880384227 has started.
+2017-09-29 05:45:36,454 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880384227 has ended.
+2017-09-29 05:45:36,456 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880384227 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:36,459 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880384227 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:37,117 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880383613 has started.
+2017-09-29 05:45:37,120 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880383613 has ended.
+2017-09-29 05:45:37,122 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880383613 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:37,125 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880383613 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:37,725 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880383390 has started.
+2017-09-29 05:45:37,728 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880383390 has ended.
+2017-09-29 05:45:37,730 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880383390 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:37,732 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880383390 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:38,745 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880382361 has started.
+2017-09-29 05:45:38,749 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880382361 has ended.
+2017-09-29 05:45:38,751 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880382361 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:38,754 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880382361 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:39,763 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880381331 has started.
+2017-09-29 05:45:39,766 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880381331 has ended.
+2017-09-29 05:45:39,768 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880381331 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:39,770 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880381331 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:40,861 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880380381 has started.
+2017-09-29 05:45:40,864 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880380381 has ended.
+2017-09-29 05:45:40,866 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880380381 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:40,868 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880380381 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:41,831 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880379368 has started.
+2017-09-29 05:45:41,835 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880379368 has ended.
+2017-09-29 05:45:41,838 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880379368 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:41,841 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880379368 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:42,923 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880378155 has started.
+2017-09-29 05:45:42,926 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880378155 has ended.
+2017-09-29 05:45:42,928 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880378155 to file rec/TakAIRecords-0.csv
+2017-09-29 05:45:42,931 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880378155 to file rec/TakAIRecords-0.csv
+2017-09-29 05:46:02,784 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880358335 has started.
+2017-09-29 05:46:02,786 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880358335 has ended.
+2017-09-29 05:46:02,788 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880358335 to file rec/TakAIRecords-0.csv
+2017-09-29 05:46:02,792 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880358335 to file rec/TakAIRecords-0.csv
+2017-09-29 05:46:04,866 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880356324 has started.
+2017-09-29 05:46:04,869 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880356324 has ended.
+2017-09-29 05:46:04,871 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880356324 to file rec/TakAIRecords-0.csv
+2017-09-29 05:46:04,873 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880356324 to file rec/TakAIRecords-0.csv
+2017-09-29 05:46:06,246 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880354312 has started.
+2017-09-29 05:46:06,249 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880354312 has ended.
+2017-09-29 05:46:06,252 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880354312 to file rec/TakAIRecords-0.csv
+2017-09-29 05:46:06,254 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880354312 to file rec/TakAIRecords-0.csv
+2017-09-29 05:46:07,575 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880353655 has started.
+2017-09-29 05:46:07,578 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880353655 has ended.
+2017-09-29 05:46:07,580 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880353655 to file rec/TakAIRecords-0.csv
+2017-09-29 05:46:07,583 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880353655 to file rec/TakAIRecords-0.csv
+2017-09-29 05:46:08,638 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880352605 has started.
+2017-09-29 05:46:08,641 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880352605 has ended.
+2017-09-29 05:46:08,641 [main] (RecordsManager.java:114) INFO  io.RecordsManager  - Created new records file: rec/TakAIRecords-1.csv
+2017-09-29 05:46:08,645 [main] (RecordsManager.java:63) DEBUG io.RecordsManager  - Attempting to record game: -880352605 to file rec/TakAIRecords-1.csv
+2017-09-29 05:46:08,648 [main] (RecordsManager.java:65) INFO  io.RecordsManager  - Successfully recorded game: -880352605 to file rec/TakAIRecords-1.csv
+2017-09-29 05:48:55,245 [main] (GameManager.java:135) INFO  game.GameManager  - Game -880185453 has started.
+2017-09-29 05:48:55,248 [main] (GameManager.java:145) INFO  game.GameManager  - Game -880185453 has ended.
+2017-09-29 05:48:55,250 [main] (RecordsManager.java:64) DEBUG io.RecordsManager  - Attempting to record game: -880185453 to file rec/TakAIRecords-1.csv
+2017-09-29 05:48:55,252 [main] (RecordsManager.java:66) INFO  io.RecordsManager  - Successfully recorded game: -880185453 to file rec/TakAIRecords-1.csv

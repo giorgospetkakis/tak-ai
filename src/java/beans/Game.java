@@ -39,13 +39,13 @@ public class Game {
     this.board = new Board(boardSize);
     this.players = new ArrayList<Player>();
 
-    this.players.add(new Player());
-    this.players.add(new Player());
+    this.players.add(new Player("Test1", 0, boardSize));
+    this.players.add(new Player("Test2", 1, boardSize));
 
     this.setGameState(NOT_STARTED);
   }
   
-  /** TODO: Add coin-flip to decide play order
+  /**
    * Game constructor specifying players.
    * @param boardSize The size of the board (min 3, max 8)
    * @param p1 Player 1 of the game
@@ -64,14 +64,18 @@ public class Game {
   public void start() {
 
   }
-
+  
   /**
-   * Returns the winning player, if any.
+   * Detects and sets the winning player, if any.
    * 
    * @return The winning player. Null if no winner.
    */
-  public Player getWinner() {
-    return GameManager.detectWinner(this);
+  public Player detectWinnerOuter() {
+    Player winner = GameManager.detectWinner(this);
+    if (winner != null) {
+      setWinner(winner);
+    }
+    return winner;
   }
 
   /**
@@ -118,6 +122,14 @@ public class Game {
    */
   public void setGameState(int gameState) {
     this.gameState = gameState;
+  }
+  
+  /**
+   * Returns the winning player.
+   * @return The winning player. Null if the game has no winner.
+   */
+  public Player getWinner() {
+    return winner;
   }
 
   /**

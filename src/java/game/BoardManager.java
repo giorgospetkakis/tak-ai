@@ -27,7 +27,7 @@ public abstract class BoardManager {
    * @param cell The board position to add the piece
    */
   public static void addPiece(Board board, Piece piece, Cell cell) {
-    if (isEmptyCell(board, cell)) {
+    if (isEmptyCell(board, cell) && piece != null) {
       cell.getPieces().push(piece);
     }
   }
@@ -175,13 +175,13 @@ public abstract class BoardManager {
         byte cellIdx = getByteCode(x, y);
         String rep = " ";
         if (!BoardManager.isEmptyCell(board, board.getCells().get(cellIdx))) {
-          Piece cellContents = board.getCells().get(cellIdx).top();
-          rep = cellContents.getOwner().getName().substring(0, 1);
-          if (cellContents instanceof Capstone) {
+          Piece topPiece = board.getCells().get(cellIdx).top();
+          rep = topPiece.getOwner().getName().substring(0, 1);
+          if (topPiece instanceof Capstone) {
             rep = " " + rep.toUpperCase();
-          } else if (cellContents instanceof Stone) {
+          } else if (topPiece instanceof Stone) {
             rep = rep.toLowerCase();
-            if (((Stone) cellContents).isStandingStone()) {
+            if (((Stone) topPiece).isStandingStone()) {
               rep = "/" + rep;
             } else {
               rep = " " + rep;

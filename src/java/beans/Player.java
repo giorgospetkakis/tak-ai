@@ -1,7 +1,7 @@
 package beans;
 
 /**
- * An abstract representation of a Tak Player.
+ * An abstract Java bean representation of a Tak Player.
  * 
  * @author giorgospetkakis
  *

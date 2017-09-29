@@ -9,6 +9,12 @@ import beans.Stone;
 import java.util.Stack;
 import org.apache.log4j.Logger;
 
+/**
+ * Provides Board movement and piece management utilities.
+ * 
+ * @author giorgospetkakis
+ *
+ */
 public abstract class BoardManager {
 
   private static final Logger logger = Logger.getLogger(BoardManager.class);

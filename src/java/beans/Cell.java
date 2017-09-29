@@ -2,6 +2,12 @@ package beans;
 
 import java.util.Stack;
 
+/**
+ * A Java bean representation of a Tak Board Cell.
+ * 
+ * @author giorgospetkakis
+ *
+ */
 public class Cell {
   
   private Cell north;
@@ -30,104 +36,120 @@ public class Cell {
   }
 
   /**
-   * @return the north
+   * Returns the cell 'North' of <code> this </code>.
+   * @return the cell to the north
    */
   public Cell getNorth() {
     return north;
   }
 
   /**
-   * @param north the north to set
+   * Sets the given cell to be north north of <code> this </code>.
+   * @param north The cell to set to north
    */
   public void setNorth(Cell north) {
     this.north = north;
   }
 
   /**
-   * @return the south
+   * Returns the cell 'South' of <code> this </code>.
+   * @return the cell to the south
    */
   public Cell getSouth() {
     return south;
   }
 
   /**
-   * @param south the south to set
+   * Sets the given cell to be south of <code> this </code>.
+   * @param south The cell to set to south
    */
   public void setSouth(Cell south) {
     this.south = south;
   }
 
   /**
-   * @return the west
+   * Returns the cell 'West' of <code> this </code>.
+   * @return the cell to the west
    */
   public Cell getWest() {
     return west;
   }
 
   /**
-   * @param west the west to set
+   * Sets the given cell to be west south of <code> this </code>.
+   * @param west The cell to set to west
    */
   public void setWest(Cell west) {
     this.west = west;
   }
 
   /**
-   * @return the east
+   * Returns the cell 'East' of <code> this </code>.
+   * @return the cell to the east
    */
   public Cell getEast() {
     return east;
   }
 
   /**
-   * @param east the east to set
+   * Sets the given cell to be east of <code> this </code>.
+   * @param east The cell to set to east
    */
   public void setEast(Cell east) {
     this.east = east;
   }
 
   /**
-   * @return the pieces
+   * Returns the Stack of pieces in the cell.
+   * @return the pieces in the cell
    */
   public Stack<Piece> getPieces() {
     return pieces;
   }
 
   /**
-   * @param pieces the pieces to set
+   * Sets the Stack of pieces.
+   * @param pieces the stack of pieces to set
    */
   public void setPieces(Stack<Piece> pieces) {
     this.pieces = pieces;
   }
 
   /**
-   * @return the xpos
+   * The x position of the cell.
+   * @return the x position
    */
   public byte getXpos() {
     return xpos;
   }
 
   /**
-   * @param xpos the xpos to set
+   * Sets the x position of the cell.
+   * @param xpos the x position to set
    */
   public void setXpos(byte xpos) {
     this.xpos = xpos;
   }
 
   /**
-   * @return the ypos
+   * Returns the y position of the cell.
+   * @return the y position
    */
   public byte getYpos() {
     return ypos;
   }
 
   /**
-   * @param ypos the ypos to set
+   * Sets the y position of the cell.
+   * @param ypos the y position to set
    */
   public void setYpos(byte ypos) {
     this.ypos = ypos;
   }
 
   /**
+   * Returns true if the cell has been visited.
+   * For use with BFS-Dijkstra algorithms
    * @return the visited
    */
   public boolean isVisited() {
@@ -135,27 +157,43 @@ public class Cell {
   }
 
   /**
-   * @param visited the visited to set
+   * Sets the cell to (un)visited.
+   * @param visited whether the cell has been visited
    */
   public void setVisited(boolean visited) {
     this.visited = visited;
   }
   
+  /**
+   * Returns the cell's current controlling player.
+   * @return the player that controls the cell
+   */
   public Player getOwner() {
     return this.top().getOwner();
   }
   
+  /**
+   * Returns the top piece of the cell.
+   * @return the top piece
+   */
   public Piece top() {
     return pieces.peek();
   }
   
+  /**
+   * An abbreviated version of toString. 
+   * Returns only the cell coordinates
+   * @return The coordinates of the cell in readable format
+   */
   public String toStringShrt() {
     return "X=" + xpos + " Y=" + ypos;
   }
   
   /**
-   * Returns a String representation of a cell.
+   * Returns a String representation of the cell.
+   * @return the cell's String representation in full
    */
+  @SuppressWarnings("all")
   public String toString() {
     return 
         "\n" +

@@ -3,6 +3,12 @@ package beans;
 import java.util.ArrayList;
 import game.GameManager;
 
+/**
+ * Java bean that represents an instance of a Tak Game Session.
+ * 
+ * @author giorgospetkakis
+ *
+ */
 public class Game {
 
   private Board board;
@@ -16,6 +22,8 @@ public class Game {
   private int score;
   
   private double timeElapsed;
+  
+  private int hashCode;
 
   public static final int NOT_STARTED = 0;
 
@@ -145,5 +153,20 @@ public class Game {
    */
   public void setTimeElapsed(double timeElapsed) {
     this.timeElapsed = timeElapsed;
+  }
+
+  /**
+   * @return the hashCode
+   */
+  @Override
+  public int hashCode() {
+    return hashCode;
+  }
+
+  /**
+   * @param hashCode the hashCode to set
+   */
+  public void setHashCode(int hashCode) {
+    this.hashCode = hashCode;
   }
 }

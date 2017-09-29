@@ -4,6 +4,8 @@ import beans.Cell;
 import beans.Game;
 import beans.Player;
 import io.RecordsManager;
+import java.time.Instant;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.LinkedList;
 import org.apache.log4j.Logger;
@@ -32,7 +34,7 @@ public abstract class GameManager {
         game.setWinner(winner);
         game.setScore(calculateScore(game));
         end(game);
-        RecordsManager.recordGame(game);
+        RecordsManager.record(game);
       }
     }
   }
@@ -128,6 +130,7 @@ public abstract class GameManager {
    */
   public static void start(Game game) {
     game.setTimeElapsed(System.currentTimeMillis());
+    game.setHashCode(Date.from(Instant.now()).hashCode());
     game.setGameState(Game.IN_PROGRESS);
     logger.info("Game " + game.hashCode() + " has started.");
   }

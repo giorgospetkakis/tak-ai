@@ -1,5 +1,11 @@
 package beans;
 
+/**
+ * A Java bean representation of a Tak Stone piece.
+ * 
+ * @author giorgospetkakis
+ *
+ */
 public class Stone extends Piece {
   
   protected boolean isStandingStone;

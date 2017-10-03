@@ -1,9 +1,9 @@
 package run;
 
 import org.apache.log4j.Logger;
-import beans.Game;
-import game.BoardManager;
-import game.GameManager;
+import beans.Player;
+import game.Game;
+import game.tak.BoardManagerTak;
 
 /**
  * TAK AI An AI player for the game Tak.
@@ -26,14 +26,10 @@ public class Application {
    * @param args Console arguments
    */
   public static void main(String[] args) {
-    Game g = new Game(3);
-
-    GameManager.start(g);
-    
-    BoardManager.addPiece(g.getBoard(), g.getPlayers().get(0).getStone(false), g.getBoard().getCells().get(BoardManager.getByteCode(0, 0)));
-    BoardManager.addPiece(g.getBoard(), g.getPlayers().get(0).getStone(false), g.getBoard().getCells().get(BoardManager.getByteCode(0, 1)));
-    BoardManager.addPiece(g.getBoard(), g.getPlayers().get(0).getStone(false), g.getBoard().getCells().get(BoardManager.getByteCode(0, 2)));
-    
-    GameManager.gameLoop(g);
+    GameManager.newGame(Game.TIC_TAC_TOE, 3, Player.DUMMY, Player.DUMMY);
+    GameManager.newGame(Game.TIC_TAC_TOE, 3, Player.DUMMY, Player.DUMMY);
+    GameManager.newGame(Game.TIC_TAC_TOE, 3, Player.DUMMY, Player.DUMMY);
+    GameManager.newGame(Game.TIC_TAC_TOE, 3, Player.DUMMY, Player.DUMMY);
+    GameManager.newGame(Game.TIC_TAC_TOE, 3, Player.DUMMY, Player.DUMMY);
   }
 }

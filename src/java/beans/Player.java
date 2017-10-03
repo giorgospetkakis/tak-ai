@@ -1,6 +1,6 @@
 package beans;
 
-import game.PlayerManager;
+import game.tak.PlayerManagerTak;
 
 /**
  * An abstract Java bean representation of a Tak Player.
@@ -53,7 +53,7 @@ public class Player implements Comparable<Player> {
     this.setName(playerCount == 0 ? "White" : "Black");
     this.setPlayerType(0);
     this.id = ++playerCount;
-    PlayerManager.initPlayerPieces(this, 0);
+    PlayerManagerTak.initPlayerPieces(this, 0);
   }
 
   /**
@@ -65,7 +65,7 @@ public class Player implements Comparable<Player> {
     this.setName(playerCount == 0 ? "White" : "Black");
     this.setPlayerType(playerType);
     this.id = ++playerCount;
-    PlayerManager.initPlayerPieces(this, 0);
+    PlayerManagerTak.initPlayerPieces(this, 0);
   }
 
   /**
@@ -77,7 +77,7 @@ public class Player implements Comparable<Player> {
     this.setPlayerType(playerType);
     this.setName(name != null && !name.isEmpty() ? name : playerCount == 0 ? "White" : "Black");
     this.id = ++playerCount;
-    PlayerManager.initPlayerPieces(this, boardSize);
+    PlayerManagerTak.initPlayerPieces(this, boardSize);
   }
 
   /**

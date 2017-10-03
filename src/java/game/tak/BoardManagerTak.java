@@ -1,4 +1,4 @@
-package game;
+package game.tak;
 
 import beans.Board;
 import beans.Capstone;
@@ -15,9 +15,9 @@ import org.apache.log4j.Logger;
  * @author giorgospetkakis
  *
  */
-public abstract class BoardManager {
+public abstract class BoardManagerTak {
 
-  private static final Logger logger = Logger.getLogger(BoardManager.class);
+  private static final Logger logger = Logger.getLogger(BoardManagerTak.class);
 
   /**
    * Adds a new piece to the selected board position.
@@ -174,7 +174,7 @@ public abstract class BoardManager {
       for (int x = 0; x < board.getSize(); x++) {
         byte cellIdx = getByteCode(x, y);
         String rep = " ";
-        if (!BoardManager.isEmptyCell(board, board.getCells().get(cellIdx))) {
+        if (!BoardManagerTak.isEmptyCell(board, board.getCells().get(cellIdx))) {
           Piece topPiece = board.getCells().get(cellIdx).top();
           rep = topPiece.getOwner().getName().substring(0, 1);
           if (topPiece instanceof Capstone) {

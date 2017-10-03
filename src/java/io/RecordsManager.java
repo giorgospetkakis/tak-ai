@@ -1,6 +1,5 @@
 package io;
 
-import beans.Game;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -9,6 +8,7 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.FileLock;
 import java.nio.channels.OverlappingFileLockException;
 import org.apache.log4j.Logger;
+import game.Game;
 
 /**
  * Enables writing game information to files.

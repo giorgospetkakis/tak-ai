@@ -1,8 +1,8 @@
-package game;
+package game.tak;
 
 import beans.Player;
 
-public class PlayerManager {
+public class PlayerManagerTak {
   
   /**
    * Initiates the Player piece pool.

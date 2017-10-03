@@ -1,7 +1,11 @@
-package beans;
+package game;
 
+import java.time.Instant;
 import java.util.ArrayList;
-import game.GameManager;
+import java.util.Date;
+import beans.Board;
+import beans.Player;
+import run.GameManager;
 
 /**
  * Java bean that represents an instance of a Tak Game Session.
@@ -9,7 +13,21 @@ import game.GameManager;
  * @author giorgospetkakis
  *
  */
-public class Game {
+public abstract class Game implements BoardGame {
+  
+  public static final String TAK = "Tak";
+  
+  public static final String TIC_TAC_TOE = "TicTacToe";
+  
+  public static final int NOT_STARTED = 0;
+
+  public static final int IN_PROGRESS = 1;
+
+  public static final int FINISHED = 2;
+  
+  public static int DEFAULT_BOARD_SIZE;
+  
+  private String gameType;
 
   private Board board;
 
@@ -25,17 +43,12 @@ public class Game {
   
   private int hashCode;
 
-  public static final int NOT_STARTED = 0;
-
-  public static final int IN_PROGRESS = 1;
-
-  public static final int FINISHED = 2;
-
   /**
    * Quick game constructor.
    * @param boardSize The size of the board (min 3, max 8)
    */
-  public Game(int boardSize) {
+  public Game(int boardSize, String gameType) {
+    this.gameType = gameType;
     this.board = new Board(boardSize);
     this.players = new ArrayList<Player>();
 
@@ -51,7 +64,8 @@ public class Game {
    * @param p1 Player 1 of the game
    * @param p2 Player 2 of the game
    */
-  public Game(int boardSize, Player p1, Player p2) {
+  public Game(int boardSize, Player p1, Player p2, String gameType) {
+    this.gameType = gameType;
     this.board = new Board(boardSize);
     this.players = new ArrayList<Player>();
 
@@ -60,22 +74,20 @@ public class Game {
 
     this.setGameState(NOT_STARTED);
   }
-
+  
+  @Override
   public void start() {
-
+    this.setTimeElapsed(System.currentTimeMillis());
+    this.setHashCode(Date.from(Instant.now()).hashCode());
+    this.setGameState(Game.IN_PROGRESS);
   }
   
-  /**
-   * Detects and sets the winning player, if any.
-   * 
-   * @return The winning player. Null if no winner.
-   */
-  public Player detectWinnerOuter() {
-    Player winner = GameManager.detectWinner(this);
-    if (winner != null) {
-      setWinner(winner);
-    }
-    return winner;
+  @Override
+  public void end() {
+    this.setTimeElapsed(System.currentTimeMillis() - this.getTimeElapsed());
+    this.setGameState(Game.FINISHED);
+    //TODO: Move this to whatever manages starting the game
+    //logger.info("Game " + this.hashCode() + " has ended.");
   }
 
   /**

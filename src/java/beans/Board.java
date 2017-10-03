@@ -1,8 +1,8 @@
 package beans;
 
-import game.BoardManager;
 import java.util.HashMap;
 import org.apache.log4j.Logger;
+import game.tak.BoardManagerTak;
 
 /**
  * A Java bean that represents a Tak board.
@@ -45,7 +45,7 @@ public class Board {
   public Board(int size) {
     this.setSize(size);
     cells = new HashMap<Byte, Cell>();
-    BoardManager.initializeBoard(this); // TODO: Move this in a different class
+    BoardManagerTak.initializeBoard(this); // TODO: Move this in a different class
   }
 
   /**

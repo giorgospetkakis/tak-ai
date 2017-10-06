@@ -67,7 +67,7 @@ public abstract class BoardManagerTak {
    * 
    * @param board The board to initialize
    */
-  public static void initializeBoard(Board board) {
+  public static void initialize(Board board) {
     // Initialize cell values and keys
     for (byte y = 0; y < board.getSize(); y++) {
       for (byte x = 0; x < board.getSize(); x++) {

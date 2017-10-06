@@ -45,7 +45,6 @@ public class Board {
   public Board(int size) {
     this.setSize(size);
     cells = new HashMap<Byte, Cell>();
-    BoardManagerTak.initializeBoard(this); // TODO: Move this in a different class
   }
 
   /**

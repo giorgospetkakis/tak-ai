@@ -12,6 +12,7 @@
   <property name="unitTestResultsDir" value="${genDir}/test/unit-test-results"/>
   <property name="coberturaDataFile" value="${testingDir}/cobertura.ser"/>
   <property name="codeCoverageReportDir" value="${testingDir}/code-coverage-report"/>
+  <property name="build.compiler.noverify" value="true"/>
 
   <!-- Build the Classpath -->
   <path id="project.class.path">
@@ -183,6 +184,7 @@
 
       <!-- set log4j.configuration system property -->
       <jvmarg value="-Dlog4j.configuration=file:${testLoggingProperties}"/>
+      <jvmarg value="-noverify"/>
 
       <!-- define the classpath -->
       <classpath refid="project.class.path"/>

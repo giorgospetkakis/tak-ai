@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <testsuites>
-  <testsuite errors="0" failures="0" hostname="giorgos-GL502VS" id="0" name="BoardTest" package="beans.test" skipped="0" tests="2" time="0.093" timestamp="2017-10-06T00:22:00">
+  <testsuite errors="0" failures="0" hostname="giorgos-GL502VS" id="0" name="BoardTest" package="beans.test" skipped="0" tests="2" time="0.088" timestamp="2017-10-06T00:39:40">
       <properties>
           <property name="file.encoding.pkg" value="sun.io" />
 
@@ -40,7 +40,7 @@
 
           <property name="org.eclipse.equinox.simpleconfigurator.configUrl" value="file:org.eclipse.equinox.simpleconfigurator/bundles.info" />
 
-          <property name="org.osgi.framework.uuid" value="3a425d8b-b9c0-4653-86ee-85f73ba57c4e" />
+          <property name="org.osgi.framework.uuid" value="f05cb6ba-f4aa-4a4b-a9ae-ee2195637e56" />
 
           <property name="osgi.splashPath" value="file:/home/giorgos/.p2/pool/plugins/org.eclipse.platform_4.6.3.v20170301-0400" />
 
@@ -94,7 +94,7 @@
 
           <property name="ant.project.default-target" value="dist" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner beans.test.BoardTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/giorgos/workspace/tak-ai/generated/test/unit-test-results/TEST-beans.test.BoardTest.xml crashfile=/home/giorgos/workspace/tak-ai/junitvmwatcher4906977167662674217.properties propsfile=/home/giorgos/workspace/tak-ai/junit9165798476387843717.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner beans.test.BoardTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/giorgos/workspace/tak-ai/generated/test/unit-test-results/TEST-beans.test.BoardTest.xml crashfile=/home/giorgos/workspace/tak-ai/junitvmwatcher4942144683256934010.properties propsfile=/home/giorgos/workspace/tak-ai/junit3568848517767794305.properties" />
 
           <property name="codeCoverageReportDir" value="generated/test/code-coverage-report" />
 
@@ -190,7 +190,7 @@
 
           <property name="ant.java.version" value="1.8" />
 
-          <property name="eclipse.commands" value="-os&#xa;linux&#xa;-ws&#xa;gtk&#xa;-arch&#xa;x86_64&#xa;-showsplash&#xa;-launcher&#xa;/home/giorgos/eclipse/java-neon/eclipse/eclipse&#xa;-name&#xa;Eclipse&#xa;--launcher.library&#xa;/home/giorgos/.p2/pool/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.401.v20161122-1740/eclipse_1618.so&#xa;-startup&#xa;/home/giorgos/eclipse/java-neon/eclipse//plugins/org.eclipse.equinox.launcher_1.3.201.v20161025-1711.jar&#xa;--launcher.appendVmargs&#xa;-exitdata&#xa;1f8014&#xa;-product&#xa;org.eclipse.epp.package.java.product&#xa;-vm&#xa;/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java&#xa;" />
+          <property name="eclipse.commands" value="-os&#xa;linux&#xa;-ws&#xa;gtk&#xa;-arch&#xa;x86_64&#xa;-showsplash&#xa;-launcher&#xa;/home/giorgos/eclipse/java-neon/eclipse/eclipse&#xa;-name&#xa;Eclipse&#xa;--launcher.library&#xa;/home/giorgos/.p2/pool/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.401.v20161122-1740/eclipse_1618.so&#xa;-startup&#xa;/home/giorgos/eclipse/java-neon/eclipse//plugins/org.eclipse.equinox.launcher_1.3.201.v20161025-1711.jar&#xa;--launcher.appendVmargs&#xa;-exitdata&#xa;3b000c&#xa;-product&#xa;org.eclipse.epp.package.java.product&#xa;-vm&#xa;/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java&#xa;" />
 
           <property name="basedir" value="/home/giorgos/workspace/tak-ai" />
 
@@ -268,7 +268,7 @@
 
           <property name="sun.cpu.endian" value="little" />
 
-          <property name="eclipse.startTime" value="1507241494493" />
+          <property name="eclipse.startTime" value="1507250219886" />
 
           <property name="java.vm.version" value="25.131-b11" />
 
@@ -296,7 +296,7 @@
 
           <property name="java.vm.specification.vendor" value="Oracle Corporation" />
 
-          <property name="TSTAMP" value="0322" />
+          <property name="TSTAMP" value="0339" />
 
           <property name="oomph.update.url" value="http://download.eclipse.org/oomph/updates/milestone/latest" />
 
@@ -376,7 +376,7 @@ log4j:ERROR Ignoring configuration file [file:"test.logging.properties"].
 ]]></system-err>
 
   </testsuite>
-  <testsuite errors="0" failures="0" hostname="giorgos-GL502VS" id="1" name="CapstoneTest" package="beans.test" skipped="0" tests="1" time="0.08" timestamp="2017-10-06T00:22:02">
+  <testsuite errors="0" failures="0" hostname="giorgos-GL502VS" id="1" name="CapstoneTest" package="beans.test" skipped="0" tests="1" time="0.075" timestamp="2017-10-06T00:39:41">
       <properties>
           <property name="file.encoding.pkg" value="sun.io" />
 
@@ -416,7 +416,7 @@ log4j:ERROR Ignoring configuration file [file:"test.logging.properties"].
 
           <property name="org.eclipse.equinox.simpleconfigurator.configUrl" value="file:org.eclipse.equinox.simpleconfigurator/bundles.info" />
 
-          <property name="org.osgi.framework.uuid" value="3a425d8b-b9c0-4653-86ee-85f73ba57c4e" />
+          <property name="org.osgi.framework.uuid" value="f05cb6ba-f4aa-4a4b-a9ae-ee2195637e56" />
 
           <property name="osgi.splashPath" value="file:/home/giorgos/.p2/pool/plugins/org.eclipse.platform_4.6.3.v20170301-0400" />
 
@@ -470,7 +470,7 @@ log4j:ERROR Ignoring configuration file [file:"test.logging.properties"].
 
           <property name="ant.project.default-target" value="dist" />
 
-          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner beans.test.CapstoneTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/giorgos/workspace/tak-ai/generated/test/unit-test-results/TEST-beans.test.CapstoneTest.xml crashfile=/home/giorgos/workspace/tak-ai/junitvmwatcher1699273174128849691.properties propsfile=/home/giorgos/workspace/tak-ai/junit5059217794514441092.properties" />
+          <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner beans.test.CapstoneTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.SummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/giorgos/workspace/tak-ai/generated/test/unit-test-results/TEST-beans.test.CapstoneTest.xml crashfile=/home/giorgos/workspace/tak-ai/junitvmwatcher3745140245504980336.properties propsfile=/home/giorgos/workspace/tak-ai/junit394084126645806769.properties" />
 
           <property name="codeCoverageReportDir" value="generated/test/code-coverage-report" />
 
@@ -566,7 +566,7 @@ log4j:ERROR Ignoring configuration file [file:"test.logging.properties"].
 
           <property name="ant.java.version" value="1.8" />
 
-          <property name="eclipse.commands" value="-os&#xa;linux&#xa;-ws&#xa;gtk&#xa;-arch&#xa;x86_64&#xa;-showsplash&#xa;-launcher&#xa;/home/giorgos/eclipse/java-neon/eclipse/eclipse&#xa;-name&#xa;Eclipse&#xa;--launcher.library&#xa;/home/giorgos/.p2/pool/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.401.v20161122-1740/eclipse_1618.so&#xa;-startup&#xa;/home/giorgos/eclipse/java-neon/eclipse//plugins/org.eclipse.equinox.launcher_1.3.201.v20161025-1711.jar&#xa;--launcher.appendVmargs&#xa;-exitdata&#xa;1f8014&#xa;-product&#xa;org.eclipse.epp.package.java.product&#xa;-vm&#xa;/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java&#xa;" />
+          <property name="eclipse.commands" value="-os&#xa;linux&#xa;-ws&#xa;gtk&#xa;-arch&#xa;x86_64&#xa;-showsplash&#xa;-launcher&#xa;/home/giorgos/eclipse/java-neon/eclipse/eclipse&#xa;-name&#xa;Eclipse&#xa;--launcher.library&#xa;/home/giorgos/.p2/pool/plugins/org.eclipse.equinox.launcher.gtk.linux.x86_64_1.1.401.v20161122-1740/eclipse_1618.so&#xa;-startup&#xa;/home/giorgos/eclipse/java-neon/eclipse//plugins/org.eclipse.equinox.launcher_1.3.201.v20161025-1711.jar&#xa;--launcher.appendVmargs&#xa;-exitdata&#xa;3b000c&#xa;-product&#xa;org.eclipse.epp.package.java.product&#xa;-vm&#xa;/usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java&#xa;" />
 
           <property name="basedir" value="/home/giorgos/workspace/tak-ai" />
 
@@ -644,7 +644,7 @@ log4j:ERROR Ignoring configuration file [file:"test.logging.properties"].
 
           <property name="sun.cpu.endian" value="little" />
 
-          <property name="eclipse.startTime" value="1507241494493" />
+          <property name="eclipse.startTime" value="1507250219886" />
 
           <property name="java.vm.version" value="25.131-b11" />
 
@@ -672,7 +672,7 @@ log4j:ERROR Ignoring configuration file [file:"test.logging.properties"].
 
           <property name="java.vm.specification.vendor" value="Oracle Corporation" />
 
-          <property name="TSTAMP" value="0322" />
+          <property name="TSTAMP" value="0339" />
 
           <property name="oomph.update.url" value="http://download.eclipse.org/oomph/updates/milestone/latest" />
 
@@ -706,7 +706,7 @@ log4j:ERROR Ignoring configuration file [file:"test.logging.properties"].
 
       </properties>
 
-      <testcase classname="beans.test.CapstoneTest" name="isStandingStoneTest" time="0.006" />
+      <testcase classname="beans.test.CapstoneTest" name="isStandingStoneTest" time="0.008" />
 
       <system-out><![CDATA[]]></system-out>
 

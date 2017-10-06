@@ -9,7 +9,7 @@ public class TicTacToeGame extends Game {
   
   private static final int DEFAULT_BOARD_SIZE = 3;
   
-  private static final String TYPE = "TAK";
+  private static final String TYPE = "Tic-Tac-Toe";
   
   public TicTacToeGame() {
     super(DEFAULT_BOARD_SIZE, TYPE);

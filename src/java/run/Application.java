@@ -25,6 +25,6 @@ public class Application {
    * @param args Console arguments
    */
   public static void main(String[] args) {
-    GameManager.newGame(Game.TAK, 3, Player.DUMMY, Player.DUMMY);
+    GameManager.newGame(Game.TIC_TAC_TOE, 3, Player.DUMMY, Player.DUMMY);
   }
 }

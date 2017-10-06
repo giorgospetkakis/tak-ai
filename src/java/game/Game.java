@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import beans.Board;
 import beans.Player;
-import run.GameManager;
 
 /**
  * Java bean that represents an instance of a Tak Game Session.
@@ -48,12 +47,12 @@ public abstract class Game implements BoardGame {
    * @param boardSize The size of the board (min 3, max 8)
    */
   public Game(int boardSize, String gameType) {
-    this.gameType = gameType;
+    this.setType(gameType);
     this.board = new Board(boardSize);
     this.players = new ArrayList<Player>();
 
-    this.players.add(new Player("Test1", 0, boardSize));
-    this.players.add(new Player("Test2", 1, boardSize));
+    this.players.add(new Player(0));
+    this.players.add(new Player(1));
 
     this.setGameState(NOT_STARTED);
   }
@@ -65,7 +64,7 @@ public abstract class Game implements BoardGame {
    * @param p2 Player 2 of the game
    */
   public Game(int boardSize, Player p1, Player p2, String gameType) {
-    this.gameType = gameType;
+    this.setType(gameType);
     this.board = new Board(boardSize);
     this.players = new ArrayList<Player>();
 
@@ -86,8 +85,6 @@ public abstract class Game implements BoardGame {
   public void end() {
     this.setTimeElapsed(System.currentTimeMillis() - this.getTimeElapsed());
     this.setGameState(Game.FINISHED);
-    //TODO: Move this to whatever manages starting the game
-    //logger.info("Game " + this.hashCode() + " has ended.");
   }
 
   /**
@@ -192,5 +189,19 @@ public abstract class Game implements BoardGame {
    */
   public void setHashCode(int hashCode) {
     this.hashCode = hashCode;
+  }
+
+  /**
+   * @return the gameType
+   */
+  public String getType() {
+    return gameType;
+  }
+
+  /**
+   * @param gameType the gameType to set
+   */
+  public void setType(String gameType) {
+    this.gameType = gameType;
   }
 }

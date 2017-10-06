@@ -22,6 +22,7 @@ public class TakGame extends Game {
   public TakGame(int boardSize, Player p1, Player p2) {
     super(boardSize, p1, p2, "Tak");
     BoardManagerTak.initialize(this.getBoard());
+    PlayerManagerTak.initPlayerPieces(boardSize, p1, p2);
   }
 
   public static final Logger logger = Logger.getLogger(GameManager.class);

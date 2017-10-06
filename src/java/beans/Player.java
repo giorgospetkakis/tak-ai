@@ -1,7 +1,5 @@
 package beans;
 
-import game.tak.PlayerManagerTak;
-
 /**
  * An abstract Java bean representation of a Tak Player.
  * 
@@ -13,17 +11,12 @@ public class Player implements Comparable<Player> {
   /**
    * The current number of initialized players.
    */
-  private static int playerCount = 0;
+  private static long playerCount = 0;
 
   public static final int DUMMY = 0;
   public static final int HUMAN = 1;
   public static final int ALPHA_BETA = 2;
   public static final int REINF_LEARNING = 3;
-
-  /**
-   * A unique player id.
-   */
-  private int id;
 
   /**
    * The player's name. Defaults to black / white.
@@ -50,10 +43,8 @@ public class Player implements Comparable<Player> {
    * Default player constructor. Creates a dummy player.
    */
   public Player() {
-    this.setName(playerCount == 0 ? "White" : "Black");
+    this.setName(playerCount++ % 2 == 0 ? "White" : "Black");
     this.setPlayerType(0);
-    this.id = ++playerCount;
-    PlayerManagerTak.initPlayerPieces(this, 0);
   }
 
   /**
@@ -62,22 +53,8 @@ public class Player implements Comparable<Player> {
    * @param playerType The type of player being initialized
    */
   public Player(int playerType) {
-    this.setName(playerCount == 0 ? "White" : "Black");
+    this.setName(playerCount++ % 2 == 0 ? "White" : "Black");
     this.setPlayerType(playerType);
-    this.id = ++playerCount;
-    PlayerManagerTak.initPlayerPieces(this, 0);
-  }
-
-  /**
-   * Full constructor for different player types with specified names.
-   * 
-   * @param playerType The type of player being initialized
-   */
-  public Player(String name, int playerType, int boardSize) {
-    this.setPlayerType(playerType);
-    this.setName(name != null && !name.isEmpty() ? name : playerCount == 0 ? "White" : "Black");
-    this.id = ++playerCount;
-    PlayerManagerTak.initPlayerPieces(this, boardSize);
   }
 
   /**
@@ -90,7 +67,7 @@ public class Player implements Comparable<Player> {
    */
   @Override
   public int compareTo(Player p2) {
-    if (this.id == p2.id) {
+    if (this.name == p2.name) {
       return 1;
     }
     return 0;

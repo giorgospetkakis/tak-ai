@@ -2,7 +2,7 @@ package beans;
 
 import java.util.HashMap;
 import org.apache.log4j.Logger;
-import game.tak.BoardManagerTak;
+import game.BoardManager;
 
 /**
  * A Java bean that represents a Tak board.

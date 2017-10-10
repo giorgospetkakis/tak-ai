@@ -4,7 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import org.junit.Test;
 import beans.Board;
-import game.tak.BoardManagerTak;
+import game.BoardManager;
 
 public class BoardTest {
   
@@ -19,7 +19,7 @@ public class BoardTest {
   @Test
   public void getCellsTest() {
     board = new Board(3);
-    BoardManagerTak.initialize(board);
+    BoardManager.initialize(board);
     org.junit.Assert.assertNotNull(board.getCells());
   }
 }

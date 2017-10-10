@@ -24,7 +24,7 @@ public abstract class RecordsManager {
   
   private static final String FILE_SUFFIX = ".csv";
 
-  private static final String HEADER = "key,p1,p2,winner,score,timeElapsed";
+  private static final String HEADER = "key,p1,p2,winner,score,numTurns,timeElapsed";
   
   private static final long MAX_FILE_SIZE = 5 * 1024 * 1024;
   
@@ -128,6 +128,7 @@ public abstract class RecordsManager {
    * Player 2 type | 0 dummy, 1 human, 2 ab, 3
    * rl Winning player (1 or 2) 
    * Game score 
+   * Number of turns that have passed
    * Time elapsed since the start of the game
    * 
    * @param game The game to return metadata for
@@ -135,10 +136,10 @@ public abstract class RecordsManager {
    */
   private static String getGameMetadata(Game game) {
     String ret = "\n";
-    ret += game.hashCode() + "," + game.getPlayers().get(0).getPlayerType() + ","
-        + game.getPlayers().get(1).getPlayerType() + ","
-        + (game.getWinner().compareTo(game.getPlayers().get(1)) + 1) + "," + game.getScore() + ","
-        + game.getTimeElapsed();
+    ret += game.hashCode() + "," + game.getPlayer(0).getPlayerType() + ","
+        + game.getPlayer(1).getPlayerType() + ","
+        + (game.getWinner().compareTo(game.getPlayer(1)) + 1) + "," + game.getScore() + ","
+        + game.getNumTurns() + "," + game.getTimeElapsed();
     return ret;
   }
 }

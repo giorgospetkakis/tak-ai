@@ -1,12 +1,12 @@
 package run;
 
+import java.io.IOException;
 import org.apache.log4j.Logger;
 import beans.Player;
 import game.Game;
-import game.tak.BoardManagerTak;
-import game.tak.PlayerManagerTak;
-import game.tak.TakGame;
+import game.TakGame;
 import game.tictactoe.TicTacToeGame;
+import io.GameFileManager;
 import io.RecordsManager;
 
 public class GameManager {
@@ -20,7 +20,7 @@ public class GameManager {
    * @param player1Type
    * @param player2Type
    */
-  public static void newGame(String gameType, int boardSize, int player1Type, int player2Type) {
+  public static Game newGame(String gameType, int boardSize, int player1Type, int player2Type) {
     Game newGame;
     Player p1 = new Player(player1Type);
     Player p2 = new Player(player2Type);
@@ -31,7 +31,7 @@ public class GameManager {
         newGame = new TakGame(boardSize, p1, p2);
         break;
       }
-      case "TicTacToe": {
+      case "Tic-Tac-Toe": {
         newGame = new TicTacToeGame(p1, p2);
         break;
       }
@@ -39,10 +39,24 @@ public class GameManager {
         newGame = new TakGame(TakGame.DEFAULT_BOARD_SIZE, p1, p2);
       }
     }
-
-    newGame.start();
-    logger.info(newGame.getType() + " Game " + newGame.hashCode() + " has started.");
-    gameLoop(newGame);
+    logger.info(newGame.getType() + " Game " + newGame.hashCode() + " has been created.");
+    return newGame;
+//    newGame.start();
+//    logger.info(newGame.getType() + " Game " + newGame.hashCode() + " has started.");
+//    gameLoop(newGame);
+  }
+  
+  /**
+   * Loads a game state from a file
+   * @param filename The file to be read
+   * @return An instance of the game in the file
+   */
+  public static Game loadGame(String filename) {
+    try {
+      return GameFileManager.readGameFromFile(filename);
+    } catch (IOException e) {
+      return null;
+    }
   }
 
   /**

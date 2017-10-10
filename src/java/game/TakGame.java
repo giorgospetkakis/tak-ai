@@ -1,4 +1,4 @@
-package game.tak;
+package game;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
 import beans.Cell;
 import beans.Move;
 import beans.Player;
-import game.Game;
 import run.GameManager;
 
 public class TakGame extends Game {
@@ -16,13 +15,13 @@ public class TakGame extends Game {
   
   public TakGame(int boardSize) {
     super(boardSize, "Tak");
-    BoardManagerTak.initialize(this.getBoard());
+    BoardManager.initialize(this.getBoard());
   }
   
   public TakGame(int boardSize, Player p1, Player p2) {
     super(boardSize, p1, p2, "Tak");
-    BoardManagerTak.initialize(this.getBoard());
-    PlayerManagerTak.initPlayerPieces(boardSize, p1, p2);
+    BoardManager.initialize(this.getBoard());
+    PlayerManager.initPlayerPieces(boardSize, p1, p2);
   }
 
   public static final Logger logger = Logger.getLogger(GameManager.class);
@@ -44,9 +43,9 @@ public class TakGame extends Game {
       for (int i = 0; i < this.getBoard().getSize(); i++) {
         // This is to capture start (j = 0) and end (j = size-1) points in one block of code
         for (int j = 0; j < this.getBoard().getSize(); j += this.getBoard().getSize() - 1) {
-          Cell currCell = d == 0 ? BoardManagerTak.getCell(this.getBoard(), i, j)
-              : BoardManagerTak.getCell(this.getBoard(), j, i);
-          if (!BoardManagerTak.isEmptyCell(this.getBoard(), currCell)
+          Cell currCell = d == 0 ? BoardManager.getCell(this.getBoard(), i, j)
+              : BoardManager.getCell(this.getBoard(), j, i);
+          if (currCell.isEmpty()
               && !currCell.top().isStandingStone()) {
             // Add cell to start points
             if (j == 0) {
@@ -74,32 +73,32 @@ public class TakGame extends Game {
         }
         // Check all adjacent cells
         if (currCell.getNorth() != null
-            && !BoardManagerTak.isEmptyCell(this.getBoard(), currCell.getNorth())
-            && BoardManagerTak.isControlledByPlayer(currCell, currCell.getNorth().getOwner())) {
+            && currCell.getNorth().isEmpty()
+            && BoardManager.isControlledByPlayer(currCell, currCell.getNorth().getOwner())) {
           if (!currCell.getNorth().isVisited() && !currCell.top().isStandingStone()) {
             queue.add(currCell.getNorth());
           }
         }
 
         if (currCell.getSouth() != null
-            && !BoardManagerTak.isEmptyCell(this.getBoard(), currCell.getSouth())
-            && BoardManagerTak.isControlledByPlayer(currCell, currCell.getSouth().getOwner())) {
+            && currCell.getSouth().isEmpty()
+            && BoardManager.isControlledByPlayer(currCell, currCell.getSouth().getOwner())) {
           if (!currCell.getSouth().isVisited() && !currCell.top().isStandingStone()) {
             queue.add(currCell.getSouth());
           }
         }
 
         if (currCell.getWest() != null
-            && !BoardManagerTak.isEmptyCell(this.getBoard(), currCell.getWest())
-            && BoardManagerTak.isControlledByPlayer(currCell, currCell.getWest().getOwner())) {
+            && currCell.getWest().isEmpty()
+            && BoardManager.isControlledByPlayer(currCell, currCell.getWest().getOwner())) {
           if (!currCell.getWest().isVisited() && !currCell.top().isStandingStone()) {
             queue.add(currCell.getWest());
           }
         }
 
         if (currCell.getEast() != null
-            && !BoardManagerTak.isEmptyCell(this.getBoard(), currCell.getEast())
-            && BoardManagerTak.isControlledByPlayer(currCell, currCell.getEast().getOwner())) {
+            && currCell.getEast().isEmpty()
+            && BoardManager.isControlledByPlayer(currCell, currCell.getEast().getOwner())) {
           if (!currCell.getEast().isVisited() && !currCell.top().isStandingStone()) {
             queue.add(currCell.getEast());
           }

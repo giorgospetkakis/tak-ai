@@ -8,8 +8,6 @@ package beans;
  */
 public class Stone extends Piece {
   
-  protected boolean isStandingStone;
-  
   /**
    * Creates a new Stone piece for the specified Player.
    * Defaults to non-standing stones
@@ -28,13 +26,6 @@ public class Stone extends Piece {
   public Stone(Player owner, boolean isStandingStone) {
     super(owner);
     setStandingStone(isStandingStone);
-  }
-
-  /**
-   * @param isStandingStone true if piece is a standing stone.
-   */
-  public void setStandingStone(boolean isStandingStone) {
-    this.isStandingStone = isStandingStone;
   }
   
   /**

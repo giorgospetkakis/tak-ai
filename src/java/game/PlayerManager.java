@@ -1,16 +1,15 @@
-package game.tak;
+package game;
 
 import beans.Player;
 
-public class PlayerManagerTak {
+public abstract class PlayerManager {
 
   /**
    * Initiates the Player piece pool.
    * 
-   * @param p The p to set the pieces for
    * @param boardSize The size of the board (determines number of pieces)
    */
-  public static void initPlayerPieces(int boardSize, Player ... players) {
+  public static void initPlayerPieces(int boardSize, Player... players) {
     for (Player p : players) {
       switch (boardSize) {
         case 3: {

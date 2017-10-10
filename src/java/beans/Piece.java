@@ -8,7 +8,8 @@ package beans;
  */
 public abstract class Piece {
 
-  protected Player owner;
+  private Player owner;
+  protected boolean isStandingStone;
   
   /**
    * Basic Piece constructor.
@@ -18,6 +19,9 @@ public abstract class Piece {
     setOwner(owner);
   }
   
+  /**
+   * Abstract method that returns if a piece is a standing stone.
+   */
   public abstract boolean isStandingStone();
 
   /**
@@ -33,5 +37,12 @@ public abstract class Piece {
    */
   public void setOwner(Player owner) {
     this.owner = owner;
+  }
+
+  /**
+   * @param isStandingStone true if piece is a standing stone.
+   */
+  public void setStandingStone(boolean isStandingStone) {
+    this.isStandingStone = isStandingStone;
   }
 }

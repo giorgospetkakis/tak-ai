@@ -27288,3 +27288,406 @@ E X=1 Y=0
 2017-10-06 22:12:41,545 [main] (GameManager.java:44) INFO  run.GameManager  - TAK Game -216359145 has started.
 2017-10-06 22:13:37,170 [main] (GameManager.java:44) INFO  run.GameManager  - Tic Tac Toe Game -216303924 has started.
 2017-10-06 22:13:49,016 [main] (GameManager.java:44) INFO  run.GameManager  - Tic-Tac-Toe Game -216292215 has started.
+2017-10-10 01:52:19,465 [main] (GameManager.java:44) INFO  run.GameManager  - Tic-Tac-Toe Game 56018903 has started.
+2017-10-10 02:14:44,800 [main] (GameManager.java:44) INFO  run.GameManager  - Tic-Tac-Toe Game 57363615 has started.
+2017-10-10 04:51:17,189 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 04:52:50,080 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 04:54:02,277 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 04:54:20,945 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 04:54:59,694 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 04:54:59,697 [main] (GameFileManager.java:76) DEBUG io.GameFileManager  - beans.Board@4fca772d
+2017-10-10 04:55:30,176 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 04:55:30,179 [main] (GameFileManager.java:76) DEBUG io.GameFileManager  - 
+  A   B   C  
+-------------
+|/b | b |   | 1
+-------------
+| w |   |   | 2
+-------------
+| b |   | b | 3
+-------------
+2017-10-10 04:57:54,424 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 04:57:54,428 [main] (GameFileManager.java:76) DEBUG io.GameFileManager  - 
+  A   B   C  
+-------------
+|/b | b |   | 1
+-------------
+| w |   |   | 2
+-------------
+| b |   | b | 3
+-------------
+2017-10-10 04:58:21,355 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 04:58:21,358 [main] (GameFileManager.java:76) DEBUG io.GameFileManager  - 
+  A   B   C  
+-------------
+|/b | b |   | 1
+-------------
+| w |   |   | 2
+-------------
+| b |   | b | 3
+-------------
+2017-10-10 05:02:00,852 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 05:02:00,855 [main] (GameFileManager.java:78) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 05:03:11,392 [main] (GameFileManager.java:76) ERROR io.GameFileManager  - File damaged or corrupted resources/tak/sample-boards/test.tak
+2017-10-10 05:03:58,299 [main] (GameFileManager.java:77) ERROR io.GameFileManager  - File damaged or corrupted resources/tak/sample-boards/test.tak
+2017-10-10 05:04:14,395 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 05:04:14,398 [main] (GameFileManager.java:71) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 05:13:58,163 [main] (GameFileManager.java:92) ERROR io.GameFileManager  - Could not find file resources/tak/sample-boards/test.d
+2017-10-10 05:14:24,211 [main] (Application.java:34) ERROR run.Application  - Could not read file resources/tak/sample-boards/test.d
+2017-10-10 05:14:39,127 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 05:14:39,130 [main] (GameFileManager.java:90) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 05:59:06,343 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 05:59:06,345 [main] (GameFileManager.java:102) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 05:59:06,346 [main] (GameFileManager.java:185) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-0-0.tak
+2017-10-10 06:00:21,167 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:00:21,170 [main] (GameFileManager.java:100) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 06:00:21,170 [main] (GameFileManager.java:183) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-0-1.tak
+2017-10-10 06:00:21,171 [main] (GameFileManager.java:117) DEBUG io.GameFileManager  - Tak
+5
+2
+2
+1
+0:1,0,1/
+4:1:1,0!
+5:2:6:3:7:4:8:1:1,1,0
+2:3:4:5:2:1
+3:4:1,0,1,1!
+5:6:3:4:5:6:7:
+2017-10-10 06:00:59,156 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:00:59,159 [main] (GameFileManager.java:100) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 06:00:59,159 [main] (GameFileManager.java:183) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-0-2.tak
+2017-10-10 06:00:59,160 [main] (GameFileManager.java:117) DEBUG io.GameFileManager  - Tak
+5
+2
+2
+1
+0:1,0,1/
+4:1:1,0!
+5:2:6:3:7:4:8:1:1,1,0
+2:3:4:5:2:1
+3:4:1,0,1,1!
+5:6:3:4:5:6:7:
+2017-10-10 06:01:07,705 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:01:07,707 [main] (GameFileManager.java:100) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 06:01:07,708 [main] (GameFileManager.java:183) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-0-3.tak
+2017-10-10 06:01:07,708 [main] (GameFileManager.java:117) DEBUG io.GameFileManager  - Tak
+5
+2
+2
+1
+00:1,0,1/
+04:10:1,0!
+14:20:24:30:34:40:44:01:1,1,0
+11:21:31:41:02:1
+12:22:1,0,1,1!
+32:42:03:13:23:33:43:
+2017-10-10 06:07:20,229 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:07:20,232 [main] (GameFileManager.java:100) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 06:07:20,232 [main] (GameFileManager.java:188) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-0-4.tak
+2017-10-10 06:07:20,233 [main] (GameFileManager.java:117) DEBUG io.GameFileManager  - Tak
+5
+2
+2
+1
+00:1,0,1/
+10:1,0!
+01:1,1,0
+02:1
+22:1,0,1,1!
+
+2017-10-10 06:08:59,909 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:08:59,911 [main] (GameFileManager.java:100) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 06:08:59,912 [main] (GameFileManager.java:188) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-0-0.tak
+2017-10-10 06:08:59,912 [main] (GameFileManager.java:117) DEBUG io.GameFileManager  - Tak
+5
+2
+2
+1
+00:1,0,1/
+10:1,0!
+01:1,1,0
+02:1
+22:1,0,1,1!
+
+2017-10-10 06:10:38,259 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:10:38,261 [main] (GameFileManager.java:101) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 06:10:38,262 [main] (GameFileManager.java:192) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-0-1.tak
+2017-10-10 06:13:03,595 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:13:03,597 [main] (GameFileManager.java:101) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 06:13:03,597 [main] (GameFileManager.java:192) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-0-2.tak
+2017-10-10 06:13:03,600 [main] (GameFileManager.java:126) DEBUG io.GameFileManager  - Tak
+5
+2
+2
+1
+00:1,0,1/
+10:1,0!
+01:1,1,0
+02:1
+22:1,0,1,1!
+
+2017-10-10 06:15:11,105 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:15:11,108 [main] (GameFileManager.java:101) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 06:15:11,109 [main] (GameFileManager.java:195) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-13-0.tak
+2017-10-10 06:23:40,824 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:23:40,827 [main] (GameFileManager.java:101) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 06:23:40,828 [main] (GameFileManager.java:197) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-13-1.tak
+2017-10-10 06:26:54,103 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:26:54,107 [main] (GameFileManager.java:101) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 06:26:54,107 [main] (GameFileManager.java:197) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-13-2.tak
+2017-10-10 06:28:43,861 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:28:43,864 [main] (GameFileManager.java:101) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | b |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 06:28:43,864 [main] (GameFileManager.java:197) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-12-0.tak
+2017-10-10 06:30:46,514 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:30:46,517 [main] (GameFileManager.java:101) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | b |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 06:30:46,517 [main] (GameFileManager.java:198) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-12-1.tak
+2017-10-10 06:31:06,122 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:31:06,125 [main] (GameFileManager.java:101) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 06:31:06,125 [main] (GameFileManager.java:198) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-13-3.tak
+2017-10-10 06:32:26,084 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:32:26,087 [main] (GameFileManager.java:101) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 06:32:26,087 [main] (GameFileManager.java:199) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-13-4.tak
+2017-10-10 06:37:30,128 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:37:30,130 [main] (GameFileManager.java:101) DEBUG io.GameFileManager  - 
+  A   B   C   D   E  
+---------------------
+|/b | W |   |   |   | 1
+---------------------
+| w |   |   |   |   | 2
+---------------------
+| b |   | B |   |   | 3
+---------------------
+|   |   |   |   |   | 4
+---------------------
+|   |   |   |   |   | 5
+---------------------
+2017-10-10 06:37:30,131 [main] (Application.java:34) INFO  run.Application  - beans.Player@3d494fbf
+2017-10-10 06:37:30,131 [main] (GameFileManager.java:200) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-13-5.tak
+2017-10-10 06:37:51,085 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:37:51,088 [main] (Application.java:34) INFO  run.Application  - beans.Player@3d494fbf
+2017-10-10 06:37:51,089 [main] (GameFileManager.java:199) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-13-6.tak
+2017-10-10 06:40:31,850 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:40:31,853 [main] (Application.java:34) INFO  run.Application  - beans.Player@3d494fbf
+2017-10-10 06:40:31,854 [main] (GameFileManager.java:199) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-13-7.tak
+2017-10-10 06:41:32,181 [main] (GameManager.java:42) INFO  run.GameManager  - Tak Game 0 has been created.
+2017-10-10 06:41:32,183 [main] (Application.java:34) INFO  run.Application  - beans.Player@3d494fbf
+2017-10-10 06:41:32,183 [main] (GameFileManager.java:199) INFO  io.GameFileManager  - Created new sample board file: resources/tak/sample-boards/5-2-2-13-8.tak
+2017-10-10 06:42:03,798 [main] (GameManager.java:42) INFO  run.GameManager  - Tic-Tac-Toe Game 0 has been created.
+2017-10-10 06:42:03,801 [main] (Application.java:34) INFO  run.Application  - beans.Player@3d494fbf
+2017-10-10 06:42:03,801 [main] (GameFileManager.java:199) INFO  io.GameFileManager  - Created new sample board file: resources/tic-tac-toe/sample-boards/3-2-2-0-0.tak

@@ -1,8 +1,10 @@
 package run;
 
+import java.io.IOException;
 import org.apache.log4j.Logger;
 import beans.Player;
 import game.Game;
+import io.GameFileManager;
 
 /**
  * TAK AI An AI player for the game Tak.
@@ -17,7 +19,7 @@ import game.Game;
  */
 public class Application {
 
-  private static final Logger l = Logger.getLogger(Application.class);
+  private static final Logger logger = Logger.getLogger(Application.class);
 
   /**
    * Application main method.
@@ -25,6 +27,15 @@ public class Application {
    * @param args Console arguments
    */
   public static void main(String[] args) {
-    GameManager.newGame(Game.TIC_TAC_TOE, 3, Player.DUMMY, Player.DUMMY);
+    String filename = "resources/tak/sample-boards/test.tak";
+
+    try {
+      Game g = GameFileManager.readGameFromFile(filename);
+      logger.info(g.whoseTurn());
+      
+      GameFileManager.writeGameToFile(g);
+    } catch (IOException e) {
+      logger.error("Could not read file " + filename);
+    }
   }
 }

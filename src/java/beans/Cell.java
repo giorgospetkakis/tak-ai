@@ -180,6 +180,10 @@ public class Cell {
     return pieces.peek();
   }
   
+  public boolean isEmpty() {
+    return pieces.isEmpty();
+  }
+  
   /**
    * An abbreviated version of toString. 
    * Returns only the cell coordinates

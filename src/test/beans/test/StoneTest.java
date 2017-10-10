@@ -12,5 +12,4 @@ public class StoneTest {
     Stone testStone = new Stone(new Player(), true);
     assertTrue(testStone.isStandingStone());
   }
-
 }

@@ -16,7 +16,7 @@ public abstract class Game implements BoardGame {
   
   public static final String TAK = "Tak";
   
-  public static final String TIC_TAC_TOE = "TicTacToe";
+  public static final String TIC_TAC_TOE = "Tic-Tac-Toe";
   
   public static final int NOT_STARTED = 0;
 
@@ -33,12 +33,16 @@ public abstract class Game implements BoardGame {
   private ArrayList<Player> players;
 
   private int gameState;
+  
+  private Player current;
 
   private Player winner;
 
   private int score;
   
   private double timeElapsed;
+  
+  private int numTurns;
   
   private int hashCode;
 
@@ -48,11 +52,11 @@ public abstract class Game implements BoardGame {
    */
   public Game(int boardSize, String gameType) {
     this.setType(gameType);
-    this.board = new Board(boardSize);
-    this.players = new ArrayList<Player>();
+    this.setBoard(new Board(boardSize));
+    this.setPlayers(new ArrayList<Player>());
 
-    this.players.add(new Player(0));
-    this.players.add(new Player(1));
+    this.addPlayer(new Player(1));
+    this.addPlayer(new Player(1));
 
     this.setGameState(NOT_STARTED);
   }
@@ -65,11 +69,11 @@ public abstract class Game implements BoardGame {
    */
   public Game(int boardSize, Player p1, Player p2, String gameType) {
     this.setType(gameType);
-    this.board = new Board(boardSize);
-    this.players = new ArrayList<Player>();
+    this.setBoard(new Board(boardSize));
+    this.setPlayers(new ArrayList<Player>());
 
-    this.players.add(p1);
-    this.players.add(p2);
+    this.addPlayer(p1);
+    this.addPlayer(p2);
 
     this.setGameState(NOT_STARTED);
   }
@@ -203,5 +207,45 @@ public abstract class Game implements BoardGame {
    */
   public void setType(String gameType) {
     this.gameType = gameType;
+  }
+
+  /**
+   * @return the current
+   */
+  public Player whoseTurn() {
+    return current;
+  }
+
+  /**
+   * @param current the current to set
+   */
+  public void setCurrent(Player current) {
+    this.current = current;
+  }
+
+  /**
+   * @return the numTurns
+   */
+  public int getNumTurns() {
+    return numTurns;
+  }
+
+  /**
+   * @param numTurns the numTurns to set
+   */
+  public void setNumTurns(int numTurns) {
+    this.numTurns = numTurns;
+  }
+  
+  public Player getPlayer(int playerIndex) {
+    return this.players.get(playerIndex);
+  }
+  
+  public void addPlayer(Player player) {
+    this.players.add(player);
+  }
+  
+  public void incrementTurn() {
+    this.numTurns++;
   }
 }

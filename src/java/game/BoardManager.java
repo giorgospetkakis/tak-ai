@@ -1,4 +1,4 @@
-package game.tak;
+package game;
 
 import beans.Board;
 import beans.Capstone;
@@ -11,13 +11,14 @@ import org.apache.log4j.Logger;
 
 /**
  * Provides Board movement and piece management utilities.
+ * Does NOT identify valid or invalid moves.
  * 
  * @author giorgospetkakis
  *
  */
-public abstract class BoardManagerTak {
+public abstract class BoardManager {
 
-  private static final Logger logger = Logger.getLogger(BoardManagerTak.class);
+  private static final Logger logger = Logger.getLogger(BoardManager.class);
 
   /**
    * Adds a new piece to the selected board position.
@@ -27,7 +28,7 @@ public abstract class BoardManagerTak {
    * @param cell The board position to add the piece
    */
   public static void addPiece(Board board, Piece piece, Cell cell) {
-    if (isEmptyCell(board, cell) && piece != null) {
+    if (piece != null) {
       cell.getPieces().push(piece);
     }
   }
@@ -45,6 +46,12 @@ public abstract class BoardManagerTak {
     for (int i = 0; i < size; i++) {
       moveStack.push(src.getPieces().pop());
     }
+
+    // Enables crushing standing stones
+    if (dest.top().isStandingStone() && moveStack.peek() instanceof Capstone) {
+      dest.top().setStandingStone(false);
+    }
+
     // Drop pieces in order
     for (int i = 0; i < size; i++) {
       dest.getPieces().push(moveStack.pop());
@@ -121,7 +128,7 @@ public abstract class BoardManagerTak {
   public static byte getByteCode(int x, int y) {
     return (byte) (x | (y << 4));
   }
-  
+
   /**
    * Returns the cell at the given coordinates.
    * 
@@ -135,17 +142,6 @@ public abstract class BoardManagerTak {
   }
 
   /**
-   * Returns true if the specified cell is empty.
-   * 
-   * @param board the board on which the cell is
-   * @param cell the selected cell position
-   * @return true if cell is empty
-   */
-  public static boolean isEmptyCell(Board board, Cell cell) {
-    return board.getCells().get(getCellKey(cell)).getPieces().isEmpty();
-  }
-
-  /**
    * Text method of displaying the current board.
    *
    * @param board The board to output
@@ -153,7 +149,7 @@ public abstract class BoardManagerTak {
    */
   public static String toString(Board board) {
     StringBuilder overview = new StringBuilder();
-    StringBuilder stacks = new StringBuilder(); //TODO: Add a way to print contents of a stack
+    StringBuilder stacks = new StringBuilder(); // TODO: Add a way to print contents of a stack
 
     overview.append("\n ");
     // Append letter cell reference
@@ -162,26 +158,26 @@ public abstract class BoardManagerTak {
       overview.append(" " + app + "  ");
     }
     overview.append("\n");
-    
+
     for (int y = 0; y < board.getSize(); y++) {
       // Append horizontal cell lines
       for (int k = 0; k < board.getSize(); k++) {
         overview.append("----");
       }
-      
+
       // Append cell values and vertical lines
       overview.append("-\n|");
       for (int x = 0; x < board.getSize(); x++) {
         byte cellIdx = getByteCode(x, y);
         String rep = " ";
-        if (!BoardManagerTak.isEmptyCell(board, board.getCells().get(cellIdx))) {
+        if (!board.getCells().get(cellIdx).isEmpty()) {
           Piece topPiece = board.getCells().get(cellIdx).top();
           rep = topPiece.getOwner().getName().substring(0, 1);
           if (topPiece instanceof Capstone) {
             rep = " " + rep.toUpperCase();
           } else if (topPiece instanceof Stone) {
             rep = rep.toLowerCase();
-            if (((Stone) topPiece).isStandingStone()) {
+            if (topPiece.isStandingStone()) {
               rep = "/" + rep;
             } else {
               rep = " " + rep;

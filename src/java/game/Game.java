@@ -1,10 +1,10 @@
 package game;
 
-import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Date;
 import beans.Board;
+import beans.Move;
 import beans.Player;
+import players.DummyPlayer;
 
 /**
  * Java bean that represents an instance of a Tak Game Session.
@@ -55,8 +55,8 @@ public abstract class Game implements BoardGame {
     this.setBoard(new Board(boardSize));
     this.setPlayers(new ArrayList<Player>());
 
-    this.addPlayer(new Player(1));
-    this.addPlayer(new Player(1));
+    this.addPlayer(new DummyPlayer());
+    this.addPlayer(new DummyPlayer());
 
     this.setGameState(NOT_STARTED);
   }
@@ -76,19 +76,6 @@ public abstract class Game implements BoardGame {
     this.addPlayer(p2);
 
     this.setGameState(NOT_STARTED);
-  }
-  
-  @Override
-  public void start() {
-    this.setTimeElapsed(System.currentTimeMillis());
-    this.setHashCode(Date.from(Instant.now()).hashCode());
-    this.setGameState(Game.IN_PROGRESS);
-  }
-  
-  @Override
-  public void end() {
-    this.setTimeElapsed(System.currentTimeMillis() - this.getTimeElapsed());
-    this.setGameState(Game.FINISHED);
   }
 
   /**
@@ -222,6 +209,13 @@ public abstract class Game implements BoardGame {
   public void setCurrent(Player current) {
     this.current = current;
   }
+  
+  /**
+   * Changes the current player to the other one.
+   */
+  public void swapCurrentPlayer() {
+    this.current = this.whoseTurn() == this.getPlayer(0) ? this.getPlayer(1) : this.getPlayer(0);
+  }
 
   /**
    * @return the numTurns
@@ -247,5 +241,9 @@ public abstract class Game implements BoardGame {
   
   public void incrementTurn() {
     this.numTurns++;
+  }
+  
+  public void undoMove(Move move) {
+    makeMove(move.getInverse());
   }
 }

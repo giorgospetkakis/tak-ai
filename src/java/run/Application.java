@@ -1,6 +1,5 @@
 package run;
 
-import java.io.IOException;
 import org.apache.log4j.Logger;
 import beans.Player;
 import game.Game;
@@ -27,15 +26,14 @@ public class Application {
    * @param args Console arguments
    */
   public static void main(String[] args) {
-    String filename = "resources/tak/sample-boards/test.tak";
 
-    try {
-      Game g = GameFileManager.readGameFromFile(filename);
-      logger.info(g.whoseTurn());
-      
-      GameFileManager.writeGameToFile(g);
-    } catch (IOException e) {
-      logger.error("Could not read file " + filename);
+    for (int i = 0; i < 1000; i++) {
+      GameManager.newGame(Game.TAK, 5, Player.DUMMY, Player.DUMMY);
     }
+    
+    GameManager.startQueue();
+
+    logger.info("Game queue empty. Application closing");
+    Runtime.getRuntime().exit(0);
   }
 }

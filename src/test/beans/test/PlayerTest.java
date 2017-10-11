@@ -1,13 +1,16 @@
 package beans.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import org.junit.Test;
 import beans.Player;
+import players.DummyPlayer;
 
 public class PlayerTest {
   
-  Player p1 = new Player(1);
-  Player p2 = new Player(2);
+  Player p1 = new DummyPlayer();
+  Player p2 = new DummyPlayer();
   
   String default_p1_name = "White";
   

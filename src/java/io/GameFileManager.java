@@ -18,6 +18,7 @@ import beans.Player;
 import beans.Stone;
 import game.BoardManager;
 import game.Game;
+import players.DummyPlayer;
 import run.GameManager;
 
 /**
@@ -43,7 +44,7 @@ public abstract class GameFileManager {
    * @return The game being created
    * @throws IOException
    */
-  public static Game readGameFromFile(String path) throws IOException {
+  public static Game loadGame(String path) throws IOException {
 
     // Check if we're trying to read the right file format
     if (!path.substring(path.length() - 3).equalsIgnoreCase("tak")) {
@@ -61,8 +62,10 @@ public abstract class GameFileManager {
 
       // Parse first five lines of metadata: Game Type, Board Size, Player types and whose turn it
       // is
-      game = GameManager.newGame(br.readLine(), Integer.parseInt(br.readLine()),
+      GameManager.newGame(br.readLine(), Integer.parseInt(br.readLine()),
           Integer.parseInt(br.readLine()), Integer.parseInt(br.readLine()));
+      game = GameManager.games.getLast();
+      
       game.setCurrent(game.getPlayer(Integer.parseInt(br.readLine())));
 
       // Parse board state
@@ -81,7 +84,7 @@ public abstract class GameFileManager {
         // Add pieces to the cell
         while (tr.hasMoreTokens()) {
           String input = tr.nextToken();
-          Piece piece = new Stone(new Player(), false);
+          Piece piece = new Stone(new DummyPlayer(), false);
           Player player = game.getPlayer(Integer.parseInt(input.substring(0, 1)));
 
           // Find piece type from special characters
@@ -94,7 +97,7 @@ public abstract class GameFileManager {
           } else {
             piece = player.getStone(false);
           }
-          BoardManager.addPiece(game.getBoard(), piece, target);
+          BoardManager.add(game.getBoard(), piece, target);
         }
         line = br.readLine();
       }
@@ -108,7 +111,7 @@ public abstract class GameFileManager {
     return game;
   }
 
-  public static void writeGameToFile(Game game) {
+  public static void saveGame(Game game) {
     String info = generateFileContent(game);
     
     String filename = createGameFile(game);

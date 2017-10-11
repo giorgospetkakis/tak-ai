@@ -27,9 +27,21 @@ public abstract class BoardManager {
    * @param piece The piece being added
    * @param cell The board position to add the piece
    */
-  public static void addPiece(Board board, Piece piece, Cell cell) {
+  public static void add(Board board, Piece piece, Cell cell) {
     if (piece != null) {
       cell.getPieces().push(piece);
+    }
+  }
+  
+  /**
+   * Removes the top element of the stack.
+   * @param board The board to remove the piece from
+   * @param cell The cell to remove the piece from
+   */
+  public static void remove(Board board, Cell cell) {
+    if (!cell.isEmpty()) {
+      cell.getOwner().removePiece(cell.top());
+      cell.getPieces().pop();
     }
   }
 
@@ -40,7 +52,7 @@ public abstract class BoardManager {
    * @param dest The destination cell of the stack
    * @param size The size / height of the stack
    */
-  public static void moveStack(Cell src, Cell dest, int size) {
+  public static void move(Cell src, Cell dest, int size) {
     Stack<Piece> moveStack = new Stack<Piece>();
     // Pick up pieces
     for (int i = 0; i < size; i++) {
@@ -48,7 +60,7 @@ public abstract class BoardManager {
     }
 
     // Enables crushing standing stones
-    if (dest.top().isStandingStone() && moveStack.peek() instanceof Capstone) {
+    if (!dest.isEmpty() && dest.top().isStandingStone() && moveStack.peek() instanceof Capstone) {
       dest.top().setStandingStone(false);
     }
 

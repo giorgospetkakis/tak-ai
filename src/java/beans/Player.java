@@ -1,22 +1,28 @@
 package beans;
 
+import players.Playable;
+
 /**
  * An abstract Java bean representation of a Tak Player.
  * 
  * @author giorgospetkakis
  *
  */
-public class Player implements Comparable<Player> {
+public abstract class Player implements Comparable<Player>, Playable {
 
   /**
    * The current number of initialized players.
    */
   private static long playerCount = 0;
-
+  
+  /**
+   * Constants that help instantiate players in the Game Manager.
+   */
   public static final int DUMMY = 0;
   public static final int HUMAN = 1;
   public static final int ALPHA_BETA = 2;
   public static final int REINF_LEARNING = 3;
+  public static final int NEURAL_NET = 4;
 
   /**
    * The player's name. Defaults to black / white.
@@ -38,6 +44,11 @@ public class Player implements Comparable<Player> {
    * The number of available Capstones.
    */
   private int capstonesAvailable;
+  
+  /**
+   * The number of flat-stones in play- alternate win condition.
+   */
+  private int flatstonesInPlay;
 
   /**
    * Default player constructor. Creates a dummy player.
@@ -149,6 +160,9 @@ public class Player implements Comparable<Player> {
   public Stone getStone(boolean standing) {
     if (stonesAvailable > 0) {
       stonesAvailable--;
+      if (!standing) {
+        this.incrementFlatstonesInPlay();
+      }
       return new Stone(this, standing);
     } else {
       return null;
@@ -165,6 +179,34 @@ public class Player implements Comparable<Player> {
       return new Capstone(this);
     } else {
       return null;
+    }
+  }
+
+  /**
+   * Returns the number of flatstones in play.
+   * @return the flatstonesInPlay The number of flatstones in play
+   */
+  public int getFlatstonesInPlay() {
+    return flatstonesInPlay;
+  }
+
+  /**
+   * Increments the number of flatstones.
+   */
+  public void incrementFlatstonesInPlay() {
+    this.flatstonesInPlay++;
+  }
+  
+  /**
+   * Removes a piece from play and adds it back to the player's pool.
+   * @param piece The piece to be added back
+   */
+  public void removePiece(Piece piece) {
+    if (piece instanceof Capstone) {
+      this.capstonesAvailable++;
+    } else {
+      this.stonesAvailable++;
+      this.flatstonesInPlay--;
     }
   }
 }

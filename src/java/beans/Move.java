@@ -1,5 +1,6 @@
 package beans;
 
-public class Move {
+public abstract class Move {
   
+  public abstract Move getInverse();
 }

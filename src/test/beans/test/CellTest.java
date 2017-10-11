@@ -2,15 +2,14 @@ package beans.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
-
+import java.util.Stack;
+import org.apache.log4j.Logger;
+import org.junit.Test;
 import beans.Cell;
 import beans.Piece;
 import beans.Player;
 import beans.Stone;
-
-import org.apache.log4j.Logger;
-import org.junit.Test;
-import java.util.Stack;
+import players.DummyPlayer;
 
 
 public class CellTest {
@@ -25,7 +24,7 @@ public class CellTest {
   Cell westCell = new Cell((byte) (dim - 1), dim);
 
   Stack<Piece> pieceTest = new Stack<Piece>();
-  Player p1 = new Player();
+  Player p1 = new DummyPlayer();
   Stone testStone = new Stone(p1);
 
   @Test

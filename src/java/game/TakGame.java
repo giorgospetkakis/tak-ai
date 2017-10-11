@@ -256,14 +256,18 @@ public class TakGame extends Game {
   
   @Override
   public void makeMove(Move move) {
+    // Handle Addition moves
     if (move instanceof AdditionMove) {
       BoardManager.add(this.getBoard(), ((AdditionMove) move).getPiece(),
           ((AdditionMove) move).getCell());
+    // Handle Movement moves
     } else if (move instanceof MovementMove) {
       BoardManager.move(((MovementMove) move).getSource(), ((MovementMove) move).getTarget(),
           ((MovementMove) move).getStackSize());
+    // Handle Removal moves
     } else if (move instanceof RemovalMove) {
       BoardManager.remove(this.getBoard(), ((RemovalMove) move).getCell());
+    // Recursively handle Composite moves
     } else if (move instanceof CompositeMove) {
       for (Move m : ((CompositeMove) move).getMoves()) {
         makeMove(m);

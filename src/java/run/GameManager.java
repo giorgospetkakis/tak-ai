@@ -12,7 +12,7 @@ import game.BoardManager;
 import game.Game;
 import game.PlayerManager;
 import game.TakGame;
-import game.tictactoe.TicTacToeGame;
+import game.TicTacToeGame;
 import io.GameFileManager;
 import io.RecordsManager;
 

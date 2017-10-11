@@ -1,9 +1,8 @@
-package game.tictactoe;
+package game;
 
 import java.util.ArrayList;
 import beans.Move;
 import beans.Player;
-import game.Game;
 
 public class TicTacToeGame extends Game {
   

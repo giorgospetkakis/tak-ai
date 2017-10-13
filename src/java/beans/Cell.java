@@ -243,7 +243,16 @@ public class Cell {
    * @return The coordinates of the cell in readable format
    */
   public String toStringShrt() {
-    return "X=" + xpos + " Y=" + ypos;
+    return "("  + xpos + "," +  + ypos + ")";
+  }
+  
+  /**
+   * An abbreviated version of toString. Returns only the cell coordinates
+   * 
+   * @return The coordinates of the cell in readable format
+   */
+  public String toStringDisplay() {
+    return "("  + (char)('A' + (xpos)) + "," +  + (ypos + 1) + ")";
   }
 
   /**

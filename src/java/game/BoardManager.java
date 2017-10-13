@@ -6,12 +6,12 @@ import beans.Cell;
 import beans.Piece;
 import beans.Player;
 import beans.Stone;
+import java.util.Iterator;
 import java.util.Stack;
 import org.apache.log4j.Logger;
 
 /**
- * Provides Board movement and piece management utilities.
- * Does NOT identify valid or invalid moves.
+ * Provides Board movement and piece management utilities. Does NOT identify valid or invalid moves.
  * 
  * @author giorgospetkakis
  *
@@ -32,9 +32,10 @@ public abstract class BoardManager {
       cell.getPieces().push(piece);
     }
   }
-  
+
   /**
    * Removes the top element of the stack.
+   * 
    * @param board The board to remove the piece from
    * @param cell The cell to remove the piece from
    */
@@ -62,6 +63,12 @@ public abstract class BoardManager {
     // Enables crushing standing stones
     if (!dest.isEmpty() && dest.top().isStandingStone() && moveStack.peek() instanceof Capstone) {
       dest.top().setStandingStone(false);
+    }
+
+    // Enabled un-crushing standing stones for undo moves
+    if (size == 1 && moveStack.peek() instanceof Capstone && moveStack.size() > 1
+        && src.top().wasStandingStone()) {
+      src.top().setStandingStone(true);
     }
 
     // Drop pieces in order
@@ -161,7 +168,7 @@ public abstract class BoardManager {
    */
   public static String toString(Board board) {
     StringBuilder overview = new StringBuilder();
-    StringBuilder stacks = new StringBuilder(); // TODO: Add a way to print contents of a stack
+    StringBuilder stacks = new StringBuilder();
 
     overview.append("\n ");
     // Append letter cell reference
@@ -190,7 +197,7 @@ public abstract class BoardManager {
           } else if (topPiece instanceof Stone) {
             rep = rep.toLowerCase();
             if (topPiece.isStandingStone()) {
-              rep = "/" + rep;
+              rep += "/";
             } else {
               rep = " " + rep;
             }
@@ -206,7 +213,34 @@ public abstract class BoardManager {
     for (int k = 0; k < board.getSize(); k++) {
       overview.append("----");
     }
-    overview.append('-');
+    overview.append("-\n");
+
+    // Append the contents of each cell
+    for (Cell c : board.getCells().values()) {
+      if (c.isEmpty()) {
+        continue;
+      }
+      stacks.append(c.toStringDisplay());
+      Iterator<Piece> i = c.getPieces().stream().iterator();
+      String rep = "";
+      while (i.hasNext()) {
+        Piece p = i.next();
+        rep = p.getOwner().getName().substring(0, 1);
+        if (p instanceof Capstone) {
+          rep = rep.toUpperCase();
+        } else if (p instanceof Stone) {
+          rep = rep.toLowerCase();
+          if (p.isStandingStone()) {
+            rep += "/";
+          }
+          if (i.hasNext()) {
+            rep += ",";
+          }
+        }
+        stacks.append(rep);
+      }
+      stacks.append("\n");
+    }
     return overview.toString() + stacks.toString();
   }
 }

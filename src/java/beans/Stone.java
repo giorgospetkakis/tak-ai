@@ -26,6 +26,7 @@ public class Stone extends Piece {
   public Stone(Player owner, boolean isStandingStone) {
     super(owner);
     setStandingStone(isStandingStone);
+    setWasStandingStone(isStandingStone);
   }
   
   /**
@@ -34,5 +35,10 @@ public class Stone extends Piece {
   @Override
   public boolean isStandingStone() {
     return isStandingStone;
+  }
+  
+  @Override
+  public boolean wasStandingStone() {
+    return wasStandingStone;
   }
 }

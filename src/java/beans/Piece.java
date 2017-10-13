@@ -10,6 +10,7 @@ public abstract class Piece {
 
   private Player owner;
   protected boolean isStandingStone;
+  protected boolean wasStandingStone;
   
   /**
    * Basic Piece constructor.
@@ -45,4 +46,10 @@ public abstract class Piece {
   public void setStandingStone(boolean isStandingStone) {
     this.isStandingStone = isStandingStone;
   }
+  
+  public void setWasStandingStone(boolean wasStandingStone) {
+    this.wasStandingStone = wasStandingStone;
+  }
+
+  public abstract boolean wasStandingStone();
 }

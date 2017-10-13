@@ -61,6 +61,6 @@ public class MovementMove extends Move {
   
   @Override
   public String toString() {
-    return "Move stack of size " + stackSize + " from " + src.toStringShrt() + " to " + target.toStringShrt();
+    return "Move (" + stackSize + ") " + src.toStringDisplay() + "->" + target.toStringDisplay();
   }
 }

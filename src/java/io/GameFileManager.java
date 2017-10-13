@@ -66,6 +66,8 @@ public abstract class GameFileManager {
           Integer.parseInt(br.readLine()), Integer.parseInt(br.readLine()));
       game = GameManager.games.getLast();
       
+      game.setNumTurns(Integer.parseInt(br.readLine()));
+      
       game.setCurrent(game.getPlayer(Integer.parseInt(br.readLine())));
 
       // Parse board state

@@ -52,10 +52,10 @@ public class CompositeMove extends Move {
    * Returns a String representation of the Composite Move.
    */
   public String toString() {
-    String ret = "Composite Move:\n";
+    String ret = "Composite Move: ";
     for (MovementMove m : moves) {
-      ret += m.toString() + "\n";
+      ret += m.toString() + ", ";
     }
-    return ret;
+    return ret.substring(0, ret.length() - 2);
   }
 }

@@ -23,4 +23,9 @@ public class Capstone extends Piece {
   public boolean isStandingStone() {
     return false;
   }
+
+  @Override
+  public boolean wasStandingStone() {
+    return false;
+  }
 }

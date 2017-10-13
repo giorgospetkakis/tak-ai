@@ -86,11 +86,10 @@ public class GameManager {
    * @param game The game to be started
    */
   private static void start(Game game) {
-    game.setTimeElapsed(System.currentTimeMillis());
+    game.setTimeElapsed(System.nanoTime());
     game.setGameState(Game.IN_PROGRESS);
     game.setCurrent(game.getPlayer((int) (Math.random() * 2)));
     logger.info(game.getType() + " Game " + game.hashCode() + " has started.");
-    gameLoop();
   }
 
   /**
@@ -100,11 +99,12 @@ public class GameManager {
    * @param winner The winner of the game
    */
   private static void end(Game game, Player winner, boolean record) {
-    game.setTimeElapsed(System.currentTimeMillis() - game.getTimeElapsed());
+    game.setTimeElapsed(System.nanoTime() - game.getTimeElapsed());
     game.setWinner(winner);
     game.setScore(game.calculateScore());
 
     game.setGameState(Game.FINISHED);
+    logger.info(game.getType() + " Game " + game.hashCode() + " has ended.");
     if (record) {
       RecordsManager.record(game);
     }
@@ -126,8 +126,10 @@ public class GameManager {
     
     // Single game loop
     while (current.getGameState() == Game.IN_PROGRESS) {
+      
       ArrayList<Move> movelist = current.availableMoves();
       Move chosenMove = current.whoseTurn().requestMove(current, movelist);
+      logger.debug("Making move" + movelist.indexOf(chosenMove));
       current.makeMove(chosenMove);
 
       checkEndState(current);

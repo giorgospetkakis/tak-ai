@@ -47,6 +47,6 @@ public class AdditionMove extends Move {
       type = "standing-stone";
     }
 
-    return "Add " + type + " to: " + cell.toStringShrt();
+    return "Add " + type + " to: " + cell.toStringDisplay();
   }
 }

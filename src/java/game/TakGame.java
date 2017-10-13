@@ -191,7 +191,7 @@ public class TakGame extends Game {
           moveList.add(new AdditionMove(currCell, new Stone(current, false)));
         }
         // If the current player has a piece in it, they can move the stack
-      } else if (currCell.getOwner().compareTo(current) == 0) {
+      } else if (currCell.getOwner().compareTo(current) == 1) {
         // Handle any chosen stack-size
         for (int i = 1; i <= Math.min(this.getBoard().getSize(),
             currCell.getPieces().size()); i++) {

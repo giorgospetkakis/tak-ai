@@ -1,6 +1,7 @@
 bin/
 dist/
 generated/
+log/
 
 *.html
 *.log

@@ -27,7 +27,7 @@ public class Application {
    */
   public static void main(String[] args) {
 
-    GameManager.newGame(Game.TAK, 3, Player.HUMAN, Player.HUMAN);
+    GameManager.newGame(Game.TAK, 6, Player.HUMAN, Player.HUMAN);
     
     GameManager.startQueue();
 

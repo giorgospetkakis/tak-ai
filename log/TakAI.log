@@ -34063,3 +34063,17 @@ w,
 w,
 W
 
+2017-10-14 00:17:04,732 [main] (GameManager.java:56) INFO  run.GameManager  - Tak Game 395903491 has been created.
+2017-10-14 00:17:04,734 [main] (GameManager.java:58) INFO  run.GameManager  - 1
+2017-10-14 00:17:04,734 [main] (GameManager.java:79) INFO  run.GameManager  - Game queue started
+2017-10-14 00:17:04,735 [main] (GameManager.java:92) INFO  run.GameManager  - Tak Game 395903491 has started.
+2017-10-14 00:17:25,726 [main] (GameManager.java:56) INFO  run.GameManager  - Tak Game 395924481 has been created.
+2017-10-14 00:17:25,728 [main] (GameManager.java:58) INFO  run.GameManager  - 1
+2017-10-14 00:17:25,728 [main] (GameManager.java:79) INFO  run.GameManager  - Game queue started
+2017-10-14 00:17:25,729 [main] (GameManager.java:92) INFO  run.GameManager  - Tak Game 395924481 has started.
+2017-10-14 00:18:03,948 [main] (GameManager.java:56) INFO  run.GameManager  - Tak Game 395963379 has been created.
+2017-10-14 00:18:03,950 [main] (GameManager.java:58) INFO  run.GameManager  - 1
+2017-10-14 00:18:03,950 [main] (GameManager.java:79) INFO  run.GameManager  - Game queue started
+2017-10-14 00:18:03,950 [main] (GameManager.java:92) INFO  run.GameManager  - Tak Game 395963379 has started.
+2017-10-14 00:18:11,347 [main] (GameManager.java:132) DEBUG run.GameManager  - Making move81
+2017-10-14 00:18:21,586 [main] (GameManager.java:132) DEBUG run.GameManager  - Making move93

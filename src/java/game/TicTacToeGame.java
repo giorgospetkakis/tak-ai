@@ -6,7 +6,9 @@ import beans.AdditionMove;
 import beans.Cell;
 import beans.Move;
 import beans.Player;
+import beans.RemovalMove;
 import beans.Stone;
+import players.DummyPlayer;
 
 public class TicTacToeGame extends Game {
 
@@ -27,7 +29,7 @@ public class TicTacToeGame extends Game {
   @Override
   public int calculateScore() {
     if (this.getWinner() != null) {
-      return this.getWinner() == this.getPlayer(0) ? 1 : -1;
+      return 1;
     } else {
       return 0;
     }
@@ -55,6 +57,9 @@ public class TicTacToeGame extends Game {
 
   @Override
   public Player detectWinner() {
+    if(this.getNumTurns() == 8) {
+      return new DummyPlayer();
+    }
     Player p1 = this.getPlayer(0);
     Player p2 = this.getPlayer(1);
 
@@ -64,7 +69,7 @@ public class TicTacToeGame extends Game {
     for (int i = 0; i < this.getBoard().getSize(); i++) {
 
       // horizontal
-      
+
       if (!BoardManager.getCell(this.getBoard(), i, 0).isEmpty()
           && !BoardManager.getCell(this.getBoard(), i, 1).isEmpty()
           && !BoardManager.getCell(this.getBoard(), i, 2).isEmpty()) {
@@ -93,7 +98,7 @@ public class TicTacToeGame extends Game {
 
     // if winner wasn't found in horizontal or vertical
     if (winner == null) {
-      
+
       if (!BoardManager.getCell(this.getBoard(), 0, 0).isEmpty()
           && !BoardManager.getCell(this.getBoard(), 1, 1).isEmpty()
           && !BoardManager.getCell(this.getBoard(), 2, 2).isEmpty()) {
@@ -108,9 +113,9 @@ public class TicTacToeGame extends Game {
           && !BoardManager.getCell(this.getBoard(), 1, 1).isEmpty()
           && !BoardManager.getCell(this.getBoard(), 2, 0).isEmpty()) {
         if (BoardManager.getCell(this.getBoard(), 0, 2).getOwner() == BoardManager
-                .getCell(this.getBoard(), 1, 1).getOwner()
-                && BoardManager.getCell(this.getBoard(), 0, 2).getOwner() == BoardManager
-                    .getCell(this.getBoard(), 2, 0).getOwner()) {
+            .getCell(this.getBoard(), 1, 1).getOwner()
+            && BoardManager.getCell(this.getBoard(), 0, 2).getOwner() == BoardManager
+                .getCell(this.getBoard(), 2, 0).getOwner()) {
           winner = BoardManager.getCell(this.getBoard(), 1, 1).getOwner();
         }
       }
@@ -121,8 +126,12 @@ public class TicTacToeGame extends Game {
 
   @Override
   public void makeMove(Move move) {
-    // for tic-tac-toe, it will always be an addition move
-    BoardManager.add(this.getBoard(), ((AdditionMove) move).getPiece(),
-        ((AdditionMove) move).getCell());
+    super.makeMove(move);
+    if (move instanceof AdditionMove) {
+      BoardManager.add(this.getBoard(), ((AdditionMove) move).getPiece(),
+          ((AdditionMove) move).getCell());
+    } else if (move instanceof RemovalMove) {
+      BoardManager.remove(this.getBoard(), ((RemovalMove) move).getCell());
+    }
   }
 }

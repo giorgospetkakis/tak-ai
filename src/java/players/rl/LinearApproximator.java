@@ -26,8 +26,8 @@ public class LinearApproximator extends ValueApproximator {
   public LinearApproximator(Feature[] features) {
     this.setFeatures(features);
     this.setWeights(new double[features.length]);
-    this.learningRate = 0.01;
-    this.discount = 0.5;
+    this.learningRate = 0.2;
+    this.discount = 0.35;
   }
 
   @Override
@@ -42,7 +42,6 @@ public class LinearApproximator extends ValueApproximator {
       setWeight(i, getWeight(i) + (learningRate
           * (reward + discount * nextStateValue - currentStateValue) * features[i].getValue()));
     }
-    logger.debug(++timesUpdated + "\n" + this.toString());
   }
 
   @Override

@@ -2,6 +2,7 @@ package game;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import org.apache.log4j.Logger;
 import beans.Board;
 import beans.Move;
 import beans.MovementMove;
@@ -49,6 +50,8 @@ public abstract class Game implements BoardGame {
   private int numTurns;
 
   private int hashCode;
+  
+  private static final Logger logger = Logger.getLogger(Game.class);
 
   /**
    * Quick game constructor.
@@ -253,15 +256,16 @@ public abstract class Game implements BoardGame {
   }
 
   public void undoMove(Move move) {
+    makeMove(move.getInverse());
     if (this.getGameState() == Game.IN_PROGRESS) {
       this.moves.removeLast();
+      this.moves.removeLast();
     }
-    makeMove(move.getInverse());
   }
 
   public void makeMove(Move move) {
     if (this.getGameState() == Game.IN_PROGRESS && !(move instanceof MovementMove)) {
-      this.getMoves().add(move);
+      this.moves.addLast(move);
     }
   }
 

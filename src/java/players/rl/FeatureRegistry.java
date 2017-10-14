@@ -1,5 +1,6 @@
 package players.rl;
 
+import game.BoardManager;
 import game.Game;
 import run.GameManager;
 
@@ -42,6 +43,152 @@ public abstract class FeatureRegistry {
             Feature.setValue(0);
           }
         })};
+
+    TIC_TAC_TOE = new Feature[] {new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 0, 0).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 0, 0).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(0)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 0, 0).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 0, 0).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(1)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 0, 1).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 0, 1).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(0)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 0, 1).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 0, 1).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(1)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 0, 2).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 0, 2).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(0)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 0, 2).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 0, 2).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(1)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 1, 0).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 1, 0).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(0)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 1, 0).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 1, 0).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(1)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 1, 1).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 1, 1).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(0)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 1, 1).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 1, 1).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(1)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 1, 2).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 1, 2).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(0)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 1, 2).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 1, 2).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(1)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 2, 0).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 2, 0).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(0)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 2, 0).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 2, 0).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(1)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 2, 1).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 2, 1).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(0)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 2, 1).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 2, 1).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(1)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 2, 2).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 2, 2).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(0)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }), new Feature(() -> {
+      if (!BoardManager.getCell(GameManager.getCurrent().getBoard(), 2, 2).isEmpty()
+          && BoardManager.getCell(GameManager.getCurrent().getBoard(), 2, 2).getOwner()
+              .compareTo(GameManager.getCurrent().getPlayer(1)) == 1) {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    })};
   }
 
   /**

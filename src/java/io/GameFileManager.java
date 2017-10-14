@@ -155,8 +155,6 @@ public abstract class GameFileManager {
 
       Iterator<Piece> p = cell.getPieces().iterator();
       while (p.hasNext()) {
-        game.incrementTurn();
-        
         Piece piece = p.next();
         info += game.getPlayers().indexOf(piece.getOwner());
 

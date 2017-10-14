@@ -80,7 +80,6 @@ public class RlPlayer extends Player {
 
   @Override
   public void train(Game game) {
-    logger.info(game.getMoves().size());
     game.undoMove(game.getMoves().remove(game.getMoves().size() - 1));
     if (game.getNumTurns() < game.getMoves().size() + 2) {
       this.setNextStateValue(game.calculateScore() * this.compareTo(game.getWinner()));

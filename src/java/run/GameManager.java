@@ -107,7 +107,7 @@ public class GameManager {
     game.setScore(game.calculateScore());
     
     logger.info(game.getType() + " Game " + game.hashCode() + " has ended.");
-    if (record) {
+    if (false) {
       RecordsManager.record(game);
       GameFileManager.saveGame(game);
     }
@@ -115,7 +115,6 @@ public class GameManager {
     // Train based on score seen at the end of the game
     // Negative reward if the other player won
     for (int i = game.getMoves().size(); i > 0; i--) {
-      System.out.println(game.getMoves().size());
       game.whoseTurn().train(game);
       game.swapCurrentPlayer();
       game.incrementTurn();
@@ -138,13 +137,13 @@ public class GameManager {
 
     // Single game loop
     while (current.getGameState() == Game.IN_PROGRESS) {
-
       ArrayList<Move> movelist = current.availableMoves();
       Move chosenMove = current.whoseTurn().requestMove(current, movelist);
       current.makeMove(chosenMove);
-
-      checkEndState(current);
-
+      if (checkEndState(current)) {
+        break;
+      }
+      
       current.swapCurrentPlayer();
       current.incrementTurn();
     }
@@ -157,11 +156,14 @@ public class GameManager {
    * 
    * @param game The game to check the end-state for
    */
-  private static void checkEndState(Game game) {
+  private static boolean checkEndState(Game game) {
     Player winner = game.detectWinner();
     // End game if a winner is found
     if (winner != null) {
       end(game, winner, true);
+      return true;
+    } else {
+      return false;
     }
   }
 

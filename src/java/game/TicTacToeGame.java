@@ -64,35 +64,55 @@ public class TicTacToeGame extends Game {
     for (int i = 0; i < this.getBoard().getSize(); i++) {
 
       // horizontal
-      if (BoardManager.getCell(this.getBoard(), i, 0).getOwner() == BoardManager
-          .getCell(this.getBoard(), i, 1).getOwner()
-          && BoardManager.getCell(this.getBoard(), i, 0).getOwner() == BoardManager
-              .getCell(this.getBoard(), i, 2).getOwner()) {
-        winner = BoardManager.getCell(this.getBoard(), i, 0).getOwner();
-        break;
+      
+      if (!BoardManager.getCell(this.getBoard(), i, 0).isEmpty()
+          && !BoardManager.getCell(this.getBoard(), i, 1).isEmpty()
+          && !BoardManager.getCell(this.getBoard(), i, 2).isEmpty()) {
+        if (BoardManager.getCell(this.getBoard(), i, 0).getOwner() == BoardManager
+            .getCell(this.getBoard(), i, 1).getOwner()
+            && BoardManager.getCell(this.getBoard(), i, 0).getOwner() == BoardManager
+                .getCell(this.getBoard(), i, 2).getOwner()) {
+          winner = BoardManager.getCell(this.getBoard(), i, 0).getOwner();
+          break;
+        }
       }
 
       // vertical
-      if (BoardManager.getCell(this.getBoard(), 0, i).getOwner() == BoardManager
-          .getCell(this.getBoard(), 1, i).getOwner()
-          && BoardManager.getCell(this.getBoard(), 0, i).getOwner() == BoardManager
-              .getCell(this.getBoard(), 2, i).getOwner()) {
-        winner = BoardManager.getCell(this.getBoard(), 0, i).getOwner();
-        break;
+      if (!BoardManager.getCell(this.getBoard(), 0, i).isEmpty()
+          && !BoardManager.getCell(this.getBoard(), 1, i).isEmpty()
+          && !BoardManager.getCell(this.getBoard(), 2, i).isEmpty()) {
+        if (BoardManager.getCell(this.getBoard(), 0, i).getOwner() == BoardManager
+            .getCell(this.getBoard(), 1, i).getOwner()
+            && BoardManager.getCell(this.getBoard(), 0, i).getOwner() == BoardManager
+                .getCell(this.getBoard(), 2, i).getOwner()) {
+          winner = BoardManager.getCell(this.getBoard(), 0, i).getOwner();
+          break;
+        }
       }
     }
 
     // if winner wasn't found in horizontal or vertical
     if (winner == null) {
-      if ((BoardManager.getCell(this.getBoard(), 0, 0).getOwner() == BoardManager
-          .getCell(this.getBoard(), 1, 1).getOwner()
-          && BoardManager.getCell(this.getBoard(), 0, 0).getOwner() == BoardManager
-              .getCell(this.getBoard(), 2, 2).getOwner())
-          || (BoardManager.getCell(this.getBoard(), 0, 2).getOwner() == BoardManager
-              .getCell(this.getBoard(), 1, 1).getOwner()
-              && BoardManager.getCell(this.getBoard(), 0, 2).getOwner() == BoardManager
-                  .getCell(this.getBoard(), 2, 0).getOwner())) {
-        winner = BoardManager.getCell(this.getBoard(), 1, 1).getOwner();
+      
+      if (!BoardManager.getCell(this.getBoard(), 0, 0).isEmpty()
+          && !BoardManager.getCell(this.getBoard(), 1, 1).isEmpty()
+          && !BoardManager.getCell(this.getBoard(), 2, 2).isEmpty()) {
+        if (BoardManager.getCell(this.getBoard(), 0, 0).getOwner() == BoardManager
+            .getCell(this.getBoard(), 1, 1).getOwner()
+            && BoardManager.getCell(this.getBoard(), 0, 0).getOwner() == BoardManager
+                .getCell(this.getBoard(), 2, 2).getOwner()) {
+          winner = BoardManager.getCell(this.getBoard(), 1, 1).getOwner();
+        }
+      }
+      if (!BoardManager.getCell(this.getBoard(), 0, 2).isEmpty()
+          && !BoardManager.getCell(this.getBoard(), 1, 1).isEmpty()
+          && !BoardManager.getCell(this.getBoard(), 2, 0).isEmpty()) {
+        if (BoardManager.getCell(this.getBoard(), 0, 2).getOwner() == BoardManager
+                .getCell(this.getBoard(), 1, 1).getOwner()
+                && BoardManager.getCell(this.getBoard(), 0, 2).getOwner() == BoardManager
+                    .getCell(this.getBoard(), 2, 0).getOwner()) {
+          winner = BoardManager.getCell(this.getBoard(), 1, 1).getOwner();
+        }
       }
     }
 

@@ -27,8 +27,10 @@ public class Application {
    */
   public static void main(String[] args) {
 
-    GameManager.newGame(Game.TAK, 6, Player.HUMAN, Player.HUMAN);
-    
+    for (int i = 0; i < 1; i++) {
+      GameManager.newGame(Game.TIC_TAC_TOE, 3, Player.HUMAN, Player.HUMAN);
+    }
+
     GameManager.startQueue();
 
     logger.info("Game queue empty. Application closing");

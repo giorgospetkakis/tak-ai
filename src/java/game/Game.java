@@ -1,8 +1,10 @@
 package game;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import beans.Board;
 import beans.Move;
+import beans.MovementMove;
 import beans.Player;
 import players.DummyPlayer;
 
@@ -13,56 +15,61 @@ import players.DummyPlayer;
  *
  */
 public abstract class Game implements BoardGame {
-  
+
   public static final String TAK = "Tak";
-  
+
   public static final String TIC_TAC_TOE = "Tic-Tac-Toe";
-  
+
   public static final int NOT_STARTED = 0;
 
   public static final int IN_PROGRESS = 1;
 
   public static final int FINISHED = 2;
-  
+
   public static int DEFAULT_BOARD_SIZE;
-  
+
   private String gameType;
 
   private Board board;
 
   private ArrayList<Player> players;
 
+  private LinkedList<Move> moves;
+
   private int gameState;
-  
+
   private Player current;
 
   private Player winner;
 
   private int score;
-  
+
   private double timeElapsed;
-  
+
   private int numTurns;
-  
+
   private int hashCode;
 
   /**
    * Quick game constructor.
+   * 
    * @param boardSize The size of the board (min 3, max 8)
    */
   public Game(int boardSize, String gameType) {
     this.setType(gameType);
     this.setBoard(new Board(boardSize));
     this.setPlayers(new ArrayList<Player>());
+    this.setMoves(new LinkedList<Move>());
 
     this.addPlayer(new DummyPlayer());
     this.addPlayer(new DummyPlayer());
 
     this.setGameState(NOT_STARTED);
   }
-  
+
   /**
    * Game constructor specifying players.
+   * 
    * @param boardSize The size of the board (min 3, max 8)
    * @param p1 Player 1 of the game
    * @param p2 Player 2 of the game
@@ -71,6 +78,7 @@ public abstract class Game implements BoardGame {
     this.setType(gameType);
     this.setBoard(new Board(boardSize));
     this.setPlayers(new ArrayList<Player>());
+    this.setMoves(new LinkedList<Move>());
 
     this.addPlayer(p1);
     this.addPlayer(p2);
@@ -123,9 +131,10 @@ public abstract class Game implements BoardGame {
   public void setGameState(int gameState) {
     this.gameState = gameState;
   }
-  
+
   /**
    * Returns the winning player.
+   * 
    * @return The winning player. Null if the game has no winner.
    */
   public Player getWinner() {
@@ -209,7 +218,7 @@ public abstract class Game implements BoardGame {
   public void setCurrent(Player current) {
     this.current = current;
   }
-  
+
   /**
    * Changes the current player to the other one.
    */
@@ -230,20 +239,43 @@ public abstract class Game implements BoardGame {
   public void setNumTurns(int numTurns) {
     this.numTurns = numTurns;
   }
-  
+
   public Player getPlayer(int playerIndex) {
     return this.players.get(playerIndex);
   }
-  
+
   public void addPlayer(Player player) {
     this.players.add(player);
   }
-  
+
   public void incrementTurn() {
     this.numTurns++;
   }
-  
+
   public void undoMove(Move move) {
+    if (this.getGameState() == Game.IN_PROGRESS) {
+      this.moves.removeLast();
+    }
     makeMove(move.getInverse());
+  }
+
+  public void makeMove(Move move) {
+    if (this.getGameState() == Game.IN_PROGRESS && !(move instanceof MovementMove)) {
+      this.getMoves().add(move);
+    }
+  }
+
+  /**
+   * @return the moves
+   */
+  public LinkedList<Move> getMoves() {
+    return moves;
+  }
+
+  /**
+   * @param moves the moves to set
+   */
+  public void setMoves(LinkedList<Move> moves) {
+    this.moves = moves;
   }
 }

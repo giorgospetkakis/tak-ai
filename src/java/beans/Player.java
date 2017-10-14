@@ -1,5 +1,6 @@
 package beans;
 
+import game.Game;
 import players.Playable;
 
 /**
@@ -14,15 +15,17 @@ public abstract class Player implements Comparable<Player>, Playable {
    * The current number of initialized players.
    */
   private static long playerCount = 0;
-  
+
   /**
    * Constants that help instantiate players in the Game Manager.
    */
   public static final int DUMMY = 0;
   public static final int HUMAN = 1;
   public static final int ALPHA_BETA = 2;
-  public static final int REINF_LEARNING = 3;
-  public static final int NEURAL_NET = 4;
+  public static final int SARSA_LINEAR = 3;
+  public static final int QLEARNING_LINEAR = 4;
+  public static final int SARSA_NEURALNET = 5;
+  public static final int QLEARNING_NEURALNET = 6;
 
   /**
    * The player's name. Defaults to black / white.
@@ -44,11 +47,12 @@ public abstract class Player implements Comparable<Player>, Playable {
    * The number of available Capstones.
    */
   private int capstonesAvailable;
-  
+
   /**
    * The number of flat-stones in play- alternate win condition.
    */
   private int flatstonesInPlay;
+
 
   /**
    * Default player constructor. Creates a dummy player.
@@ -67,6 +71,8 @@ public abstract class Player implements Comparable<Player>, Playable {
     this.setName(playerCount++ % 2 == 0 ? "White" : "Black");
     this.setPlayerType(playerType);
   }
+
+  public abstract void train(Game game);
 
   /**
    * Compares two players by their unique id.
@@ -122,6 +128,7 @@ public abstract class Player implements Comparable<Player>, Playable {
 
   /**
    * The number of Stones available to this Player.
+   * 
    * @return the stonesAvailable
    */
   public int getStonesAvailable() {
@@ -130,6 +137,7 @@ public abstract class Player implements Comparable<Player>, Playable {
 
   /**
    * Sets the number of Stones available to this Player.
+   * 
    * @param stonesAvailable the stonesAvailable to set
    */
   public void setStonesAvailable(int stonesAvailable) {
@@ -138,6 +146,7 @@ public abstract class Player implements Comparable<Player>, Playable {
 
   /**
    * The number of Capstones available to this Player.
+   * 
    * @return the capstonesAvailable
    */
   public int getCapstonesAvailable() {
@@ -146,6 +155,7 @@ public abstract class Player implements Comparable<Player>, Playable {
 
   /**
    * Sets the number of Capstones available.
+   * 
    * @param capstonesAvailable the capstonesAvailable to set
    */
   public void setCapstonesAvailable(int capstonesAvailable) {
@@ -154,6 +164,7 @@ public abstract class Player implements Comparable<Player>, Playable {
 
   /**
    * Returns a Stone, owned by this player, if any.
+   * 
    * @param standing set to true if making a Standing Stone
    * @return the Stone, if available.
    */
@@ -171,6 +182,7 @@ public abstract class Player implements Comparable<Player>, Playable {
 
   /**
    * Returns a Capstone, owned by this player, if any.
+   * 
    * @return the Capstone, if available
    */
   public Capstone getCapstone() {
@@ -184,6 +196,7 @@ public abstract class Player implements Comparable<Player>, Playable {
 
   /**
    * Returns the number of flatstones in play.
+   * 
    * @return the flatstonesInPlay The number of flatstones in play
    */
   public int getFlatstonesInPlay() {
@@ -196,17 +209,20 @@ public abstract class Player implements Comparable<Player>, Playable {
   public void incrementFlatstonesInPlay() {
     this.flatstonesInPlay++;
   }
-  
+
   /**
    * Removes a piece from play and adds it back to the player's pool.
+   * 
    * @param piece The piece to be added back
    */
   public void removePiece(Piece piece) {
     if (piece instanceof Capstone) {
       this.capstonesAvailable++;
     } else {
+      if (!piece.isStandingStone()) {
+        this.flatstonesInPlay--;
+      }
       this.stonesAvailable++;
-      this.flatstonesInPlay--;
     }
   }
 }

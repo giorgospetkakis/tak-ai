@@ -198,16 +198,11 @@ public class TakGame extends Game {
           // Handle all cardinal directions
           for (int d = 0; d < 4; d++) {
             // Handle awkward one-piece moves
-            if (currCell.getPieces().size() == 1
-                && validateMove(currCell.top(), currCell.getDirection(d), 1)) {
-              moveList.add(new MovementMove(currCell, currCell.getDirection(d), 1));
-            } else {
-              CompositeMove cm = new CompositeMove();
-              makeComposite(cm, currCell, currCell, d, i);
+            CompositeMove cm = new CompositeMove();
+            makeComposite(cm, currCell, currCell, d, i);
 
-              for (int j = cm.getMoves().size(); j > 0; j--) {
-                moveList.add(new CompositeMove(cm.getMoves().subList(0, j)));
-              }
+            for (int j = cm.getMoves().size(); j > 0; j--) {
+              moveList.add(new CompositeMove(cm.getMoves().subList(0, j)));
             }
           }
         }
@@ -253,21 +248,22 @@ public class TakGame extends Game {
     }
     return true;
   }
-  
+
   @Override
   public void makeMove(Move move) {
+    super.makeMove(move);
     // Handle Addition moves
     if (move instanceof AdditionMove) {
       BoardManager.add(this.getBoard(), ((AdditionMove) move).getPiece(),
           ((AdditionMove) move).getCell());
-    // Handle Movement moves
+      // Handle Movement moves
     } else if (move instanceof MovementMove) {
       BoardManager.move(((MovementMove) move).getSource(), ((MovementMove) move).getTarget(),
           ((MovementMove) move).getStackSize());
-    // Handle Removal moves
+      // Handle Removal moves
     } else if (move instanceof RemovalMove) {
       BoardManager.remove(this.getBoard(), ((RemovalMove) move).getCell());
-    // Recursively handle Composite moves
+      // Recursively handle Composite moves
     } else if (move instanceof CompositeMove) {
       for (Move m : ((CompositeMove) move).getMoves()) {
         makeMove(m);

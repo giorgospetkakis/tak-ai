@@ -4,7 +4,7 @@ import beans.Player;
 import players.AlphaBetaPlayer;
 import players.DummyPlayer;
 import players.HumanPlayer;
-import players.ReinforcementLearningPlayer;
+import players.RlPlayer;
 
 public abstract class PlayerManager {
 
@@ -60,7 +60,7 @@ public abstract class PlayerManager {
    * @param type The type of player being instantiated
    * @return An instance of the desired player.
    */
-  public static Player generatePlayer(int type) {
+  public static Player generatePlayer(String gameType, int type) {
     switch (type) {
       case Player.DUMMY: {
         return new DummyPlayer();
@@ -71,11 +71,17 @@ public abstract class PlayerManager {
       case Player.ALPHA_BETA: {
         return new AlphaBetaPlayer();
       }
-      case Player.REINF_LEARNING: {
-        return new ReinforcementLearningPlayer();
+      case Player.SARSA_LINEAR: {
+        return new RlPlayer(gameType, RlPlayer.SARSA, RlPlayer.LINEAR_APPROXIMATION);
       }
-      case Player.NEURAL_NET: {
-        return new ReinforcementLearningPlayer();
+      case Player.QLEARNING_LINEAR: {
+        return new RlPlayer(gameType, RlPlayer.Q_LEARNING, RlPlayer.LINEAR_APPROXIMATION);
+      }
+      case Player.SARSA_NEURALNET: {
+        return new RlPlayer(gameType, RlPlayer.SARSA, RlPlayer.NEURAL_NETWORK_APPROXIMATION);
+      }
+      case Player.QLEARNING_NEURALNET: {
+        return new RlPlayer(gameType, RlPlayer.Q_LEARNING, RlPlayer.NEURAL_NETWORK_APPROXIMATION);
       }
       default: {
         return new DummyPlayer();

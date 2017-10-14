@@ -13,4 +13,8 @@ public class AlphaBetaPlayer extends Player {
     return null;
   }
 
+  @Override
+  public void train(Game game) {
+  }
+
 }

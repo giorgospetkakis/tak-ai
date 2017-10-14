@@ -30,7 +30,8 @@ public class CompositeMove extends Move {
     ArrayList<MovementMove> mv = new ArrayList<MovementMove>();
     Iterator<MovementMove> i = this.moves.iterator();
     while (i.hasNext()) {
-      mv.add(0, i.next().getInverse());
+      MovementMove m = i.next();
+      mv.add(0, m.getInverse());
     }
     return new CompositeMove(mv);
   }

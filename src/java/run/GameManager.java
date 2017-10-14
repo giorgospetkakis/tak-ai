@@ -22,6 +22,8 @@ public class GameManager {
 
   public static LinkedList<Game> games;
 
+  private static Game current;
+
   static {
     games = new LinkedList<Game>();
   }
@@ -35,8 +37,8 @@ public class GameManager {
    */
   public static void newGame(String gameType, int boardSize, int player1Type, int player2Type) {
     Game newGame;
-    Player p1 = PlayerManager.generatePlayer(player1Type);
-    Player p2 = PlayerManager.generatePlayer(player2Type);
+    Player p1 = PlayerManager.generatePlayer(gameType, player1Type);
+    Player p2 = PlayerManager.generatePlayer(gameType, player2Type);
 
     // Make the game
     switch (gameType) {
@@ -99,14 +101,24 @@ public class GameManager {
    * @param winner The winner of the game
    */
   private static void end(Game game, Player winner, boolean record) {
+    game.setGameState(Game.FINISHED);
     game.setTimeElapsed(System.nanoTime() - game.getTimeElapsed());
     game.setWinner(winner);
     game.setScore(game.calculateScore());
-
-    game.setGameState(Game.FINISHED);
+    
     logger.info(game.getType() + " Game " + game.hashCode() + " has ended.");
     if (record) {
       RecordsManager.record(game);
+      GameFileManager.saveGame(game);
+    }
+    
+    // Train based on score seen at the end of the game
+    // Negative reward if the other player won
+    for (int i = game.getMoves().size(); i > 0; i--) {
+      System.out.println(game.getMoves().size());
+      game.whoseTurn().train(game);
+      game.swapCurrentPlayer();
+      game.incrementTurn();
     }
   }
 
@@ -121,15 +133,14 @@ public class GameManager {
       return;
     }
 
-    Game current = games.removeFirst();
+    current = games.removeFirst();
     start(current);
-    
+
     // Single game loop
     while (current.getGameState() == Game.IN_PROGRESS) {
-      
+
       ArrayList<Move> movelist = current.availableMoves();
       Move chosenMove = current.whoseTurn().requestMove(current, movelist);
-      logger.debug("Making move" + movelist.indexOf(chosenMove));
       current.makeMove(chosenMove);
 
       checkEndState(current);
@@ -152,5 +163,14 @@ public class GameManager {
     if (winner != null) {
       end(game, winner, true);
     }
+  }
+
+  /**
+   * Returns the current game being played.
+   * 
+   * @return the game being played.
+   */
+  public static Game getCurrent() {
+    return current;
   }
 }

@@ -1,8 +1,12 @@
 package game;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import beans.AdditionMove;
+import beans.Cell;
 import beans.Move;
 import beans.Player;
+import beans.Stone;
 
 public class TicTacToeGame extends Game {
   
@@ -21,25 +25,72 @@ public class TicTacToeGame extends Game {
 
   @Override
   public int calculateScore() {
-    // TODO Auto-generated method stub
-    return 0;
+    if(this.getWinner() != null)
+      return this.getWinner() == this.getPlayer(0) ? 1 : -1;
+    else return 0;
   }
 
   @Override
   public ArrayList<Move> availableMoves() {
-    // TODO Auto-generated method stub
-    return null;
+    ArrayList<Move> moveList = new ArrayList<Move>();
+    Player current = this.whoseTurn();
+    
+    // using iterator to check every cell
+    Iterator<Cell> iter = this.getBoard().getCells().values().iterator();
+
+    while (iter.hasNext()) {
+      Cell curCell = iter.next();
+      
+      // for tic-tac-toe it's simple, if the space is empty they can move there
+      if(curCell.isEmpty())
+        moveList.add(new AdditionMove(curCell, new Stone(current)));
+    }
+    
+    return moveList;
   }
 
   @Override
   public Player detectWinner() {
-    // TODO Auto-generated method stub
-    return null;
+    Player p1 = this.getPlayer(0);
+    Player p2 = this.getPlayer(1);
+    
+    Player winner = null;
+    
+    // checking horizontal and vertical
+    for(int i = 0; i < this.getBoard().getSize(); i++) {
+      
+      // horizontal
+      if(BoardManager.getCell(this.getBoard(), i, 0).getOwner() == BoardManager.getCell(this.getBoard(), i, 1).getOwner()
+          && BoardManager.getCell(this.getBoard(), i, 0).getOwner() == BoardManager.getCell(this.getBoard(), i, 2).getOwner()) {
+        winner = BoardManager.getCell(this.getBoard(), i, 0).getOwner();
+        break;
+      }
+      
+      // vertical
+      if(BoardManager.getCell(this.getBoard(), 0, i).getOwner() == BoardManager.getCell(this.getBoard(), 1, i).getOwner()
+          && BoardManager.getCell(this.getBoard(), 0, i).getOwner() == BoardManager.getCell(this.getBoard(), 2, i).getOwner()) {
+        winner = BoardManager.getCell(this.getBoard(), 0, i).getOwner();
+        break;
+      }
+    }
+    
+    // if winner wasn't found in horizontal or vertical
+    if(winner == null) {
+      if((BoardManager.getCell(this.getBoard(), 0, 0).getOwner() == BoardManager.getCell(this.getBoard(), 1, 1).getOwner()
+          && BoardManager.getCell(this.getBoard(), 0, 0).getOwner() == BoardManager.getCell(this.getBoard(), 2, 2).getOwner())
+          || (BoardManager.getCell(this.getBoard(), 0, 2).getOwner() == BoardManager.getCell(this.getBoard(), 1, 1).getOwner()
+              && BoardManager.getCell(this.getBoard(), 0, 2).getOwner() == BoardManager.getCell(this.getBoard(), 2, 0).getOwner())) {
+        winner = BoardManager.getCell(this.getBoard(), 1, 1).getOwner();
+      }
+    }
+    
+    return winner;
   }
 
   @Override
   public void makeMove(Move move) {
-    // TODO Auto-generated method stub
-    
+    // for tic-tac-toe, it will always be an addition move
+    BoardManager.add(this.getBoard(), ((AdditionMove) move).getPiece(),
+        ((AdditionMove) move).getCell());
   }
 }

@@ -188,7 +188,13 @@ public abstract class FeatureRegistry {
       } else {
         Feature.setValue(0);
       }
-    })};
+    }), new Feature(() -> {
+      if () {
+        Feature.setValue(1);
+      } else {
+        Feature.setValue(0);
+      }
+    }),};
   }
 
   /**

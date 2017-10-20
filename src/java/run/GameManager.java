@@ -57,7 +57,6 @@ public class GameManager {
     newGame.setHashCode(Date.from(Instant.now()).hashCode());
     logger.info(newGame.getType() + " Game " + newGame.hashCode() + " has been created.");
     games.add(newGame);
-    logger.info(games.size());
   }
 
   /**
@@ -91,7 +90,7 @@ public class GameManager {
     game.setTimeElapsed(System.nanoTime());
     game.setGameState(Game.IN_PROGRESS);
     game.setCurrent(game.getPlayer((int) (Math.random() * 2)));
-    logger.info(game.getType() + " Game " + game.hashCode() + " has started.");
+    //logger.info(game.getType() + " Game " + game.hashCode() + " has started.");
   }
 
   /**
@@ -106,7 +105,7 @@ public class GameManager {
     game.setWinner(winner);
     game.setScore(game.calculateScore());
     
-    logger.info(game.getType() + " Game " + game.hashCode() + " has ended.");
+    //logger.info(game.getType() + " Game " + game.hashCode() + " has ended.");
     if (false) {
       RecordsManager.record(game);
       GameFileManager.saveGame(game);

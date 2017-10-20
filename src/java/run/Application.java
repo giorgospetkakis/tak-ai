@@ -25,12 +25,18 @@ public class Application {
    * @param args Console arguments
    */
   public static void main(String[] args) {
-
-    for (int i = 0; i < 5; i++) {
-      GameManager.newGame(Game.TAK, 3, Player.SARSA_LINEAR, Player.HUMAN);
+    
+    for (int i = 0; i < 400; i++) {
+        GameManager.startQueue();
+      for (int j = 0; j < 1000; j++) {
+        GameManager.newGame(Game.TIC_TAC_TOE, 3, Player.SARSA_LINEAR, Player.SARSA_LINEAR); 
+      }
     }
-
-    GameManager.startQueue();
+    
+    for (int i = 0; i < 5; i++) {
+      GameManager.newGame(Game.TIC_TAC_TOE, 3, Player.SARSA_LINEAR, Player.HUMAN);
+      GameManager.startQueue();
+    }
 
     logger.info("Game queue empty. Application closing");
     Runtime.getRuntime().exit(0);

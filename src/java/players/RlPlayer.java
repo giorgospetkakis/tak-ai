@@ -2,7 +2,6 @@ package players;
 
 import java.util.ArrayList;
 import org.apache.log4j.Logger;
-import com.sun.swing.internal.plaf.metal.resources.metal;
 import beans.Move;
 import beans.Player;
 import game.Game;

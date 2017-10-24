@@ -189,7 +189,7 @@ public abstract class FeatureRegistry {
         Feature.setValue(0);
       }
     }), new Feature(() -> {
-      if () {
+      if (true) {
         Feature.setValue(1);
       } else {
         Feature.setValue(0);

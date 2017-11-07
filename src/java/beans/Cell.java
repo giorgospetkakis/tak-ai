@@ -190,7 +190,11 @@ public class Cell {
    * @return the player that controls the cell
    */
   public Player getOwner() {
-    return this.top().getOwner();
+    if (pieces.isEmpty()) {
+      return null;
+    } else {
+      return this.top().getOwner();
+    }
   }
 
   /**

@@ -26,8 +26,4 @@ public class HumanPlayer extends Player {
     }
     return availableMoves.get(choice);
   }
-
-  @Override
-  public void train(Game game) {
-  }
 }

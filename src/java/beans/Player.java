@@ -72,8 +72,6 @@ public abstract class Player implements Comparable<Player>, Playable {
     this.setPlayerType(playerType);
   }
 
-  public abstract void train(Game game);
-
   /**
    * Compares two players by their unique id.
    * 

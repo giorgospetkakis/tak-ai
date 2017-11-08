@@ -17,10 +17,4 @@ public class AlphaBetaPlayer extends Player {
     //TODO make check for TTT or Tak game type
     return AlphaBetaAI.nextMove(this, game, AlphaBetaPlayer.tttDepth);
   }
-
-  @Override
-  public void train(Game game) {
-    
-  }
-
 }

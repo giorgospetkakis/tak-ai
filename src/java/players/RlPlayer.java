@@ -19,6 +19,8 @@ public class RlPlayer extends Player {
   public static final int LINEAR_APPROXIMATION = 100;
 
   public static final int NEURAL_NETWORK_APPROXIMATION = 101;
+
+  public static final double epsilon = 0.1;
   
   private static final Logger logger = Logger.getLogger(RlPlayer.class);
 
@@ -74,21 +76,20 @@ public class RlPlayer extends Player {
       valueTable[i] = approx.getValue();
       game.undoMove(m);
     }
-    return availableMoves.get(getMax(valueTable));
+    int chosenIndex = chooseMove(valueTable);
+    if(this.algo == SARSA) {
+      this.train(game, valueTable[chosenIndex]);
+    } else if (algo == Q_LEARNING) {
+      this.train(game, valueTable[getMax(valueTable)]);
+    }
+    return availableMoves.get(chosenIndex);
   }
 
-  @Override
-  public void train(Game game) {
-    game.undoMove(game.getMoves().remove(game.getMoves().size() - 1));
-    if (game.getNumTurns() < game.getMoves().size() + 2) {
-      this.setNextStateValue(game.calculateScore() * this.compareTo(game.getWinner()));
-      this.reward = game.calculateScore() * this.compareTo(game.getWinner());
-    } else {
-      double currentStateValue = approx.getValue();
-      this.reward = 0;
-      approx.update(reward, nextStateValue, currentStateValue);
-      this.setNextStateValue(currentStateValue);
-    }
+  public void train(Game game, double trainStateValue) {
+    double currentStateValue = approx.getValue();
+    this.reward = 0;
+    approx.update(reward, trainStateValue, currentStateValue);
+    this.setNextStateValue(currentStateValue);
   }
 
   private int getMax(double[] valueTable) {
@@ -99,6 +100,14 @@ public class RlPlayer extends Player {
       }
     }
     return index;
+  }
+
+  private int chooseMove(double[] valueTable) {
+    if(Math.random() <= epsilon) {
+      return (int)(Math.random() * valueTable.length);
+    } else {
+      return getMax(valueTable);
+    }
   }
 
   public void setNextStateValue(double nextStateValue) {

@@ -114,7 +114,7 @@ public class GameManager {
     // Train based on score seen at the end of the game
     // Negative reward if the other player won
     for (int i = game.getMoves().size(); i > 0; i--) {
-      game.whoseTurn().train(game);
+      //game.whoseTurn().train(game);
       game.swapCurrentPlayer();
       game.incrementTurn();
     }

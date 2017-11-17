@@ -6,6 +6,8 @@ import beans.Move;
 import beans.Player;
 import game.BoardManager;
 import game.Game;
+import players.rl.Feature;
+import players.rl.FeatureRegistry;
 
 public class AlphaBetaAI {
   
@@ -91,7 +93,26 @@ public class AlphaBetaAI {
   private static int calculateHeuristic(Game game) {
     int score = 0;
     
+    //TODO: Check for Tak too
+    Feature[] features = FeatureRegistry.getFeaturesFor(Game.TIC_TAC_TOE);
     
+    //will be 0 if it's player 0's turn, 1 if it's player 1's turn. Used in finding the index of the features for tic-tac-toe.
+    int player = game.whoseTurn().compareTo(game.getPlayer(1));
+    
+    int sideWeight = 1;
+    int cornerWeight = 2;
+    int middleWeight = 3;
+    
+    //side squares have weight of sideWeight
+    score += sideWeight * features[2+player].getValue() + sideWeight * features[6+player].getValue()
+        + sideWeight * features[10+player].getValue() + sideWeight * features[14+player].getValue();
+    
+    //corner squares have weight of cornerWeight
+    score += cornerWeight * features[0+player].getValue() + cornerWeight * features[4+player].getValue()
+        + cornerWeight * features[12+player].getValue() + cornerWeight * features[16+player].getValue();
+    
+    //center square has weight of middleWeight
+    score += middleWeight * features[8+player].getValue();
     
     return score;
   }

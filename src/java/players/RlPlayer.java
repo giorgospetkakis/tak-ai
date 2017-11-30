@@ -20,7 +20,7 @@ public class RlPlayer extends Player {
 
   public static final int NEURAL_NETWORK_APPROXIMATION = 101;
 
-  public static final double epsilon = 0.1;
+  public static final double epsilon = 0.05;
   
   private static final Logger logger = Logger.getLogger(RlPlayer.class);
 
@@ -51,7 +51,7 @@ public class RlPlayer extends Player {
 
     switch (approximationMethod) {
       case LINEAR_APPROXIMATION: {
-        approx = new LinearApproximator(FeatureRegistry.getFeaturesFor(gameType));
+         approx = new LinearApproximator(FeatureRegistry.getFeaturesFor(gameType));
         break;
       }
 
@@ -76,7 +76,18 @@ public class RlPlayer extends Player {
       valueTable[i] = approx.getValue();
       game.undoMove(m);
     }
+
     int chosenIndex = chooseMove(valueTable);
+    game.makeMove(availableMoves.get(chosenIndex));
+    if (game.detectWinner() != null) {
+      game.setWinner(game.whoseTurn());
+      this.reward = game.calculateScore();
+      game.setWinner(null);
+    } else {
+      this.reward = 0;
+    }
+    game.undoMove(availableMoves.get(chosenIndex));
+
     if(this.algo == SARSA) {
       this.train(game, valueTable[chosenIndex]);
     } else if (algo == Q_LEARNING) {
@@ -87,9 +98,8 @@ public class RlPlayer extends Player {
 
   public void train(Game game, double trainStateValue) {
     double currentStateValue = approx.getValue();
-    this.reward = 0;
+
     approx.update(reward, trainStateValue, currentStateValue);
-    this.setNextStateValue(currentStateValue);
   }
 
   private int getMax(double[] valueTable) {

@@ -26,4 +26,9 @@ public class NeuralNetApproximator extends ValueApproximator {
     // TODO Auto-generated method stub
     
   }
+
+  @Override
+  public double[] getWeights() {
+    return null;
+  }
 }

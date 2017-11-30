@@ -120,7 +120,7 @@ public abstract class Player implements Comparable<Player>, Playable {
    * 
    * @param playerType the playerType to set
    */
-  private void setPlayerType(int playerType) {
+  public void setPlayerType(int playerType) {
     this.playerType = playerType;
   }
 

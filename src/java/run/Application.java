@@ -1,5 +1,6 @@
 package run;
 
+import io.RecordsManager;
 import org.apache.log4j.Logger;
 import beans.Player;
 import game.Game;
@@ -29,27 +30,10 @@ public class Application {
   public static void main(String[] args) {
     boardSize = Integer.parseInt(args[0]);
 
-    for (int i = 0; i < 1000; i++) {
-      GameManager.newGame(Game.TAK, boardSize, Player.QLEARNING_LINEAR, Player.DUMMY);
-      GameManager.startQueue();
-      if(i % 100 == 0) {
-        System.out.println(i);
-      }
-    }
-
-    for (int i = 0; i < 1000; i++) {
-      GameManager.newGame(Game.TAK, boardSize, Player.QLEARNING_LINEAR, Player.QLEARNING_LINEAR);
-      GameManager.startQueue();
-      if(i % 100 == 0) {
-        System.out.println(i);
-      }
-    }
-
-    for (int i = 0; i < 1000; i++) {
-      GameManager.newGame(Game.TAK, boardSize, Player.QLEARNING_LINEAR, Player.DUMMY);
-      GameManager.startQueue();
-      if(i % 100 == 0) {
-        System.out.println(i);
+    for (int j = 0; j < 50; j++) {
+      for (int i = 0; i < 100000; i++) {
+        GameManager.newGame(Game.TAK, boardSize, Player.QLEARNING_LINEAR, Player.QLEARNING_LINEAR);
+        GameManager.startQueue();
       }
     }
 

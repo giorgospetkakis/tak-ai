@@ -81,6 +81,7 @@ public class LinearApproximator extends ValueApproximator {
    * 
    * @return the weights
    */
+  @Override
   public double[] getWeights() {
     return weights;
   }

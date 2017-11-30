@@ -29,9 +29,9 @@ public abstract class RecordsManager {
   private static final long MAX_FILE_SIZE = 5 * 1024 * 1024;
   
   private static final Logger logger = Logger.getLogger(RecordsManager.class);
-  
+
   private static String CURRENT_RECORDS_FILE = "";
-  
+
   static {
     int fileIdx = 0;
     do {
@@ -72,6 +72,7 @@ public abstract class RecordsManager {
       logger.error("Could not open file " + CURRENT_RECORDS_FILE);
     }
   }
+
 
   /**
    * Records the game to an external file.

@@ -1,6 +1,10 @@
 package players;
 
 import java.util.ArrayList;
+import java.util.Random;
+
+import io.RecordsManager;
+import io.WeightCacheManager;
 import org.apache.log4j.Logger;
 import beans.Move;
 import beans.Player;
@@ -21,17 +25,14 @@ public class RlPlayer extends Player {
   public static final int NEURAL_NETWORK_APPROXIMATION = 101;
 
   public static final double epsilon = 0.05;
+
+  private double mostRecentStateValue = Double.MIN_VALUE;
   
   private static final Logger logger = Logger.getLogger(RlPlayer.class);
 
   private ValueApproximator approx;
 
   private int algo;
-
-  /**
-   * The reward at the next state when backtracking.
-   */
-  private double nextStateValue;
 
   /**
    * The reward at the current state.
@@ -83,23 +84,27 @@ public class RlPlayer extends Player {
       game.setWinner(game.whoseTurn());
       this.reward = game.calculateScore();
       game.setWinner(null);
+      if(Math.random() <= 0.01) {
+        WeightCacheManager.record(this.approx);
+      }
     } else {
       this.reward = 0;
     }
     game.undoMove(availableMoves.get(chosenIndex));
 
     if(this.algo == SARSA) {
-      this.train(game, valueTable[chosenIndex]);
+      this.train(valueTable[chosenIndex]);
     } else if (algo == Q_LEARNING) {
-      this.train(game, valueTable[getMax(valueTable)]);
+      this.train(valueTable[getMax(valueTable)]);
     }
     return availableMoves.get(chosenIndex);
   }
 
-  public void train(Game game, double trainStateValue) {
-    double currentStateValue = approx.getValue();
-
-    approx.update(reward, trainStateValue, currentStateValue);
+  public void train(double currentStateValue) {
+      if(mostRecentStateValue > Double.MIN_VALUE) {
+          approx.update(reward, currentStateValue, mostRecentStateValue);
+      }
+      this.mostRecentStateValue = currentStateValue;
   }
 
   private int getMax(double[] valueTable) {
@@ -120,11 +125,11 @@ public class RlPlayer extends Player {
     }
   }
 
-  public void setNextStateValue(double nextStateValue) {
-    this.nextStateValue = nextStateValue;
+  public double getMostRecentStateValue() {
+    return mostRecentStateValue;
   }
 
-  public double getNextStateValue() {
-    return nextStateValue;
+  public void setMostRecentStateValue(double value) {
+    this.mostRecentStateValue = value;
   }
 }

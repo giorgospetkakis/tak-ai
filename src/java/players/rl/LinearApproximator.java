@@ -1,7 +1,7 @@
 package players.rl;
 
 import org.apache.log4j.Logger;
-import game.Game;
+import io.WeightCacheManager;
 
 /**
  * 
@@ -26,7 +26,7 @@ public class LinearApproximator extends ValueApproximator {
   public LinearApproximator(Feature[] features) {
     this.setFeatures(features);
     this.learningRate = 0.001;
-    this.discount = .35;
+    this.discount = .0005;
 
     if(!initialized) {
       this.init();
@@ -37,9 +37,10 @@ public class LinearApproximator extends ValueApproximator {
   public void init() {
     this.setWeights(new double[features.length]);
     for(int w = 0; w < weights.length; w++) {
-      weights[w] = 0.5;
+      weights[w] = Math.random();
     }
     initialized = true;
+    WeightCacheManager.record(this);
   }
 
   @Override

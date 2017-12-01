@@ -24,7 +24,7 @@ public class RlPlayer extends Player {
 
   public static final int NEURAL_NETWORK_APPROXIMATION = 101;
 
-  public static final double epsilon = 0.05;
+  public static final double epsilon = 0.2;
 
   private double mostRecentStateValue = Double.MIN_VALUE;
   
@@ -91,7 +91,7 @@ public class RlPlayer extends Player {
       this.reward = 0;
     }
     game.undoMove(availableMoves.get(chosenIndex));
-
+    
     if(this.algo == SARSA) {
       this.train(valueTable[chosenIndex]);
     } else if (algo == Q_LEARNING) {

@@ -15,6 +15,6 @@ public class AlphaBetaPlayer extends Player {
   public Move requestMove(Game game, ArrayList<Move> availableMoves) {
     
     //TODO make check for TTT or Tak game type
-    return AlphaBetaAI.nextMove(this, game, AlphaBetaPlayer.tttDepth);
+    return AlphaBetaAI.nextMove(this, game, AlphaBetaPlayer.takDepth);
   }
 }

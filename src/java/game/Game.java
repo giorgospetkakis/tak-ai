@@ -254,7 +254,27 @@ public abstract class Game implements BoardGame {
   public void incrementTurn() {
     this.numTurns++;
   }
-
+  
+  /**
+   * Counts the number of cells controlled by player <code>p</code>.
+   * 
+   * @param p the player
+   * @return the number of cells controlled by player <code>p</code>.
+   */
+  public int getCellsControlled(Player p) {
+    int count = 0;
+    
+    for(int i = 0; i < this.getBoard().getSize(); i++) {
+      for(int j = 0; j < this.getBoard().getSize(); j++) {
+        Player cur = BoardManager.getCell(this.getBoard(), i, j).getOwner();
+        if(cur != null && cur.equals(p))
+          count++;
+      }
+    }
+    
+    return count;
+  }
+  
   public void undoMove(Move move) {
     makeMove(move.getInverse());
     if (this.getGameState() == Game.IN_PROGRESS) {

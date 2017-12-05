@@ -27,7 +27,7 @@ public class Application {
   public static void main(String[] args) {
     logger.info("Hello");
 //    for (int i = 0; i < 5; i++) {
-      GameManager.newGame(Game.TIC_TAC_TOE, 3, Player.ALPHA_BETA, Player.HUMAN);
+      GameManager.newGame(Game.TAK, 3, Player.ALPHA_BETA, Player.HUMAN);
       GameManager.startQueue();
 //    }
 

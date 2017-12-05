@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import org.apache.log4j.Logger;
 import beans.AdditionMove;
+import beans.Board;
 import beans.Capstone;
 import beans.Cell;
 import beans.CompositeMove;
@@ -170,7 +171,7 @@ public class TakGame extends Game {
     return this.getBoard().getSize() * this.getBoard().getSize()
         + this.getWinner().getCapstonesAvailable() + this.getWinner().getStonesAvailable();
   }
-
+  
   @Override
   public ArrayList<Move> availableMoves() {
     ArrayList<Move> moveList = new ArrayList<Move>();

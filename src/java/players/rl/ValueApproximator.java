@@ -12,4 +12,6 @@ public abstract class ValueApproximator {
 
   public abstract double getValue();
 
+  public abstract double[] getWeights();
+
 }

@@ -1,7 +1,7 @@
 package players.rl;
 
 import org.apache.log4j.Logger;
-import game.Game;
+import io.WeightCacheManager;
 
 /**
  * 
@@ -13,10 +13,10 @@ public class LinearApproximator extends ValueApproximator {
   private Feature[] features;
 
   private static double[] weights;
+
+  private static boolean initialized = false;
   
   private static final Logger logger = Logger.getLogger(LinearApproximator.class);
-  
-  private static int timesUpdated = 0;
 
   /**
    * Creates a new Linear Approximator for the given feature set.
@@ -25,22 +25,28 @@ public class LinearApproximator extends ValueApproximator {
    */
   public LinearApproximator(Feature[] features) {
     this.setFeatures(features);
-    this.setWeights(new double[features.length]);
-    this.learningRate = 0.2;
-    this.discount = 0.35;
+    this.learningRate = 0.001;
+    this.discount = .0005;
+
+    if(!initialized) {
+      this.init();
+    }
   }
 
   @Override
   public void init() {
-    // TODO Auto-generated method stub
-
+    this.setWeights(new double[features.length]);
+    for(int w = 0; w < weights.length; w++) {
+      weights[w] = Math.random();
+    }
+    initialized = true;
+    WeightCacheManager.record(this);
   }
 
   @Override
   public void update(int reward, double nextStateValue, double currentStateValue) {
     for (int i = 0; i < weights.length; i++) {
-      setWeight(i, getWeight(i) + (learningRate
-          * (reward + discount * nextStateValue - currentStateValue) * features[i].getValue()));
+      setWeight(i, getWeight(i) + (learningRate * (reward + (discount * nextStateValue) - currentStateValue) * features[i].getValue()));
     }
   }
 
@@ -76,6 +82,7 @@ public class LinearApproximator extends ValueApproximator {
    * 
    * @return the weights
    */
+  @Override
   public double[] getWeights() {
     return weights;
   }

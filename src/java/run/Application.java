@@ -1,5 +1,6 @@
 package run;
 
+import io.RecordsManager;
 import org.apache.log4j.Logger;
 import beans.Player;
 import game.Game;
@@ -17,6 +18,8 @@ import game.Game;
  */
 public class Application {
 
+  public static int boardSize;
+
   private static final Logger logger = Logger.getLogger(Application.class);
 
   /**
@@ -25,11 +28,18 @@ public class Application {
    * @param args Console arguments
    */
   public static void main(String[] args) {
-    logger.info("Hello");
-//    for (int i = 0; i < 5; i++) {
-      GameManager.newGame(Game.TAK, 3, Player.ALPHA_BETA, Player.HUMAN);
-      GameManager.startQueue();
-//    }
+    boardSize = Integer.parseInt(args[0]);
+
+    for (int j = 0; j < 50; j++) {
+      for (int i = 0; i < 1000; i++) {
+        GameManager.newGame(Game.TAK, boardSize, Player.QLEARNING_LINEAR, Player.QLEARNING_LINEAR);
+        GameManager.startQueue();
+      }
+      logger.info("Played " + ((j+1) * 1000) + " games.");
+    }
+
+    GameManager.newGame(Game.TAK, boardSize, Player.QLEARNING_LINEAR, Player.HUMAN);
+    GameManager.startQueue();
 
     logger.info("Game queue empty. Application closing");
     Runtime.getRuntime().exit(0);

@@ -38,7 +38,9 @@ public class GameManager {
   public static void newGame(String gameType, int boardSize, int player1Type, int player2Type) {
     Game newGame;
     Player p1 = PlayerManager.generatePlayer(gameType, player1Type);
+    p1.setPlayerType(player1Type);
     Player p2 = PlayerManager.generatePlayer(gameType, player2Type);
+    p2.setPlayerType(player2Type);
 
     // Make the game
     switch (gameType) {
@@ -89,7 +91,7 @@ public class GameManager {
   private static void start(Game game) {
     game.setTimeElapsed(System.nanoTime());
     game.setGameState(Game.IN_PROGRESS);
-    game.setCurrent(game.getPlayer((int) (Math.random() * 2)));
+    game.setCurrent(game.getPlayer(0));
     //logger.info(game.getType() + " Game " + game.hashCode() + " has started.");
   }
 
@@ -106,24 +108,14 @@ public class GameManager {
     game.setScore(game.calculateScore());
     
     //logger.info(game.getType() + " Game " + game.hashCode() + " has ended.");
-    if (false) {
+    if (record) {
       RecordsManager.record(game);
-      GameFileManager.saveGame(game);
-    }
-    
-    // Train based on score seen at the end of the game
-    // Negative reward if the other player won
-    for (int i = game.getMoves().size(); i > 0; i--) {
-      //game.whoseTurn().train(game);
-      game.swapCurrentPlayer();
-      game.incrementTurn();
+      //GameFileManager.saveGame(game);
     }
   }
 
   /**
    * The main game loop for the game. Controls when game ends.
-   * 
-   * @param game The game of the loop
    */
   private static void gameLoop() {
     // End loop if there are no games left.

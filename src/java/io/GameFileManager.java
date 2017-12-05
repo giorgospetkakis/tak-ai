@@ -192,7 +192,7 @@ public abstract class GameFileManager {
         + "-" + game.getNumTurns() + "-" + fileIdx + FILE_SUFFIX;
 
     while (new File(filename).exists()) {
-      filename = filename.substring(0, filename.length() - 5) + ++fileIdx + FILE_SUFFIX;
+      filename = filename.substring(0, filename.length() - 6) + ++fileIdx + FILE_SUFFIX;
     }
 
     // Create the file

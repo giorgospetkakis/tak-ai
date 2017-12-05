@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import org.apache.log4j.Logger;
 import beans.Board;
+import beans.Cell;
 import beans.Move;
 import beans.MovementMove;
 import beans.Player;
@@ -268,6 +269,26 @@ public abstract class Game implements BoardGame {
       for(int j = 0; j < this.getBoard().getSize(); j++) {
         Player cur = BoardManager.getCell(this.getBoard(), i, j).getOwner();
         if(cur != null && cur.equals(p))
+          count++;
+      }
+    }
+    
+    return count;
+  }
+  
+  /**
+   * Counts the number of cells controlled by player <code>p</code> using standing stones.
+   * 
+   * @param p the player
+   * @return the number of cells controlled by player <code>p</code> using standing stones.
+   */
+  public int getCellsControlledStanding(Player p) {
+    int count = 0;
+    
+    for(int i = 0; i < this.getBoard().getSize(); i++) {
+      for(int j = 0; j < this.getBoard().getSize(); j++) {
+        Cell cur = BoardManager.getCell(this.getBoard(), i, j);
+        if(cur.getOwner() != null && cur.getOwner().equals(p) && cur.top().isStandingStone())
           count++;
       }
     }

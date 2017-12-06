@@ -48,8 +48,6 @@ public class AlphaBetaAI {
       
       game.undoMove(moves.get(i));
       
-      System.out.println(val);
-      
       //if we're looking for max value, is it the new max, and if we're looking for min value, is it the new min. Either way we want to store this move
       if((isMax && val > threshold) || (!isMax && val < threshold))
       {

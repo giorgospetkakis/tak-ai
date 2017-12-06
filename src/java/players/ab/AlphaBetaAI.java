@@ -21,19 +21,13 @@ public class AlphaBetaAI {
     
     ArrayList<Move> moves = game.availableMoves();
     Move move = null;
-    int picked = 0;
     
     //accounting for if it starts as max or min at the same time using this boolean
     boolean isMax = ai.equals(game.getPlayer(0));
     
     int threshold = Integer.MAX_VALUE;
     if(isMax)
-    {
       threshold = Integer.MIN_VALUE;
-      System.out.println("Maxing");
-    }
-    else
-      System.out.println("Minning");
     
     
     for(int i = 0; i < moves.size(); i++) {
@@ -53,11 +47,8 @@ public class AlphaBetaAI {
       {
         move = moves.get(i);
         threshold = val;
-        picked = val;
       }
     }
-    
-    System.out.println("picked " + picked);
     
     return move;
   }

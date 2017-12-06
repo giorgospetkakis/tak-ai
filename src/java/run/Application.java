@@ -38,7 +38,7 @@ public class Application {
       logger.info("Played " + ((j+1) * 1000) + " games.");
     }
 
-    GameManager.newGame(Game.TAK, boardSize, Player.ALPHA_BETA, Player.QLEARNING_LINEAR);
+    GameManager.newGame(Game.TAK, boardSize, Player.ALPHA_BETA, Player.ALPHA_BETA);
     GameManager.startQueue();
 
     logger.info("Game queue empty. Application closing");

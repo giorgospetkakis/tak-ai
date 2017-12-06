@@ -19,8 +19,8 @@ public abstract class Player implements Comparable<Player>, Playable {
   /**
    * Constants that help instantiate players in the Game Manager.
    */
-  public static final int DUMMY = 0;
-  public static final int HUMAN = 1;
+  public static final int DUMMY = 1;
+  public static final int HUMAN = 0;
   public static final int ALPHA_BETA = 2;
   public static final int SARSA_LINEAR = 3;
   public static final int QLEARNING_LINEAR = 4;

@@ -25,8 +25,8 @@ public class LinearApproximator extends ValueApproximator {
    */
   public LinearApproximator(Feature[] features) {
     this.setFeatures(features);
-    this.learningRate = 0.001;
-    this.discount = .0005;
+    this.learningRate = 0.0001;
+    this.discount = .005;
 
     if(!initialized) {
       this.init();
@@ -40,7 +40,6 @@ public class LinearApproximator extends ValueApproximator {
       weights[w] = Math.random();
     }
     initialized = true;
-    WeightCacheManager.record(this);
   }
 
   @Override

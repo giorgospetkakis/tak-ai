@@ -15,7 +15,7 @@ public class AlphaBetaAI {
   
   private static int STAND_WEIGHT = 1;
   private static int FLAT_WEIGHT = 5;
-  private static int WIN_WEIGHT = 1000;
+  private static int WIN_WEIGHT = 10;
   
   public static Move nextMove(Player ai, Game game, int depth) {
     
@@ -103,7 +103,7 @@ public class AlphaBetaAI {
     return beta;
   }
   
-  private static int calculateHeuristic(Game game, boolean max) {
+  public static int calculateHeuristic(Game game, boolean max) {
     int score = 0;
     
     if(game.getType().equals(Game.TIC_TAC_TOE)) {

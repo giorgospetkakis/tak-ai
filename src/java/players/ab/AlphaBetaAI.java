@@ -75,10 +75,10 @@ public class AlphaBetaAI {
       game.undoMove(moves.get(i));
       
       //pruning
-      /*if(val > beta) {
+      if(val > beta) {
         alpha = val;
         break;
-      }*/
+      }
       
       if(val > alpha)
         alpha = val;
@@ -100,10 +100,10 @@ public class AlphaBetaAI {
       game.undoMove(moves.get(i));
       
       //pruning
-      /*if(val < alpha) {
+      if(val < alpha) {
         beta = val;
         break;
-      }*/
+      }
       
       if(val < beta)
         beta = val;

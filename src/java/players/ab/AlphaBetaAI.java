@@ -15,7 +15,7 @@ public class AlphaBetaAI {
   
   private static int STAND_WEIGHT = 1;
   private static int FLAT_WEIGHT = 5;
-  private static int WIN_WEIGHT = 1000;
+  private static int WIN_WEIGHT = 10;
   
   public static Move nextMove(Player ai, Game game, int depth) {
     
@@ -29,6 +29,8 @@ public class AlphaBetaAI {
     if(isMax)
       threshold = Integer.MIN_VALUE;
     
+    //used for randomly picking between ties
+    ArrayList<Integer> vals = new ArrayList<Integer>();
     
     for(int i = 0; i < moves.size(); i++) {
       game.makeMove(moves.get(i));
@@ -47,8 +49,16 @@ public class AlphaBetaAI {
       {
         move = moves.get(i);
         threshold = val;
+        
+        for(int j = vals.size()-1; j >= 0; j--)
+          vals.remove(j);
+        vals.add(i);
       }
+      else if(val == threshold)
+        vals.add(i);
     }
+    
+    move = moves.get(vals.get((int) (Math.random() * vals.size())));
     
     return move;
   }
@@ -59,6 +69,10 @@ public class AlphaBetaAI {
       return AlphaBetaAI.calculateHeuristic(game, true);
     
     ArrayList<Move> moves = game.availableMoves();
+    
+    ArrayList<Integer> maxes = new ArrayList<Integer>();
+    
+    maxes.add(alpha);
     
     for(int i = 0; i < moves.size(); i++) {
       game.makeMove(moves.get(i));
@@ -72,8 +86,19 @@ public class AlphaBetaAI {
       }
       
       if(val > alpha)
+      {
         alpha = val;
+        for(int j = maxes.size()-1; j >= 0; j--)
+          maxes.remove(j);
+        maxes.add(alpha);
+        
+      }
+      
+      if(val == alpha)
+        maxes.add(val);
     }
+    
+    alpha = maxes.get((int) (Math.random() * maxes.size()));
     
     return alpha;
   }
@@ -84,6 +109,10 @@ public class AlphaBetaAI {
       return AlphaBetaAI.calculateHeuristic(game, false);
     
     ArrayList<Move> moves = game.availableMoves();
+    
+    ArrayList<Integer> mins = new ArrayList<Integer>();
+    
+    mins.add(beta);
     
     for(int i = 0; i < moves.size(); i++) {
       game.makeMove(moves.get(i));
@@ -96,9 +125,18 @@ public class AlphaBetaAI {
         break;
       }
       
-      if(val < beta)
+      if(val < beta) {
         beta = val;
+        for(int j = mins.size()-1; j >= 0; j--)
+          mins.remove(j);
+        mins.add(beta);
+      }
+      
+      if(val == beta)
+        mins.add(val);
     }
+    
+    beta = mins.get((int) (Math.random() * mins.size()));
     
     return beta;
   }
@@ -183,6 +221,8 @@ public class AlphaBetaAI {
         }
         
         score *= game.calculateScore();
+        
+        game.setWinner(null);
       }
       else {    //there is no winner yet
         int cellsp0 = game.getCellsControlled(game.getPlayer(0));

@@ -32,7 +32,7 @@ public class Application {
     
     for (int j = 0; j < 50; j++) {
       for (int i = 0; i < 1000; i++) {
-        GameManager.newGame(Game.TAK, boardSize, Player.QLEARNING_LINEAR, Player.QLEARNING_LINEAR);
+        GameManager.newGame(Game.TAK, boardSize,Player.ALPHA_BETA, Player.QLEARNING_LINEAR);
         GameManager.startQueue();
       }
       logger.info("Played " + ((j+1) * 1000) + " games.");

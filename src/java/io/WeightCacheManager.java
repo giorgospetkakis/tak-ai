@@ -9,7 +9,9 @@ import java.nio.channels.FileLock;
 import java.nio.channels.OverlappingFileLockException;
 import org.apache.log4j.Logger;
 import game.Game;
+import players.ab.AlphaBetaAI;
 import players.rl.ValueApproximator;
+import run.GameManager;
 
 /**
  * Enables writing game information to files.
@@ -136,6 +138,7 @@ public abstract class WeightCacheManager {
      */
     private static String getApproximatorWeights(ValueApproximator approx) {
         String ret = "\n";
+        ret += AlphaBetaAI.calculateHeuristic(GameManager.getCurrent(), true);
         for (double w : approx.getWeights()) {
             ret +=  w + ",";
         }

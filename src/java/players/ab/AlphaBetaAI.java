@@ -141,7 +141,7 @@ public class AlphaBetaAI {
     return beta;
   }
   
-  private static int calculateHeuristic(Game game, boolean max) {
+  public static int calculateHeuristic(Game game, boolean max) {
     int score = 0;
     
     if(game.getType().equals(Game.TIC_TAC_TOE)) {

@@ -75,6 +75,35 @@ public abstract class FeatureRegistry {
                   })
           );
 
+          // Checks for number of same-color pieces in a column
+          TAK.add (
+                  new Feature(() -> {
+                      int sum = 0;
+                      for(int l = 0; l < GameManager.getCurrent().getBoard().getSize(); l++) {
+                          sum += (BoardManager.getCell(GameManager.getCurrent().getBoard(), y, l).getOwner())!=null &&
+                                  (BoardManager.getCell(GameManager.getCurrent().getBoard(), y, l).getOwner())!=GameManager.getCurrent().getPlayer(player) &&
+                                  !BoardManager.getCell(GameManager.getCurrent().getBoard(), y, l).top().isStandingStone() ? 1 : 0;
+                          if (sum >= GameManager.getCurrent().getBoard().getSize() - 1) {
+                              sum += sum;
+                          }
+                      }
+                      Feature.setValue(sum);
+                  })
+          );
+
+          // Checks for the number of same-color pieces in a row
+          TAK.add (
+                  new Feature(() -> {
+                      int sum = 0;
+                      for(int l = 0; l < Application.boardSize; l++) {
+                          sum += (BoardManager.getCell(GameManager.getCurrent().getBoard(), l, y).getOwner())!=null &&
+                                  (BoardManager.getCell(GameManager.getCurrent().getBoard(), l, y).getOwner())!=GameManager.getCurrent().getPlayer(player) &&
+                                  !BoardManager.getCell(GameManager.getCurrent().getBoard(), l, y).top().isStandingStone() ? 1 : 0;
+                      }
+                      Feature.setValue(sum);
+                  })
+          );
+
         for (byte j = 0; j < Application.boardSize; j++) {
           final byte x = j;
 

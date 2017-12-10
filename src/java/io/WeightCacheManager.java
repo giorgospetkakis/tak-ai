@@ -138,7 +138,7 @@ public abstract class WeightCacheManager {
      */
     private static String getApproximatorWeights(ValueApproximator approx) {
         String ret = "\n";
-        ret += AlphaBetaAI.calculateHeuristic(GameManager.getCurrent(), true);
+        //ret += AlphaBetaAI.calculateHeuristic(GameManager.getCurrent(), true);
         for (double w : approx.getWeights()) {
             ret +=  w + ",";
         }

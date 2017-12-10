@@ -35,7 +35,7 @@ public class LinearApproximator extends ValueApproximator {
 
   @Override
   public void init() {
-    this.setWeights(new double[features.length]);
+    setWeights(new double[features.length]);
     for(int w = 0; w < weights.length; w++) {
       weights[w] = Math.random();
     }

@@ -84,7 +84,7 @@ public class RlPlayer extends Player {
       game.setWinner(game.whoseTurn());
       this.reward = game.calculateScore();
       game.setWinner(null);
-      if(Math.random() <= 0.01) {
+      if(Math.random() <= 0.8) {
         WeightCacheManager.record(this.approx);
       }
     } else {

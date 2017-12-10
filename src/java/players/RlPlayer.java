@@ -24,7 +24,7 @@ public class RlPlayer extends Player {
 
   public static final int NEURAL_NETWORK_APPROXIMATION = 101;
 
-  public static final double epsilon = 0.2;
+  public static double epsilon = 0.2;
 
   private double mostRecentStateValue = Double.MIN_VALUE;
   

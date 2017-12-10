@@ -9,12 +9,11 @@ import players.ab.AlphaBetaAI;
 public class AlphaBetaPlayer extends Player {
   
   private static final int tttDepth = 5;
-  private static final int takDepth = 10;
+  private static final int takDepth = 50;
   
   @Override
   public Move requestMove(Game game, ArrayList<Move> availableMoves) {
-    
-    //TODO make check for TTT or Tak game type
-    return AlphaBetaAI.nextMove(this, game, 50);
+
+    return AlphaBetaAI.nextMove(this, game, takDepth);
   }
 }

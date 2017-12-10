@@ -30,7 +30,7 @@ public class Application {
    */
   public static void main(String[] args) {
     boardSize = Integer.parseInt(args[0]);
-    
+
     for (int j = 0; j < 5000; j++) {
       for (int i = 0; i < 1000; i++) {
         GameManager.newGame(Game.TAK, boardSize, Player.ALPHA_BETA, Player.SARSA_LINEAR);

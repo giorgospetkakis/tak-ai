@@ -91,7 +91,7 @@ public class GameManager {
   private static void start(Game game) {
     game.setTimeElapsed(System.nanoTime());
     game.setGameState(Game.IN_PROGRESS);
-    game.setCurrent(game.getPlayer((int) (Math.random() * 2)));
+    game.setCurrent(game.getPlayer(0));
     //logger.info(game.getType() + " Game " + game.hashCode() + " has started.");
   }
 

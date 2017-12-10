@@ -2,14 +2,23 @@ package players.ab;
 
 import java.util.ArrayList;
 import beans.Board;
+import beans.Cell;
 import beans.Move;
 import beans.Player;
 import game.BoardManager;
 import game.Game;
 import players.rl.Feature;
 import players.rl.FeatureRegistry;
+<<<<<<< HEAD
+=======
+import run.GameManager;
+>>>>>>> c4c69f76971b9d99714086a414a76e76e83ad4ed
 
 public class AlphaBetaAI {
+  
+  private static int STAND_WEIGHT = 1;
+  private static int FLAT_WEIGHT = 5;
+  private static int WIN_WEIGHT = 10;
   
   public static Move nextMove(Player ai, Game game, int depth) {
     
@@ -24,12 +33,17 @@ public class AlphaBetaAI {
     if(isMax)
       threshold = Integer.MIN_VALUE;
     
+    //used for randomly picking between ties
+    ArrayList<Integer> vals = new ArrayList<Integer>();
+    
     for(int i = 0; i < moves.size(); i++) {
       game.makeMove(moves.get(i));
       
       int val = 0;
       
       if(isMax)
+        val = AlphaBetaAI.minValue(game, --depth, Integer.MIN_VALUE, Integer.MAX_VALUE);
+      else
         val = AlphaBetaAI.maxValue(game, --depth, Integer.MIN_VALUE, Integer.MAX_VALUE);
       else
         val = AlphaBetaAI.minValue(game, --depth, Integer.MIN_VALUE, Integer.MAX_VALUE);
@@ -40,11 +54,25 @@ public class AlphaBetaAI {
       if((isMax && val > threshold) || (!isMax && val < threshold))
       {
         move = moves.get(i);
+<<<<<<< HEAD
         picked = val;
       }
     }
     
     System.out.println("picked " + picked);
+=======
+        threshold = val;
+        
+        for(int j = vals.size()-1; j >= 0; j--)
+          vals.remove(j);
+        vals.add(i);
+      }
+      else if(val == threshold)
+        vals.add(i);
+    }
+    
+    move = moves.get(vals.get((int) (Math.random() * vals.size())));
+>>>>>>> c4c69f76971b9d99714086a414a76e76e83ad4ed
     
     return move;
   }
@@ -55,6 +83,10 @@ public class AlphaBetaAI {
       return AlphaBetaAI.calculateHeuristic(game, true);
     
     ArrayList<Move> moves = game.availableMoves();
+    
+    ArrayList<Integer> maxes = new ArrayList<Integer>();
+    
+    maxes.add(alpha);
     
     for(int i = 0; i < moves.size(); i++) {
       game.makeMove(moves.get(i));
@@ -68,8 +100,19 @@ public class AlphaBetaAI {
       }
       
       if(val > alpha)
+      {
         alpha = val;
+        for(int j = maxes.size()-1; j >= 0; j--)
+          maxes.remove(j);
+        maxes.add(alpha);
+        
+      }
+      
+      if(val == alpha)
+        maxes.add(val);
     }
+    
+    alpha = maxes.get((int) (Math.random() * maxes.size()));
     
     return alpha;
   }
@@ -80,6 +123,10 @@ public class AlphaBetaAI {
       return AlphaBetaAI.calculateHeuristic(game, false);
     
     ArrayList<Move> moves = game.availableMoves();
+    
+    ArrayList<Integer> mins = new ArrayList<Integer>();
+    
+    mins.add(beta);
     
     for(int i = 0; i < moves.size(); i++) {
       game.makeMove(moves.get(i));
@@ -92,18 +139,33 @@ public class AlphaBetaAI {
         break;
       }
       
-      if(val < beta)
+      if(val < beta) {
         beta = val;
+        for(int j = mins.size()-1; j >= 0; j--)
+          mins.remove(j);
+        mins.add(beta);
+      }
+      
+      if(val == beta)
+        mins.add(val);
     }
+    
+    beta = mins.get((int) (Math.random() * mins.size()));
     
     return beta;
   }
   
+<<<<<<< HEAD
   private static int calculateHeuristic(Game game, boolean max) {
     int score = 0;
     
     int winWeight = 1000;
     
+=======
+  public static int calculateHeuristic(Game game, boolean max) {
+    int score = 0;
+    
+>>>>>>> c4c69f76971b9d99714086a414a76e76e83ad4ed
     if(game.getType().equals(Game.TIC_TAC_TOE)) {
       Feature[] features = FeatureRegistry.getFeaturesFor(Game.TIC_TAC_TOE);
       
@@ -142,7 +204,11 @@ public class AlphaBetaAI {
           || topLeft + left + botLeft == 3 || topMid + mid + botMid == 3 || topRight + right + botRight == 3
           || topLeft + mid + botRight == 3 || topRight + mid + botLeft == 3)
       //if(game.getWinner() != null)
+<<<<<<< HEAD
         score = winWeight;
+=======
+        score = AlphaBetaAI.WIN_WEIGHT;
+>>>>>>> c4c69f76971b9d99714086a414a76e76e83ad4ed
       else if(etopLeft + topMid + topRight == 3 || topLeft + etopMid + topRight == 3 || topLeft + topMid + etopRight == 3
           || eleft + mid + right == 3 || left + emid + right == 3 || left + mid + eright == 3
           || ebotLeft + botMid + botRight == 3 || botLeft + ebotMid + botRight == 3 || botLeft + botMid + ebotRight == 3
@@ -172,15 +238,24 @@ public class AlphaBetaAI {
       
       if(winner != null) {
         if(winner.equals(game.getPlayer(0))) {
+<<<<<<< HEAD
           score = winWeight;
           game.setWinner(game.getPlayer(0));
         }
         else {
           score = -winWeight;
+=======
+          score = AlphaBetaAI.WIN_WEIGHT;
+          game.setWinner(game.getPlayer(0));
+        }
+        else {
+          score = -AlphaBetaAI.WIN_WEIGHT;
+>>>>>>> c4c69f76971b9d99714086a414a76e76e83ad4ed
           game.setWinner(game.getPlayer(1));
         }
         
         score *= game.calculateScore();
+<<<<<<< HEAD
       }
       else {    //there is no winner yet
         score = game.getCellsControlled(game.getPlayer(0)) - game.getCellsControlled(game.getPlayer(1));
@@ -189,6 +264,24 @@ public class AlphaBetaAI {
     }
     
     System.out.println("Score: " + score);
+=======
+        
+        game.setWinner(null);
+      }
+      else {    //there is no winner yet
+        int cellsp0 = game.getCellsControlled(game.getPlayer(0));
+        int standCellsp0 = game.getCellsControlledStanding(game.getPlayer(0));
+        int cellsp1 = game.getCellsControlled(game.getPlayer(1));
+        int standCellsp1 = game.getCellsControlledStanding(game.getPlayer(1));
+        
+        //flat stones and standing stones of player 1 on the top of stacks minus flat stones and standing stones of
+        //player 2 on the top of stacks. Both are weighted by FLAT_WEIGHT and STAND_WEIGHT respectively.
+        score = ((cellsp0 - standCellsp0) * AlphaBetaAI.FLAT_WEIGHT + standCellsp0 * AlphaBetaAI.STAND_WEIGHT)
+            - ((cellsp1 - standCellsp1) * AlphaBetaAI.FLAT_WEIGHT + standCellsp1 * AlphaBetaAI.STAND_WEIGHT);
+      }
+      
+    }
+>>>>>>> c4c69f76971b9d99714086a414a76e76e83ad4ed
     
     return score;
   }

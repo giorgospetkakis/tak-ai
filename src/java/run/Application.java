@@ -4,6 +4,7 @@ import io.RecordsManager;
 import org.apache.log4j.Logger;
 import beans.Player;
 import game.Game;
+import players.RlPlayer;
 
 /**
  * TAK AI An AI player for the game Tak.
@@ -30,11 +31,12 @@ public class Application {
   public static void main(String[] args) {
     boardSize = Integer.parseInt(args[0]);
     
-    for (int j = 0; j < 50; j++) {
+    for (int j = 0; j < 5000; j++) {
       for (int i = 0; i < 1000; i++) {
-        GameManager.newGame(Game.TAK, boardSize,Player.ALPHA_BETA, Player.QLEARNING_LINEAR);
+        GameManager.newGame(Game.TAK, boardSize, Player.ALPHA_BETA, Player.SARSA_LINEAR);
         GameManager.startQueue();
       }
+      RlPlayer.epsilon *= 0.9;
       logger.info("Played " + ((j+1) * 1000) + " games.");
     }
 
